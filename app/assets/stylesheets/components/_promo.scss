@@ -1,15 +1,15 @@
 .index_promo {
-  position: sticky;
-  width: calc(100vw - 15rem);
+  width: 100vw;
   height: 13px;
-  z-index: 100;
-  flex: 1 1 auto;
   display: flex;
+  margin-top: 5px;
   align-items: center;
   padding: 1rem 0;
-  font-size: 0.75rem;
   background-color: #17a349;
   color: white;
+  /* z-index: 100; */
+  /* flex: 1 1 auto; */
+  /* font-size: 0.75rem; */
 }
 
 .prime_text {
