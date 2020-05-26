@@ -1,0 +1,23 @@
+.main-footer {
+    color: #878685;
+    font-size: 20px;
+    padding: 10px;
+    padding-left: 0;
+    margin-left: -5px;
+    text-align: center;
+    height: 15px;
+    min-height: calc(100vh - 70px - 80px);
+}
+
+.main-footer ul li {
+  display: inline;
+  list-style: none;
+}
+
+.main-footer a {
+  color: #17a349;
+}
+
+.main-footer a:hover {
+  color: white;
+}
