@@ -2,22 +2,12 @@
 .index_navbarre {
   overflow: hidden;
   background-color: #181a1b;
-  position: sticky;
   top: 0;
 }
 
 /* Stick to right login/register TO_FIX MULTIPLE SELECTOR */
 .index_navbarre .nav_register {
   float: right;
-  margin-left: 6px;
-}
-.index_navbarre .nav_login {
-  float: right;
-}
-
-button {
-  margin-top: 6px;
-  border: none;
 }
 
 /* Style the links inside the navigation bar */
@@ -60,15 +50,4 @@ button {
   .index_navbarre input[type=text] {
     border: 1px solid #ccc;
   }
-}
-
-.index_navbarre .search-container button {
-  float: right;
-  padding: 6px 10px;
-  margin-top: 8px;
-  margin-right: 16px;
-  background: #ddd;
-  font-size: 17px;
-  border: none;
-  cursor: pointer;
 }
