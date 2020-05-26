@@ -1,19 +1,24 @@
 <div class="index_navbarre">
-  <%= link_to "Home" do %>
-  <i class="fa fa-fw fa-home"></i>
-  <%= image_tag "" %>
+  <%= link_to root_path do %>
+  <i class="fa fa-fw fa-home"></i>Accueil
   <% end %>
 
+  <%= link_to do %>
+  <i class ="a fa fa-fw fa-lightbulb"></i>Tendances
+  <% end %>
 
-<%= link_to '<i class="fa fa-fw fa-lightbulb"></i><button type="button">Tendances</button>'.html_safe %>
-<%= link_to '<i class="fa fa-fw fa-envelope"></i><button type="button">Contact</button>'.html_safe %>
+  <%= link_to do %>
+  <i class ="a fa fa-fw fa-envelope"></i>Contact
+  <% end %>
 
-
-  <%= link_to "Search" do %>
   <input type="text" placeholder="Rechercher..">
-  <i class="fas fa-search"></i>
+  <button type="submit"><i class="fas fa-search"></i></button>
+
+  <%= link_to destroy_user_session_path, class: "nav_register" do %>
+  <i class="fa fa-fw fa-user"></i>Deconnecter
   <% end %>
 
-  <%= link_to '<i class="fa fa-fw fa-user"></i><button type="button" class: "btn-grey nav_register">Se connecter</button>'.html_safe %>
-  <%= link_to '<i class="fa fa-fw fa-user"></i><button type="button" class: "btn-grey nav_register">Inscription</button>'.html_safe %>
+  <%= link_to new_user_session_path, class: "nav_register" do %>
+  <i class="fa fa-user-plus"></i>Login
+  <% end %>
 </div>

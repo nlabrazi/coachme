@@ -6,6 +6,47 @@
 @import "../components/button";
 @import "../components/card";
 @import "../components/promo";
+@import "../components/home-searchbar";
 
 @import "../config/colors";
 @import "../config/fonts";
+
+
+.zone-center {
+    width: 100%;
+    max-width: 1350px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 45px;
+}
+
+
+.home-searchbar {
+    height: 60px;
+    width: 100%;
+    min-width: 600px;
+    display: flex;
+    box-shadow: 0 0 20px 0 cyan;
+    border-radius: 8px;
+    background-color: red;
+}
+
+.searchbar-input-what {
+  height: 100%;
+}
+
+.searchbar-input-where {
+  height: 100%;
+}
+
+
+.zone-center h1 {
+  margin: 0 -50px 21px;
+  font-size: 26px;
+  line-height: 34px;
+  font-family: "Montserrat", arial, sans-serif;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  position: relative;
+}
