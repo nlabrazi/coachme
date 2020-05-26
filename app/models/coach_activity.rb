@@ -1,0 +1,2 @@
+class CoachActivity < ApplicationRecord
+end
