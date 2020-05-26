@@ -14,7 +14,7 @@
   <input type="text" placeholder="Rechercher..">
   <button type="submit"><i class="fas fa-search"></i></button>
 
-  <%= link_to destroy_user_session_path, class: "nav_register" do method: :delete %>
+  <%= link_to destroy_user_session_path, method: :delete, class: "nav_register" do  %>
   <i class="fa fa-fw fa-user"></i>Deconnecter
   <% end %>
 
