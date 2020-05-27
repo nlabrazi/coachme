@@ -23,7 +23,7 @@
 
 /* Change the color of links on hover */
 .index_navbarre a:hover {
-  color: #17a349;
+  color: #861388;
 }
 
 /* Style the search box inside the navigation bar */
@@ -50,4 +50,9 @@
   .index_navbarre input[type=text] {
     border: 1px solid #ccc;
   }
+}
+
+.navbar_login {
+  float: right;
+  list-style: none;
 }
