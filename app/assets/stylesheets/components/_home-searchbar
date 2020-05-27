@@ -8,9 +8,18 @@
 }
 
 .home-searchbar {
-  display: inline-flex;
-  width: 100%;
   font-size: 20px;
+  display: inline-flex;
 }
 
+.home-searchbar input {
+  float: right
+}
 
+.barsearch {
+  display: contents;
+}
+
+.form-control {
+  height 100%;
+}
