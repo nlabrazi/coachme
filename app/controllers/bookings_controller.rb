@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_booking
+  #before_action :set_booking
 
   def index
     @user = User.find(params[:user_id])
@@ -11,16 +11,26 @@ class BookingsController < ApplicationController
   end
 
   def new
+    @booking = Booking.new
+  end
+
+  def create
     @booking = Booking.new(booking_params)
+    @booking.activity = Activity.find(params[:activity_id])
+    @booking.user = current_user
+    @booking.coach = User.find(params[:coach_id])
+    @booking.status = "pending"
+      if booking.save
+        redirect_to coach_activity_bookings_path
+      else
+        render "coach_activities/show"
+      end
   end
 
   def update
 
   end
 
-  def create
-
-  end
 
   def validate
     @booking = Booking.find(params[:booking_id])

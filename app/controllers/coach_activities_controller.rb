@@ -6,6 +6,14 @@ class CoachActivitiesController < ApplicationController
 
   def show
     @coach_activity = CoachActivity.find(params[:id])
+    @booking = Booking.new
+    @bookings = Booking.where(activity_id: @activity.id)
+    @bookings_dates = @bookings.map do |booking|
+      {
+        from: booking.start_date,
+        to:   booking.end_date
+      }
+    end
   end
 
     def create
