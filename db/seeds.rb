@@ -60,3 +60,6 @@ Activity.create! name: "Zumba", category: "Sports de danse", description: "Pour 
 
 CoachActivity.create! user_id: 11, activity_id: 33, price: 30, start_date: "2020-05-30", end_date: "2020-12-30", capacity: 4
 CoachActivity.create! user_id: 13, activity_id: 34, price: 60, start_date: "2020-05-30", end_date: "2020-12-30", capacity: 4
+CoachActivity.create! user_id: 6, activity_id: 1, price: 30, start_date: "2020-05-30", end_date: "2020-12-30", capacity: 4
+CoachActivity.create! user_id: 7, activity_id: 2, price: 40, start_date: "2020-05-30", end_date: "2020-12-30", capacity: 4
+CoachActivity.create! user_id: 9, activity_id: 3, price: 50, start_date: "2020-05-30", end_date: "2020-12-30", capacity: 4
