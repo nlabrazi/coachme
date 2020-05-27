@@ -1,0 +1,7 @@
+<div class="activities-browse">
+  <h2>Liste des activités disponibles</h2>
+  <% @activities.each do |activity| %>
+  <h5> <%= activity.name  %> </h5>
+  <p><%= activity.description %></p>
+  <% end %>
+</div>

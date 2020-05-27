@@ -19,39 +19,17 @@
 </div>
 <!-- END BANNER PROMO -->
 
-
-
-
-<div class="zone-center">
-
-  <h1>Partez à la recherche de votre coach</h1>
-
-  <!-- BEGIN BIG SEARCH BAR -->
-<!--   <form class="home-searchbar">
-    <div class="searchbar-what">
-      <input class="searchbar-input-what" placeholder="Coach, spécialité…" value="">
+<!-- BEGIN BIG SEARCH BAR -->
+  <div class="zone-center">
+    <h1>Partez à la recherche de votre coach</h1>
+    <div class="home-searchbar">
+      <%= form_tag search_path, method: :get do %>
+      <%= text_field_tag :query, params[:query], class: "form-control", placeholder:"Coach, spécialité..."%>
+      <%= button_to "Rechercher", class: "btn-purple searchbar-submit" %>
+      <% end %>
+      <%= link_to "Parcourir", activities_path, class: "btn-purple searchbar-submit" %>
     </div>
-    <div class="searchbar-where">
-      <input class="searchbar-input-where" placeholder="Où ?" value="">
-    </div>
-  </form> -->
-
-
-  <%= form_tag search_path, method: :get do %>
-  <%= text_field_tag :query,
-  params[:query],
-  class: "form-control",
-    placeholder:"Coach, spécialité..."
-    %>
-
-    <%= submit_tag "Rechercher", class: "btn-green searchbar-submit" %>
-    <% end %>
-
-
-    <!--       <span class="searchbar-submit"></span> -->
-
     <!-- END BIG SEARCH BAR  -->
-
 
     <!-- *** BEGIN CAROUSEL *** -->
     <div class="index_carousel">
@@ -86,7 +64,6 @@
     </div>
 
   </div>
-
   <!-- *** END CAROUSEL *** -->
 
 

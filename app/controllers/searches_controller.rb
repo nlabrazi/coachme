@@ -1,9 +1,13 @@
 class SearchesController < ApplicationController
   def search
     if params[:query].present?
-      @activities = Activity.search_by_name_desc_cat(params[:query])
+      @users = User.search_by_name(params[:query])
     else
-      @activities = Activity.all
+      @users = User.all
     end
+  end
+
+  def browse
+    @activities = Activity.all
   end
 end

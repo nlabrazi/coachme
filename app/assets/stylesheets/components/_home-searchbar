@@ -1,0 +1,16 @@
+.home-searchbar {
+  height: 60px;
+  width: 100%;
+  min-width: 600px;
+  display: flex;
+  box-shadow: 0 0 20px 0 cyan;
+  border-radius: 8px;
+}
+
+.home-searchbar {
+  display: inline-flex;
+  width: 100%;
+  font-size: 20px;
+}
+
+

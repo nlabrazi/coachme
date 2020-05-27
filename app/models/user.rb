@@ -14,7 +14,7 @@ class User < ApplicationRecord
 
   include PgSearch::Model
   pg_search_scope :search_by_name,
-  against: [ :name ],
+  against: [ :last_name ],
   using: {
     tsearch: { prefix: true }
   }
