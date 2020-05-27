@@ -1,4 +1,5 @@
 class BookingsController < ApplicationController
+  before_action :set_booking
 
   def index
     @user = User.find(params[:user_id])
@@ -10,7 +11,7 @@ class BookingsController < ApplicationController
   end
 
   def new
-    @booking = Booking.new
+    @booking = Booking.new(booking_params)
   end
 
   def update
@@ -34,7 +35,7 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit()
+    params.require(:booking).permit(:sum_price, :bill, :duration)
   end
 
 end
