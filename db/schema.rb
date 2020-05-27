@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_27_093831) do
+ActiveRecord::Schema.define(version: 2020_05_27_100542) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 2020_05_27_093831) do
     t.integer "sum_price"
     t.integer "duration"
     t.date "date_time"
+    t.string "status"
     t.index ["activity_id"], name: "index_bookings_on_activity_id"
     t.index ["coach_id"], name: "index_bookings_on_coach_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
@@ -64,8 +65,8 @@ ActiveRecord::Schema.define(version: 2020_05_27_093831) do
     t.string "phone"
     t.string "address"
     t.string "licence"
-    t.string "location"
     t.string "legal"
+    t.integer "location"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
