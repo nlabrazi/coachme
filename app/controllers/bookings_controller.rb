@@ -16,7 +16,7 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.activity = Activity.find(params[:activity_id])
+    @booking.coach_activity = CoachActivity.find(params[:coach_activity_id])
     @booking.user = current_user
     @booking.coach = User.find(params[:coach_id])
     @booking.status = "pending"
@@ -45,7 +45,7 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:sum_price, :bill, :duration, :status)
+    params.require(:booking).permit(:sum_price, :bill, :duration, :status, :start_time, :end_time)
   end
 
 end

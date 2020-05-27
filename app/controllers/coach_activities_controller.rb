@@ -7,12 +7,11 @@ class CoachActivitiesController < ApplicationController
   def show
     @coach_activity = CoachActivity.find(params[:id])
     @booking = Booking.new
-    @activity = @coach_activity.activity
-    @bookings = Booking.where(activity_id: @activity.id)
-    @bookings_dates = @bookings.map do |booking|
+    @bookings = Booking.where(coach_activity_id: @coach_activity.id)
+    @bookings_datetime = @bookings.map do |booking|
       {
-        from: booking.start_date,
-        to:   booking.end_date
+        from: booking.start_time,
+        to:   booking.end_time
       }
     end
   end
@@ -30,6 +29,6 @@ class CoachActivitiesController < ApplicationController
   private
 
   def coach_activity_params
-    params.require(:coach_activity).permit(:activity_id, :capacity, :start_date, :end_date, :price)
+    params.require(:coach_activity).permit(:activity_id, :capacity, :start_time, :end_time, :price)
   end
 end
