@@ -8,8 +8,8 @@
 }
 
 .home-searchbar {
-  font-size: 20px;
   display: inline-flex;
+  font-size: 20px;
 }
 
 .home-searchbar input {
@@ -20,6 +20,6 @@
   display: contents;
 }
 
-.form-control {
-  height 100%;
+.search-input {
+  height: 100%;
 }
