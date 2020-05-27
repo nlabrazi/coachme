@@ -1,0 +1,15 @@
+<h2>Mon cours</h2>
+
+<%= simple_form_for [ @coach_activity ] do |f| %>
+
+  <div class="form-inputs-boats">
+    <%= f.association :activity %>
+    <%= f.input :capacity %>
+    <%= f.input :start_date %>
+    <%= f.input :end_date %>
+    <%= f.input :price, :label => "Prix du cours à l'heure" %>
+    <%= f.submit "Créer le cours", class: "btn btn-primary" %>
+  </div>
+<% end %>
+
+<%= link_to 'retour à mon Dashboard', dashboard_path %>
