@@ -1,8 +1,10 @@
 class User < ApplicationRecord
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   scope :by_activity, -> (activity) {
-    self.includes(:activities).where('activities.name = ?',activity)
+    self.joins(:activities).where('activities.name = ?',activity)
   }
 
   devise :database_authenticatable, :registerable,
@@ -19,11 +21,11 @@ class User < ApplicationRecord
 
 
   # include PgSearch::Model
-  # # pg_search_scope :search_by_name,
-  # # against: [ :last_name ],
-  # # using: {
-  # #   tsearch: { prefix: true }
-  # # }
+  # pg_search_scope :search_by_name,
+  # against: [ :last_name ],
+  # using: {
+  #   tsearch: { prefix: true }
+  # }
 
   # pg_search_scope :search_by_category,
   # associated_against: {
