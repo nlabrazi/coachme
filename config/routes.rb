@@ -5,5 +5,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   get "/search", to:'searches#search'
   get "/activities", to:'searches#browse'
-  resource :bookings
+  resources :coach_activities, only: [:index, :show, :new, :create] do
+    resource :bookings
+  end
 end
