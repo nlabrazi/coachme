@@ -2,8 +2,13 @@ Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/ra
 
 config
 yarn add bootstrap
+yarn add places.js
+yarn add mapbox-gl
+
+
 
 
 #New Gem added
 gem 'pundit'
 gem 'pg_search', '~> 2.3.0'
+gem 'geocoder'
