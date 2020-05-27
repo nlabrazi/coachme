@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_26_163746) do
+ActiveRecord::Schema.define(version: 2020_05_27_090930) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,10 +28,9 @@ ActiveRecord::Schema.define(version: 2020_05_26_163746) do
     t.bigint "coach_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "price"
-    t.date "start_date"
-    t.date "end_date"
     t.bigint "activity_id"
+    t.integer "sum_price"
+    t.integer "duration"
     t.index ["activity_id"], name: "index_bookings_on_activity_id"
     t.index ["coach_id"], name: "index_bookings_on_coach_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
@@ -43,6 +42,9 @@ ActiveRecord::Schema.define(version: 2020_05_26_163746) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id"
     t.bigint "activity_id"
+    t.date "start_date"
+    t.date "end_date"
+    t.integer "capacity"
     t.index ["activity_id"], name: "index_coach_activities_on_activity_id"
     t.index ["user_id"], name: "index_coach_activities_on_user_id"
   end
