@@ -16,11 +16,14 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.coach_activity = CoachActivity.find(params[:coach_activity_id])
+    raise
+    @coach_activity = CoachActivity.find(params[:coach_activity_id])
+    @booking.coach_activity = @coach_activity
     @booking.user = current_user
-    @booking.coach = User.find(params[:coach_id])
+    @booking.coach = @coach_activity.user
+    @booking.sum_price = @coach_activity.price
     @booking.status = "pending"
-      if booking.save
+      if @booking.save!
         redirect_to coach_activity_bookings_path
       else
         render "coach_activities/show"
@@ -45,7 +48,7 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:sum_price, :bill, :duration, :status, :start_time, :end_time)
+    params.require(:booking).permit(:duration, :start_time, :end_time, :participant_number)
   end
 
 end

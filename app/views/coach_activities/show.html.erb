@@ -11,26 +11,13 @@
   <div class="form-wrapper">
     <h2>Book a course</h2>
     <%= simple_form_for [@coach_activity, @booking] do |f| %>
-      <%= f.input  :start_time, as: :string, required: false, input_html: {id: "range_start", class: "d-none"} %>
-      <%= f.input  :end_time, as: :string, required: false, input_html: {id: "range_end", class: "d-none"} %>
+      <%= f.input  :start_time, as: :string, required: false, input_html: {class: "flatpickr"} %>
+      <%= f.input  :end_time, as: :string, required: false, input_html: {class: "flatpickr"} %>
+       <%= f.input :participant_number, input_html: { min: 0, max: 5 } %>
       <%= f.button :submit, "Book", class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>’
-<div id="booking-form-div" data-bookings="<%= @bookings_dates.to_json %>" >
-
-
-
-
-<%= simple_form_for [ @coach_activity, @booking ] do |f| %>
-
-  <div class="form-inputs-bookings">
-    <%= f.input :participant_number, input_html: { max: 5 } %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.submit "Book that shit", class: "btn btn-primary" %>
-  </div>
-<% end %>
+<div id="booking-form-div" data-bookings="<%= @bookings_datetime.to_json %>" >
 
 <%= link_to "booker ce cours", coach_activity_bookings_path(@coach_activity)  %>
