@@ -5,6 +5,19 @@
 <p> <%= @coach_activity.price %> € de l'heure </p>
 
 
+<h1>Je souhaite booker ce cours</h1>
 
+<div class="container">
+  <div class="form-wrapper">
+    <h2>Book a course</h2>
+    <%= simple_form_for [@coach_activity, @booking] do |f| %>
+      <%= f.input  :start_time, as: :string, required: false, input_html: {class: "flatpickr"} %>
+      <%= f.input  :end_time, as: :string, required: false, input_html: {class: "flatpickr"} %>
+       <%= f.input :participant_number, input_html: { min: 0, max: 5 } %>
+      <%= f.button :submit, "Book", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>’
+<div id="booking-form-div" data-bookings="<%= @bookings_datetime.to_json %>" >
 
-<%= link_to "booker ce cours", coach_activity_bookings_path  %>
+<%= link_to "booker ce cours", coach_activity_bookings_path(@coach_activity)  %>

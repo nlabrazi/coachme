@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_booking
+  #before_action :set_booking
 
   def index
     @user = User.find(params[:user_id])
@@ -11,16 +11,29 @@ class BookingsController < ApplicationController
   end
 
   def new
+    @booking = Booking.new
+  end
+
+  def create
     @booking = Booking.new(booking_params)
+    raise
+    @coach_activity = CoachActivity.find(params[:coach_activity_id])
+    @booking.coach_activity = @coach_activity
+    @booking.user = current_user
+    @booking.coach = @coach_activity.user
+    @booking.sum_price = @coach_activity.price
+    @booking.status = "pending"
+      if @booking.save!
+        redirect_to coach_activity_bookings_path
+      else
+        render "coach_activities/show"
+      end
   end
 
   def update
 
   end
 
-  def create
-
-  end
 
   def validate
     @booking = Booking.find(params[:booking_id])
@@ -35,7 +48,7 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:sum_price, :bill, :duration)
+    params.require(:booking).permit(:duration, :start_time, :end_time, :participant_number)
   end
 
 end
