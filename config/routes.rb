@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   end
 
   resources :coach_activities, only: [:index, :show, :new, :create] do
-    resources :bookings
+    resources :bookings do
+      patch "validate", to: "bookings#validate"
+    end
   end
 end
