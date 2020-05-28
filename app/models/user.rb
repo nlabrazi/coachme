@@ -14,6 +14,9 @@ class User < ApplicationRecord
   has_many :coach_activities
   has_many :activities, through: :coach_activities
 
+  has_one_attached :photo
+
+  validates :phone, presence: true
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :email, presence: true, uniqueness: true

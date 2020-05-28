@@ -12,3 +12,4 @@ yarn add mapbox-gl
 gem 'pundit'
 gem 'pg_search', '~> 2.3.0'
 gem 'geocoder'
+gem 'cloudinary'

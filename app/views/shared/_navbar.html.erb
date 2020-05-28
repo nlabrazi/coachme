@@ -1,4 +1,4 @@
-<div class="index_navbarre">
+<!-- <div class="index_navbarre">
   <%= link_to root_path do %>
   <i class="fa fa-fw fa-home"></i>Accueil
   <% end %>
@@ -21,4 +21,39 @@
   <%= link_to new_user_session_path, class: "nav_register" do %>
   <i class="fa fa-user-plus"></i>Login
   <% end %>
+</div>
+-->
+
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <%= link_to root_path, class: "navbar-brand" do %>
+  <%= image_tag "logo.png" %>
+  <% end %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <%= link_to do %>
+    <i class ="a fa fa-fw fa-lightbulb"></i>Tendances
+    <% end %>
+    <%= link_to do %>
+    <i class ="a fa fa-fw fa-envelope"></i>Contact
+    <% end %>
+    <ul class="navbar-nav mr-auto">
+      <% if user_signed_in? %>
+      <li class="nav-item dropdown">
+        <%= cl_image_tag current_user.photo.key, height: 40, width: 40, gravity: :face, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <%= link_to "My Profile", edit_user_registration_path, class: "dropdown-item" %>
+          <%= link_to "My Dashboard", dashboard_path, class: "dropdown-item" %>
+          <div class="dropdown-divider"></div>
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+        </div>
+      </li>
+      <% else %>
+      <li class="nav-item btn-purple">
+        <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+      </li>
+      <% end %>
+    </ul>
+  </div>
 </div>
