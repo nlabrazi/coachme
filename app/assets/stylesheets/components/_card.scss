@@ -30,3 +30,27 @@
 .card-product .card-product-infos {
   padding: 16px;
 }
+
+.card-product-coach-activity {
+  background: transparent;
+  overflow: hidden;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+}
+
+.card-product-coach-activity .card-product-infos {
+  padding: 16px;
+  margin-left: 10px;
+}
+
+.card-product-coach-activity .card-product-infos h2 {
+  font-size: 100px;
+  color: #292F36;
+}
+
+.card-product-coach-activity .card-product-infos p {
+  font-size: 30px;
+  color: #292F36;
+}
+

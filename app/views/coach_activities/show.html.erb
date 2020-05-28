@@ -1,43 +1,57 @@
   <div class="container">
     <div>
-      <h1> <%= @coach_activity.activity.name %></h1>
+
       <% @coach.coach_activities.each do |coach_activity| %>
       <% unless coach_activity == @coach_activity %>
       <p>mes autres cours: <%= link_to coach_activity.activity.name, coach_activity_path(coach_activity) %></p>
       <% end %>
       <% end %>
     </div>
-    <div class="row">
-      <div class="col-8 d-flex">
-        <div>
-          <%= cl_image_tag current_user.photo.key, height: 200, width: 200, gravity: :face, id: "coach_avatar", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-        </div>
-        <div>
-           <p> <%= @coach_activity.activity.category %> </p>
-          <p> <%= @coach_activity.activity.description %> </p>
-          <p> <%= @coach_activity.price %> € de l'heure </p>
-        </div>
-        </div>
-
-        <div class="position-sticky vh-100 col-4">
-          <div class="form-wrapper">
-            <h2>Book a course</h2>
-            <%= simple_form_for [@coach_activity, @booking] do |f| %>
-            <%= f.input  :start_time, as: :string, required: false, input_html: {class: "flatpickr"} %>
-            <%= f.input  :end_time, as: :string, required: false, input_html: {class: "flatpickr"} %>
-            <%= f.input :participant_number, input_html: { min: 0, max: 5 } %>
-            <%= f.button :submit, "Book", class: "btn btn-primary" %>
-            <% end %>
+    <div class="row mb-5 ">
+      <div class="col-8 d-inblock vh-50">
+        <div class="card-product-coach-activity">
+          <div><%= cl_image_tag current_user.photo.key, height: 250, width: 250, gravity: :face, id: "coach_avatar", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %></div>
+          <div class="card-product-infos">
+            <h2><%= @coach_activity.user.first_name %></h2>
+            <p><em><%= @coach_activity.activity.category %></em> <strong><%= @coach_activity.activity.name %></strong></p>
+            <p> <span><%= @coach_activity.price.round %> € </span>de l'heure </p>
           </div>
-          <div id="booking-form-div" data-bookings="<%= @bookings_datetime.to_json %>" >
-          </div>
-
-          total :<%= @booking.sum_price %> €</p>
         </div>
+        <div class="d-flex justify-content-around">
+          <h2> <span class="text-secondary font-weight-bold"></span></h2>
+        </div>
+        <div>
+
+
+        </div>
+      </div>
+
+      <div class="position-sticky vh-50 col-4">
+        <div class="form-wrapper ">
+          <h2>Book a course</h2>
+          <%= simple_form_for [@coach_activity, @booking] do |f| %>
+          <%= f.input  :start_time, as: :string, required: false, input_html: {class: "flatpickr"}, placeholder:"Heure de début du cours" %>
+          <%= f.input  :end_time, as: :string, required: false, input_html: {class: "flatpickr"}, placeholder:"Heure de fin du cours" %>
+          <%= f.input :participant_number, input_html: { min: 0, max: 5 }, placeholder:"nombre de participants" %>
+          <%= f.button :submit, "Book", class: "bouton_form" %>
+          <% end %>
+        </div>
+        <div id="booking-form-div" data-bookings="<%= @bookings_datetime.to_json %>" >
+        </div>
+        total :<%= @booking.sum_price %> €</p>
       </div>
     </div>
 
 
 
-    <%= link_to "booker ce cours", coach_activity_bookings_path(@coach_activity)  %>
-
+    <div class="row mb-5">
+      <div class="col-8 d-block">
+        <h2 class= "font-weight-bold">En quoi consiste cette activité ? </h2>
+        <p> <%= @coach_activity.activity.description %> </p>
+      </div>
+    </div>
+    <div class="embed-responsive embed-responsive-16by9 mb-5 shadow-sm p-3 mb-5 bg-white rounded">
+      <iframe width="725" height="408" src="https://www.youtube.com/embed/T8Lt8c43wVY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>

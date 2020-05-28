@@ -2,6 +2,7 @@ require("@rails/ujs").start()
 require("@rails/activestorage").start()
 require("channels")
 require("turbolinks").start()
+require("flatpickr/dist/themes/dark.css");
 
 //require("../custom/home")
 
@@ -14,3 +15,4 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initFlatPicker();
 })
+
