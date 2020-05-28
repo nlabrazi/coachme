@@ -4,6 +4,7 @@ config
 yarn add bootstrap
 yarn add places.js
 yarn add mapbox-gl
+yarn add flatpickr
 
 
 
