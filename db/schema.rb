@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 2020_05_27_133108) do
+ActiveRecord::Schema.define(version: 2020_05_27_173210) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,13 +28,15 @@ ActiveRecord::Schema.define(version: 2020_05_27_133108) do
     t.bigint "coach_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "activity_id"
     t.integer "sum_price"
     t.integer "duration"
     t.date "date_time"
     t.string "status"
     t.integer "participant_number"
-    t.index ["activity_id"], name: "index_bookings_on_activity_id"
+    t.bigint "coach_activity_id"
+    t.datetime "start_time", null: false
+    t.datetime "end_time", null: false
+    t.index ["coach_activity_id"], name: "index_bookings_on_coach_activity_id"
     t.index ["coach_id"], name: "index_bookings_on_coach_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
@@ -75,7 +76,7 @@ ActiveRecord::Schema.define(version: 2020_05_27_133108) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "bookings", "activities"
+  add_foreign_key "bookings", "coach_activities"
   add_foreign_key "bookings", "users"
   add_foreign_key "coach_activities", "activities"
   add_foreign_key "coach_activities", "users"
