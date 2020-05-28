@@ -1,0 +1,12 @@
+<div class="result-search">
+  <h2>Vos coach disponibles</h2>
+  <% @coach_activities.each do |coach_activity| %>
+  <h5><%= coach_activity.activity.name %></h5>
+  <ul>
+    <li><%= coach_activity.user.email %></li>
+    <li><%= coach_activity.user.licence %></li>
+    <li><%= coach_activity.user.location %></li>
+    <li><%= coach_activity.user.legal %></li>
+  </ul>
+  <% end %>
+</div>
