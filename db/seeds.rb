@@ -6,22 +6,22 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# User.create! password: "123456", email: "loic.redon@gmail.com", first_name: "Loïc", last_name: "Redon", phone: "0652770554", address: "Quai du Lot"
-# User.create! password: "123456", email: "nabster@gmail.com", first_name: "Nabil", last_name: "Labrazouf", phone: "0652770555", address: "Impasse du Maroc "
-# User.create! password: "123456", email: "tomtom@gmail.com", first_name: "Tom", last_name: "Oeuf", phone: "0652770560", address: "Rue de Varenne"
-# User.create! password: "123456", email: "monaco@gmail.com", first_name: "Zaken", last_name: "Marezzi", phone: "0652770599", address: "Voie Georges-Pompidou"
-# User.create! password: "123456", email: "corniaud@gmail.com", first_name: "Alex", last_name: "Corniaud", phone: "0652776069", address: "Villa des Entrepreneurs"
+User.create! password: "123456", email: "loic.redon@gmail.com", first_name: "Loïc", last_name: "Redon", phone: "0652770554", address: "Quai du Lot"
+User.create! password: "123456", email: "nabster@gmail.com", first_name: "Nabil", last_name: "Labrazouf", phone: "0652770555", address: "Impasse du Maroc "
+User.create! password: "123456", email: "tomtom@gmail.com", first_name: "Tom", last_name: "Oeuf", phone: "0652770560", address: "Rue de Varenne"
+User.create! password: "123456", email: "monaco@gmail.com", first_name: "Zaken", last_name: "Marezzi", phone: "0652770599", address: "Voie Georges-Pompidou"
+User.create! password: "123456", email: "corniaud@gmail.com", first_name: "Alex", last_name: "Corniaud", phone: "0652776069", address: "Villa des Entrepreneurs"
 
-# User.create! password: "123456", email: "larque@gmail.com", coach: true, first_name: "Jean-Michel", last_name: "Larqué", phone: "0652770202", address: "Impasse des stéphanois", licence: "BPJEPS", location: 10
-# User.create! password: "123456", email: "courbis@gmail.com", coach: true, first_name: "Rolland", last_name: "Courbis", phone: "0652770245", address: "Avenue Ajaccio", licence: "none", location: 5
-# User.create! password: "123456", email: "garcia@gmail.com", coach: true, first_name: "Roudy", last_name: "Garcia", phone: "0652707070", address: "Impasse de la défaite", licence: "BPJEPS", location: 8
-# User.create! password: "123456", email: "genesio@gmail.com", coach: true, first_name: "Bruno", last_name: "Genesio", phone: "0652708080", address: "Allée Adrienne-Lecouvreur", licence: "BPJEPS", location: 4
-# User.create! password: "123456", email: "amraoui@gmail.com", coach: true, first_name: "Myriam", last_name: "Amraoui", phone: "0652707979", address: "Impasse des Jardiniers", licence: "BPJEPS", location: 6
-# User.create! password: "123456", email: "laurent@gmail.com", coach: true, first_name: "Laurent", last_name: "Voulzy", phone: "0752770202", address: "Impasse des stéphanois", licence: "BPJEPS", location: 7
-# User.create! password: "123456", email: "patrick@gmail.com", coach: true, first_name: "Patrick", last_name: "Fiori", phone: "0752770245", address: "Avenue Ajaccio", licence: "none", location: 9
-# User.create! password: "123456", email: "moha@gmail.com", coach: true, first_name: "Moha", last_name: "Le Serpent", phone: "0752707070", address: "Impasse de la défaite", licence: "BPJEPS", location: 12
-# User.create! password: "123456", email: "hugo@gmail.com", coach: true, first_name: "Hugo", last_name: "TSR", phone: "0752708080", address: "Allée Adrienne-Lecouvreur", licence: "BPJEPS", location: 10
-# User.create! password: "123456", email: "cloud@gmail.com", coach: true, first_name: "Cloud", last_name: "Strife", phone: "0752707979", address: "Impasse des Jardiniers", licence: "BPJEPS", location: 10
+User.create! password: "123456", email: "larque@gmail.com", coach: true, first_name: "Jean-Michel", last_name: "Larqué", phone: "0652770202", address: "Impasse des stéphanois", latitude: 48.8779962, longitude: 2.2505532, licence: "BPJEPS", location: 10
+User.create! password: "123456", email: "courbis@gmail.com", coach: true, first_name: "Rolland", last_name: "Courbis", phone: "0652770245", address: "Avenue Ajaccio", latitude: 48.9779962, longitude: 2.3505532, licence: "La Street", location: 5
+User.create! password: "123456", email: "garcia@gmail.com", coach: true, first_name: "Roudy", last_name: "Garcia", phone: "0652707070", address: "Impasse de la défaite", latitude: 49.0779962, longitude: 2.4505532, licence: "BPJEPS", location: 8
+User.create! password: "123456", email: "genesio@gmail.com", coach: true, first_name: "Bruno", last_name: "Genesio", phone: "0652708080", address: "Allée Adrienne-Lecouvreur", latitude: 49.1779962, longitude: 2.5505532, licence: "BPJEPS", location: 4
+User.create! password: "123456", email: "amraoui@gmail.com", coach: true, first_name: "Myriam", last_name: "Amraoui", phone: "0652707979", address: "Impasse des Jardiniers", latitude: 49.2779962, longitude: 2.6505532, licence: "BPJEPS", location: 6
+User.create! password: "123456", email: "laurent@gmail.com", coach: true, first_name: "Laurent", last_name: "Voulzy", phone: "0752770202", address: "Impasse des stéphanois", latitude: 49.3779962, longitude: 2.7505532, licence: "BPJEPS", location: 7
+User.create! password: "123456", email: "patrick@gmail.com", coach: true, first_name: "Patrick", last_name: "Fiori", phone: "0752770245", address: "Avenue Ajaccio", latitude: 49.3779962, longitude: 2.8505532, licence: "La Street", location: 9
+User.create! password: "123456", email: "moha@gmail.com", coach: true, first_name: "Moha", last_name: "Le Serpent", phone: "0752707070", address: "Impasse de la défaite", latitude: 49.4779962, longitude: 2.9505532, licence: "BPJEPS", location: 12
+User.create! password: "123456", email: "hugo@gmail.com", coach: true, first_name: "Hugo", last_name: "TSR", phone: "0752708080", address: "Allée Adrienne-Lecouvreur", latitude: 49.5779962, longitude: 2.3005532, licence: "BPJEPS", location: 10
+User.create! password: "123456", email: "cloud@gmail.com", coach: true, first_name: "Cloud", last_name: "Strife", phone: "0752707979", address: "Impasse des Jardiniers", latitude: 49.6779962, longitude: 2.3105532, licence: "BPJEPS", location: 10
 
 Activity.create! name: "Boxe thaïlandaise", category: "Sport de combat", description: "La boxe thaïlandaise abrégée boxe thaï ou encore muay-thaï est un art marial pieds points. C’est probablement la boxe la plus complète puisqu’on utilise toutes les parties du corps pour frapper son opposant. La boxe anglaise utilise les poings, la boxe française utilise les pieds et les poings, et la boxe thaï ajoute les coudes et les genoux."
 Activity.create! name: "Danse de salon", category: "Sports de danse", description: "Idéal pour tous les âges. Parfait pour faire des rencontres, ou bien comme activité de couple. Offre un sentiment libérateur. Réduit le stress. Effets positifs sur le système cardio-vasculaire. Avec ton partenaire, tu apprends différents pas de danse et mouvements de différentes danses. Cela nécessite d’être concentré et de s’adapter à son partenaire."
