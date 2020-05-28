@@ -16,7 +16,6 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    raise
     @coach_activity = CoachActivity.find(params[:coach_activity_id])
     @booking.coach_activity = @coach_activity
     @booking.user = current_user

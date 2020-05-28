@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+
+
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
   # Include default devise modules. Others available are:
@@ -6,6 +8,7 @@ class User < ApplicationRecord
   scope :by_activity, -> (activity) {
     self.joins(:activities).where('activities.name = ?',activity)
   }
+  scope :coach, -> {where(coach: true)}
 
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :validatable
@@ -15,6 +18,8 @@ class User < ApplicationRecord
   has_many :activities, through: :coach_activities
 
   has_one_attached :photo
+
+
 
   # validates :phone, presence: true
   # validates :first_name, presence: true
