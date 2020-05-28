@@ -1,22 +1,43 @@
-<h3> <%= @coach_activity.activity.name %> </h3>
+  <div class="container">
+    <div>
+      <h1> <%= @coach_activity.activity.name %></h1>
+      <% @coach.coach_activities.each do |coach_activity| %>
+      <% unless coach_activity == @coach_activity %>
+      <p>mes autres cours: <%= link_to coach_activity.activity.name, coach_activity_path(coach_activity) %></p>
+      <% end %>
+      <% end %>
+    </div>
+    <div class="row">
+      <div class="col-8 d-flex">
+        <div>
+          <%= cl_image_tag current_user.photo.key, height: 200, width: 200, gravity: :face, id: "coach_avatar", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        </div>
+        <div>
+           <p> <%= @coach_activity.activity.category %> </p>
+          <p> <%= @coach_activity.activity.description %> </p>
+          <p> <%= @coach_activity.price %> € de l'heure </p>
+        </div>
+        </div>
 
-<p> <%= @coach_activity.activity.category %> </p>
-<p> <%= @coach_activity.activity.description %> </p>
-<p> <%= @coach_activity.price %> € de l'heure </p>
+        <div class="position-sticky vh-100 col-4">
+          <div class="form-wrapper">
+            <h2>Book a course</h2>
+            <%= simple_form_for [@coach_activity, @booking] do |f| %>
+            <%= f.input  :start_time, as: :string, required: false, input_html: {class: "flatpickr"} %>
+            <%= f.input  :end_time, as: :string, required: false, input_html: {class: "flatpickr"} %>
+            <%= f.input :participant_number, input_html: { min: 0, max: 5 } %>
+            <%= f.button :submit, "Book", class: "btn btn-primary" %>
+            <% end %>
+          </div>
+          <div id="booking-form-div" data-bookings="<%= @bookings_datetime.to_json %>" >
+          </div>
 
-<h1>Je souhaite booker ce cours</h1>
+          total :<%= @booking.sum_price %> €</p>
+        </div>
+      </div>
+    </div>
 
-<div class="container">
-  <div class="form-wrapper">
-    <h2>Book a course</h2>
-    <%= simple_form_for [@coach_activity, @booking] do |f| %>
-      <%= f.input  :start_time, as: :string, required: false, input_html: {class: "flatpickr"} %>
-      <%= f.input  :end_time, as: :string, required: false, input_html: {class: "flatpickr"} %>
-       <%= f.input :participant_number, input_html: { min: 0, max: 5 } %>
-      <%= f.button :submit, "Book", class: "btn btn-primary" %>
-    <% end %>
-  </div>
-</div>’
-<div id="booking-form-div" data-bookings="<%= @bookings_datetime.to_json %>" >
 
-<%= link_to "booker ce cours", coach_activity_bookings_path(@coach_activity)  %>
+
+    <%= link_to "booker ce cours", coach_activity_bookings_path(@coach_activity)  %>
+

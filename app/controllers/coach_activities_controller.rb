@@ -15,6 +15,7 @@ class CoachActivitiesController < ApplicationController
     @coach_activity = CoachActivity.find(params[:id])
     @booking = Booking.new
     @bookings = Booking.where(coach_activity_id: @coach_activity.id)
+    @coach = @coach_activity.user
     @bookings_datetime = @bookings.map do |booking|
       {
         from: booking.start_time,

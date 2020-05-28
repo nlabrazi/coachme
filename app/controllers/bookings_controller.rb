@@ -6,12 +6,16 @@ class BookingsController < ApplicationController
     @bookings = Booking.all
   end
 
-  def show
-    @bookings = current_user.bookings
-  end
 
   def new
     @booking = Booking.new
+  end
+
+   def show
+    @booking = current_user.bookings.last
+    @coach_activity = CoachActivity.find(params[:coach_activity_id])
+    @booking.user = current_user
+    @booking.coach_activity = @coach_activity
   end
 
   def create
