@@ -1,3 +1,18 @@
 <% if current_user.coach? %>
+  <% @coach_activities.each do |coach_activity| %>
+   <div>
+  <p> <%= "#{coach_activity.activity.name} du #{coach_activity.start_date} au #{coach_activity.end_date}. Prix : #{coach_activity.price} €" %> </p>
+  <%= link_to "voir ce cours", coach_activity_path(coach_activity) %>
+  <% end %>
+   </div>
   <%= link_to "créez votre cours", new_coach_activity_path  %>
+<% end %>
+
+<% if current_user.coach? == false %>
+  <% @bookings.each do |booking| %>
+  <div>
+    <p> <%= "#{booking.coach_activity.activity.name} le #{booking.start_time} avec #{booking.coach.first_name}" %> </p>
+    <%= link_to "voir ce cours", coach_activity_booking_path(booking) %>
+  <% end %>
+  </div>
 <% end %>
