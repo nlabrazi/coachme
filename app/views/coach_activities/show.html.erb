@@ -26,7 +26,7 @@
             <%= f.input  :start_time, as: :string, required: false, input_html: {class: "flatpickr"} %>
             <%= f.input  :end_time, as: :string, required: false, input_html: {class: "flatpickr"} %>
             <%= f.input :participant_number, input_html: { min: 0, max: 5 } %>
-            <%= f.button :submit, "Book", class: "btn btn-primary" %>
+            <%= f.button :submit, "transpirer avec #{@coach_activity.user.first_name}", class: "btn btn-primary btn-block" %>
             <% end %>
           </div>
           <div id="booking-form-div" data-bookings="<%= @bookings_datetime.to_json %>" >

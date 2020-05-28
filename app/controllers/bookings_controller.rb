@@ -42,6 +42,12 @@ class BookingsController < ApplicationController
     redirect_to dashboard_path
   end
 
+  def refused
+    @booking = Booking.find(params[:booking_id])
+    @booking.update(status: "Refused")
+    redirect_to dashboard_path
+  end
+
   private
 
   def set_booking

@@ -19,7 +19,7 @@
       <div>
         <p> <%= "#{booking.user.first_name} le #{booking.start_time} au #{booking.end_time}. Montant : #{booking.sum_price} € || Status: #{booking.status}" %> </p>
         <%= link_to "Valider", coach_activity_booking_validate_path(coach_activity, booking), class: "btn btn-primary btn-block", method: :patch %>
-        <%= link_to "Refuser", coach_activity_booking_validate_path(coach_activity, booking), class: "btn btn-primary btn-block", method: :patch %>
+        <%= link_to "Refuser", coach_activity_booking_refused_path(coach_activity, booking), class: "btn btn-danger btn-block", method: :patch %>
     <% end %>
   <% end %>
    </div>
