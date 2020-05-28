@@ -49,13 +49,15 @@ ActiveRecord::Schema.define(version: 2020_05_28_090355) do
     t.bigint "coach_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "activity_id"
     t.integer "sum_price"
     t.integer "duration"
     t.date "date_time"
     t.string "status"
     t.integer "participant_number"
-    t.index ["activity_id"], name: "index_bookings_on_activity_id"
+    t.bigint "coach_activity_id"
+    t.datetime "start_time", null: false
+    t.datetime "end_time", null: false
+    t.index ["coach_activity_id"], name: "index_bookings_on_coach_activity_id"
     t.index ["coach_id"], name: "index_bookings_on_coach_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
@@ -96,7 +98,7 @@ ActiveRecord::Schema.define(version: 2020_05_28_090355) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "bookings", "activities"
+  add_foreign_key "bookings", "coach_activities"
   add_foreign_key "bookings", "users"
   add_foreign_key "coach_activities", "activities"
   add_foreign_key "coach_activities", "users"
