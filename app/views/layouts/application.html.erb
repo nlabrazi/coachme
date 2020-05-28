@@ -11,10 +11,10 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true  %>
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
-  <body <%= controller.controller_name %> >
+  <body id="<%= controller.controller_name %>-<%= controller.action_name %>" >
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-    <div class="main-footer">
+    <div class="main-stickbot">
       <%= yield %>
     </div>
     <%= render 'shared/footer' %>

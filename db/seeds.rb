@@ -6,22 +6,26 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create! password: "123456", email: "loic.redon@gmail.com", first_name: "Loïc", last_name: "Redon", phone: "0652770554", address: "Quai du Lot"
-User.create! password: "123456", email: "nabster@gmail.com", first_name: "Nabil", last_name: "Labrazouf", phone: "0652770555", address: "Impasse du Maroc "
-User.create! password: "123456", email: "tomtom@gmail.com", first_name: "Tom", last_name: "Oeuf", phone: "0652770560", address: "Rue de Varenne"
-User.create! password: "123456", email: "monaco@gmail.com", first_name: "Zaken", last_name: "Marezzi", phone: "0652770599", address: "Voie Georges-Pompidou"
-User.create! password: "123456", email: "corniaud@gmail.com", first_name: "Alex", last_name: "Corniaud", phone: "0652776069", address: "Villa des Entrepreneurs"
+User.destroy_all
+Activity.destroy_all
+CoachActivity.destroy_all
 
-User.create! password: "123456", email: "larque@gmail.com", coach: true, first_name: "Jean-Michel", last_name: "Larqué", phone: "0652770202", address: "Impasse des stéphanois", latitude: 48.8779962, longitude: 2.2505532, licence: "BPJEPS", location: 10
-User.create! password: "123456", email: "courbis@gmail.com", coach: true, first_name: "Rolland", last_name: "Courbis", phone: "0652770245", address: "Avenue Ajaccio", latitude: 48.9779962, longitude: 2.3505532, licence: "La Street", location: 5
-User.create! password: "123456", email: "garcia@gmail.com", coach: true, first_name: "Roudy", last_name: "Garcia", phone: "0652707070", address: "Impasse de la défaite", latitude: 49.0779962, longitude: 2.4505532, licence: "BPJEPS", location: 8
-User.create! password: "123456", email: "genesio@gmail.com", coach: true, first_name: "Bruno", last_name: "Genesio", phone: "0652708080", address: "Allée Adrienne-Lecouvreur", latitude: 49.1779962, longitude: 2.5505532, licence: "BPJEPS", location: 4
-User.create! password: "123456", email: "amraoui@gmail.com", coach: true, first_name: "Myriam", last_name: "Amraoui", phone: "0652707979", address: "Impasse des Jardiniers", latitude: 49.2779962, longitude: 2.6505532, licence: "BPJEPS", location: 6
-User.create! password: "123456", email: "laurent@gmail.com", coach: true, first_name: "Laurent", last_name: "Voulzy", phone: "0752770202", address: "Impasse des stéphanois", latitude: 49.3779962, longitude: 2.7505532, licence: "BPJEPS", location: 7
-User.create! password: "123456", email: "patrick@gmail.com", coach: true, first_name: "Patrick", last_name: "Fiori", phone: "0752770245", address: "Avenue Ajaccio", latitude: 49.3779962, longitude: 2.8505532, licence: "La Street", location: 9
-User.create! password: "123456", email: "moha@gmail.com", coach: true, first_name: "Moha", last_name: "Le Serpent", phone: "0752707070", address: "Impasse de la défaite", latitude: 49.4779962, longitude: 2.9505532, licence: "BPJEPS", location: 12
-User.create! password: "123456", email: "hugo@gmail.com", coach: true, first_name: "Hugo", last_name: "TSR", phone: "0752708080", address: "Allée Adrienne-Lecouvreur", latitude: 49.5779962, longitude: 2.3005532, licence: "BPJEPS", location: 10
-User.create! password: "123456", email: "cloud@gmail.com", coach: true, first_name: "Cloud", last_name: "Strife", phone: "0752707979", address: "Impasse des Jardiniers", latitude: 49.6779962, longitude: 2.3105532, licence: "BPJEPS", location: 10
+User.create! password: "123456", email: "loic.redon@gmail.com", first_name: "Loïc", last_name: "Redon", phone: "0652770554", address: "90 Rue des Moines, Paris 17e Arrondissement, Île-de-France, France"
+User.create! password: "123456", email: "nabster@gmail.com", first_name: "Nabil", last_name: "Labrazouf", phone: "0652770555", address: "93 Rue des Moines, Paris 17e Arrondissement, Île-de-France, France"
+User.create! password: "123456", email: "tomtom@gmail.com", first_name: "Tom", last_name: "Oeuf", phone: "0652770560", address: "70 Rue Rodier, Paris 9e Arrondissement, Île-de-France, France"
+User.create! password: "123456", email: "monaco@gmail.com", first_name: "Zaken", last_name: "Marezzi", phone: "0652770599", address: "60 Rue Rodier, Paris 9e Arrondissement, Île-de-France, France"
+User.create! password: "123456", email: "corniaud@gmail.com", first_name: "Alex", last_name: "Corniaud", phone: "0652776069", address: "91 Rue des Moines, Paris 17e Arrondissement, Île-de-France, France"
+
+User.create! password: "123456", email: "larque@gmail.com", coach: true, first_name: "Jean-Michel", last_name: "Larqué", phone: "0652770202", address: "90 Rue des Moines, Paris 17e Arrondissement, Île-de-France, France", latitude: 48.8779962, longitude: 2.2505532, licence: "BPJEPS", location: 10
+User.create! password: "123456", email: "courbis@gmail.com", coach: true, first_name: "Rolland", last_name: "Courbis", phone: "0652770245", address: "90 Rue des Moines, Paris 17e Arrondissement, Île-de-France, France"de: 48.9779962, longitude: 2.3505532, licence: "La Street", location: 5
+User.create! password: "123456", email: "garcia@gmail.com", coach: true, first_name: "Roudy", last_name: "Garcia", phone: "0652707070", address: "90 Rue des Moines, Paris 17e Arrondissement, Île-de-France, France" latitude: 49.0779962, longitude: 2.4505532, licence: "BPJEPS", location: 8
+User.create! password: "123456", email: "genesio@gmail.com", coach: true, first_name: "Bruno", last_name: "Genesio", phone: "0652708080", address: "90 Rue des Moines, Paris 17e Arrondissement, Île-de-France, France", latitude: 49.1779962, longitude: 2.5505532, licence: "BPJEPS", location: 4
+User.create! password: "123456", email: "amraoui@gmail.com", coach: true, first_name: "Myriam", last_name: "Amraoui", phone: "0652707979", address: "90 Rue des Moines, Paris 17e Arrondissement, Île-de-France, France", latitude: 49.2779962, longitude: 2.6505532, licence: "BPJEPS", location: 6
+User.create! password: "123456", email: "laurent@gmail.com", coach: true, first_name: "Laurent", last_name: "Voulzy", phone: "0752770202", address: "90 Rue des Moines, Paris 17e Arrondissement, Île-de-France, France", latitude: 49.3779962, longitude: 2.7505532, licence: "BPJEPS", location: 7
+User.create! password: "123456", email: "patrick@gmail.com", coach: true, first_name: "Patrick", last_name: "Fiori", phone: "0752770245", address: "90 Rue des Moines, Paris 17e Arrondissement, Île-de-France, France"de: 49.3779962, longitude: 2.8505532, licence: "La Street", location: 9
+User.create! password: "123456", email: "moha@gmail.com", coach: true, first_name: "Moha", last_name: "Le Serpent", phone: "0752707070", address: "90 Rue des Moines, Paris 17e Arrondissement, Île-de-France, France" latitude: 49.4779962, longitude: 2.9505532, licence: "BPJEPS", location: 12
+User.create! password: "123456", email: "hugo@gmail.com", coach: true, first_name: "Hugo", last_name: "TSR", phone: "0752708080", address: "90 Rue des Moines, Paris 17e Arrondissement, Île-de-France, France", latitude: 49.5779962, longitude: 2.3005532, licence: "BPJEPS", location: 10
+User.create! password: "123456", email: "cloud@gmail.com", coach: true, first_name: "Cloud", last_name: "Strife", phone: "0752707979", address: "90 Rue des Moines, Paris 17e Arrondissement, Île-de-France, France", latitude: 49.6779962, longitude: 2.3105532, licence: "BPJEPS", location: 10
 
 Activity.create! name: "Boxe thaïlandaise", category: "Sport de combat", description: "La boxe thaïlandaise abrégée boxe thaï ou encore muay-thaï est un art marial pieds points. C’est probablement la boxe la plus complète puisqu’on utilise toutes les parties du corps pour frapper son opposant. La boxe anglaise utilise les poings, la boxe française utilise les pieds et les poings, et la boxe thaï ajoute les coudes et les genoux."
 Activity.create! name: "Danse de salon", category: "Sports de danse", description: "Idéal pour tous les âges. Parfait pour faire des rencontres, ou bien comme activité de couple. Offre un sentiment libérateur. Réduit le stress. Effets positifs sur le système cardio-vasculaire. Avec ton partenaire, tu apprends différents pas de danse et mouvements de différentes danses. Cela nécessite d’être concentré et de s’adapter à son partenaire."
@@ -58,8 +62,4 @@ Activity.create! name: "Gymnastique ", category: "Sports individuels ", descript
 Activity.create! name: "Yoga", category: "Sports individuels ", description: "Pour toutes les personnes qui veulent se détendre et se relaxer grâce au sport, mais qui souhaitent quand même entraîner tout le corps. Effets de détente et de relaxation. Renforcement musculaire et amélioration du contrôle et de la souplesse. Tu apprends à contrôler ta respiration, à écouter ton corps et à détendre en pleine conscience tes muscles."
 Activity.create! name: "Zumba", category: "Sports de danse", description: "Pour les personnes qui aiment les mouvements rapides et sensuels. Parfait pour s’entraîner en groupe, mais aussi danser seul. Entraîne le système cardio-vasculaire. Tu apprends à te sentir mieux dans ta peau et à te bouger au rythme des sons latino-américains. La zumba est surtout pratiquée en groupe. Comme dans un cours fitness classique, c’est l’entraîneur qui présente les mouvements et les participants doivent les reproduire."
 
-# CoachActivity.create! user_id: 11, activity_id: 33, price: 30, start_date: "2020-05-30", end_date: "2020-12-30", capacity: 4
-# CoachActivity.create! user_id: 13, activity_id: 34, price: 60, start_date: "2020-05-30", end_date: "2020-12-30", capacity: 4
-# CoachActivity.create! user_id: 6, activity_id: 1, price: 30, start_date: "2020-05-30", end_date: "2020-12-30", capacity: 4
-# CoachActivity.create! user_id: 7, activity_id: 2, price: 40, start_date: "2020-05-30", end_date: "2020-12-30", capacity: 4
-# CoachActivity.create! user_id: 9, activity_id: 3, price: 50, start_date: "2020-05-30", end_date: "2020-12-30", capacity: 4
+CoachActivity.create! user: User.last, activity: Activity.last, price: 30, start_date: "2020-05-30", end_date: "2020-12-30", capacity: 4

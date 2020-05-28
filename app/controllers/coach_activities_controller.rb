@@ -1,5 +1,12 @@
 class CoachActivitiesController < ApplicationController
 
+  def index
+    @coach_activities = CoachActivity.all
+    if params[:query]
+      @coach_activities = @coach_activities.search_by_activity(params[:query])
+    end
+  end
+
   def new
     @coach_activity = CoachActivity.new
   end
@@ -29,6 +36,6 @@ class CoachActivitiesController < ApplicationController
   private
 
   def coach_activity_params
-    params.require(:coach_activity).permit(:activity_id, :capacity, :start_time, :end_time, :price)
+    params.require(:coach_activity).permit(:activity_id, :capacity, :start_date, :end_date, :price)
   end
 end

@@ -23,7 +23,7 @@
 <div class="zone-center">
   <h1>Partez à la recherche de votre coach</h1>
   <div class="home-searchbar">
-    <%= form_tag search_path, class: "barsearch", method: :get do %>
+    <%= form_tag coach_activities_path, class: "barsearch", method: :get do %>
     <%= text_field_tag :query, params[:query], class: "form-control search-input", placeholder:"Coach, spécialité..."%>
     <%= submit_tag "Rechercher", class: "btn-purple searchbar-submit" %>
     <% end %>

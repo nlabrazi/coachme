@@ -16,11 +16,11 @@ class User < ApplicationRecord
 
   has_one_attached :photo
 
-  validates :phone, presence: true
-  validates :first_name, presence: true
-  validates :last_name, presence: true
-  validates :email, presence: true, uniqueness: true
-  validates :phone, presence: true, uniqueness: true
+  # validates :phone, presence: true
+  # validates :first_name, presence: true
+  # validates :last_name, presence: true
+  # validates :email, presence: true, uniqueness: true
+  # validates :phone, presence: true, uniqueness: true
 
 
   # include PgSearch::Model
