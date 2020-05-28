@@ -14,35 +14,9 @@ class User < ApplicationRecord
   :recoverable, :rememberable, :validatable
   has_many :bookings
   has_many :coach_bookings, class_name: "Booking", foreign_key: "coach_id"
-  has_many :coach_activities
+  has_many :coach_activities, dependent: :destroy
   has_many :activities, through: :coach_activities
 
   has_one_attached :photo
-
-
-
-  # validates :phone, presence: true
-  # validates :first_name, presence: true
-  # validates :last_name, presence: true
-  # validates :email, presence: true, uniqueness: true
-  # validates :phone, presence: true, uniqueness: true
-
-
-  # include PgSearch::Model
-  # pg_search_scope :search_by_name,
-  # against: [ :last_name ],
-  # using: {
-  #   tsearch: { prefix: true }
-  # }
-
-  # pg_search_scope :search_by_category,
-  # associated_against: {
-  #   :associated_against => { :activities => :name }
-  # }
-  # #   activity: [ :name, :description ]
-  # # },
-  # # using: {
-  # #   tsearch: { prefix: true }
-  # # }
 
 end
