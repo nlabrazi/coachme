@@ -1,12 +1,29 @@
-<div class="result-search">
-  <h2>Vos coach disponibles</h2>
-  <% @coach_activities.each do |coach_activity| %>
-  <h5><%= coach_activity.activity.name %></h5>
-  <ul>
-    <li><%= coach_activity.user.email %></li>
-    <li><%= coach_activity.user.licence %></li>
-    <li><%= coach_activity.user.location %></li>
-    <li><%= coach_activity.user.legal %></li>
-  </ul>
-  <% end %>
+<div class="container">
+  <div class="">
+
+  </div>
+  <div class="">
+
+  </div>
+  <div class="row">
+    <div class="col-8">
+      <% @coach_activities.each do |coach_activity| %>
+        <%= link_to coach_activity_path(coach_activity) do %>
+          <div class="card-product">
+            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+            <div class="card-product-infos">
+              <h2><%= coach_activity.user.first_name %></h2>
+              <ul>
+                <li><%= coach_activity.price %>€ de l'heure</li>
+                <li>Diplome :<%= coach_activity.user.licence %></li>
+                <li><%= coach_activity.user.address %></li>
+              </ul>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <div id="map" class="position-sticky vh-100 col-4" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div>
 </div>
