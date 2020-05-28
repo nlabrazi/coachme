@@ -8,8 +8,8 @@ class ApplicationController < ActionController::Base
   end
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :phone, :address, :coach])
-    devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :phone, :address, :coach, :licence, :legal, :location ])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :phone, :address, :coach, :photo])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :phone, :address, :coach, :licence, :legal, :location, :photo ])
   end
 
   # Pundit: white-list approach.
