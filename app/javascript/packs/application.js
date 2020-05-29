@@ -2,6 +2,7 @@ require("@rails/ujs").start()
 require("@rails/activestorage").start()
 require("channels")
 require("turbolinks").start()
+require("flatpickr/dist/themes/dark.css");
 
 import "bootstrap";
 import { initMapbox } from '../plugins/init_mapbox';
@@ -12,3 +13,4 @@ document.addEventListener('turbolinks:load', () => {
   if (document.querySelector("#map")) initMapbox();
   if (document.querySelector(".flatpickr")) initFlatPicker();
 })
+
