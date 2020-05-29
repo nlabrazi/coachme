@@ -33,6 +33,11 @@
   font-size: 17px;
 }
 
+.navbar-nav img {
+  cursor: pointer;
+  border-radius: 50%;
+}
+
 .navbar-nav .nav-item a.nav-link:hover {
   color: #FCDF45;
 }
