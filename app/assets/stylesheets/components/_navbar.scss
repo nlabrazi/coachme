@@ -1,28 +1,26 @@
 /* Add a black background color to the top navigation bar */
 .navbar {
   background-color: #181a1b;
+  height: 50px;
   top: 0;
 }
 
-/* Stick to right login/register
+/* Stick to right login/register */
 .navbar_login {
   float: right;
   list-style: none;
 }
 
-/* Style the links inside the navigation bar */
-.navbar navbar-lewagon a {
-  float: left;
-  display: block;
-  color: red;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
+.dropdown-menu {
+  background-color: white;
 }
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.nav-item > .dropdown-menu > a {
+  color: #181a1b;
 }
 
 .navbar a {
