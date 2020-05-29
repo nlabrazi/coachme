@@ -37,39 +37,39 @@ coach1 = User.create! password: "123456", email: "larque@gmail.com", coach: true
 coach1.photo.attach(io: photo_coach, filename: 'coach_picture', content_type: 'image/jpg')
 
 photo_coach = URI.open("https://res.cloudinary.com/dw22pxuaw/image/upload/v1590746649/Courbis_wqcrvm.jpg")
-coach2 = User.create! password: "123456", email: "courbis@gmail.com", coach: true, first_name: "Rolland", last_name: "Courbis", phone: "0652770245", address: "90 Rue des Moines, Paris 17e Arrondissement, Île-de-France, France", latitude: 48.9779962, longitude: 2.3505532, licence: "La Street", location: 5
+coach2 = User.create! password: "123456", email: "courbis@gmail.com", coach: true, first_name: "Rolland", last_name: "Courbis", phone: "0652770245", address: "11 rue de Sévigné, Paris 3e Arrondissement, Île-de-France, France", legal: "Ticket Restaurant", licence: "BPJEPS", location: 6
 coach2.photo.attach(io: photo_coach, filename: 'coach_picture', content_type: 'image/jpg')
 
 photo_coach = URI.open("https://res.cloudinary.com/dw22pxuaw/image/upload/v1590746649/Garcia_ovirej.jpg")
-coach3 = User.create! password: "123456", email: "garcia@gmail.com", coach: true, first_name: "Roudy", last_name: "Garcia", phone: "0652707070", address: "90 Rue des Moines, Paris 17e Arrondissement, Île-de-France, France", latitude: 49.0779962, longitude: 2.4505532, licence: "BPJEPS", location: 8
+coach3 = User.create! password: "123456", email: "garcia@gmail.com", coach: true, first_name: "Roudy", last_name: "Garcia", phone: "0652707070", address: "104 Quai de Jemmapes, Paris 10e Arrondissement, Île-de-France, France", legal: "Ticket Restaurant", licence: "BPJEPS", location: 6
 coach3.photo.attach(io: photo_coach, filename: 'coach_picture', content_type: 'image/jpg')
 
 photo_coach = URI.open("https://res.cloudinary.com/dw22pxuaw/image/upload/v1590746649/Genesio_p8xjix.jpg")
-coach4 = User.create! password: "123456", email: "genesio@gmail.com", coach: true, first_name: "Bruno", last_name: "Genesio", phone: "0652708080", address: "90 Rue des Moines, Paris 17e Arrondissement, Île-de-France, France", latitude: 49.1779962, longitude: 2.5505532, licence: "BPJEPS", location: 4
+coach4 = User.create! password: "123456", email: "genesio@gmail.com", coach: true, first_name: "Bruno", last_name: "Genesio", phone: "0652708080", address: "90 Rue des Moines, Paris 17e Arrondissement, Île-de-France, France", legal: "Ticket Restaurant", licence: "BPJEPS", location: 6
 coach4.photo.attach(io: photo_coach, filename: 'coach_picture', content_type: 'image/jpg')
 
 photo_coach = URI.open("https://res.cloudinary.com/dw22pxuaw/image/upload/v1590746649/Amraoui_w0hqkd.jpg")
-coach5 = User.create! password: "123456", email: "amraoui@gmail.com", coach: true, first_name: "Myriam", last_name: "Amraoui", phone: "0652707979", address: "90 Rue des Moines, Paris 17e Arrondissement, Île-de-France, France", latitude: 49.2779962, longitude: 2.6505532, licence: "BPJEPS", location: 6
+coach5 = User.create! password: "123456", email: "amraoui@gmail.com", coach: true, first_name: "Myriam", last_name: "Amraoui", phone: "0652707979", address: "64 rue Rochechouart, Paris 9e Arrondissement, Île-de-France, France", legal: "Ticket Restaurant", licence: "BPJEPS", location: 6
 coach5.photo.attach(io: photo_coach, filename: 'coach_picture', content_type: 'image/jpg')
 
 photo_coach = URI.open("https://res.cloudinary.com/dw22pxuaw/image/upload/v1590746650/Lescault_sqrsu6.jpg")
-coach6 = User.create! password: "123456", email: "julielescault@gmail.com", coach: true, first_name: "Julie", last_name: "Lescault", phone: "0752770202", address: "90 Rue des Moines, Paris 17e Arrondissement, Île-de-France, France", latitude: 49.3779962, longitude: 2.7505532, licence: "BPJEPS", location: 7
+coach6 = User.create! password: "123456", email: "julielescault@gmail.com", coach: true, first_name: "Julie", last_name: "Lescault", phone: "0752770202", address: "4 Rue Ventadour, Paris 1er Arrondissement, Île-de-France, France", legal: "Ticket Restaurant", licence: "BPJEPS", location: 6
 coach6.photo.attach(io: photo_coach, filename: 'coach_picture', content_type: 'image/jpg')
 
 photo_coach = URI.open("https://res.cloudinary.com/dw22pxuaw/image/upload/v1590746649/demonac_gpk78h.jpg")
-coach7 = User.create! password: "123456", email: "stefdemonac@gmail.com", coach: true, first_name: "Stéphanie", last_name: "De Monaco", phone: "0752770245", address: "90 Rue des Moines, Paris 17e Arrondissement, Île-de-France, France", latitude: 49.3779962, longitude: 2.8505532, licence: "La Street", location: 9
+coach7 = User.create! password: "123456", email: "stefdemonac@gmail.com", coach: true, first_name: "Stéphanie", last_name: "De Monaco", phone: "0752770245", address: "2 Rue Rougemont, Paris 9e Arrondissement, Île-de-France, France", legal: "Ticket Restaurant", licence: "BPJEPS", location: 6
 coach7.photo.attach(io: photo_coach, filename: 'coach_picture', content_type: 'image/jpg')
 
 photo_coach = URI.open("https://res.cloudinary.com/dw22pxuaw/image/upload/v1590746650/LeSerpent_s4uzzi.jpg")
-coach8 = User.create! password: "123456", email: "moha@gmail.com", coach: true, first_name: "Moha", last_name: "Le Serpent", phone: "0752707070", address: "90 Rue des Moines, Paris 17e Arrondissement, Île-de-France, France", latitude: 49.4779962, longitude: 2.9505532, licence: "BPJEPS", location: 12
+coach8 = User.create! password: "123456", email: "moha@gmail.com", coach: true, first_name: "Moha", last_name: "Le Serpent", phone: "0752707070", address: "20 Rue Germain Pilon, Paris 18e Arrondissement, Île-de-France, France", legal: "Ticket Restaurant", licence: "BPJEPS", location: 6
 coach8.photo.attach(io: photo_coach, filename: 'coach_picture', content_type: 'image/jpg')
 
 photo_coach = URI.open("https://res.cloudinary.com/dw22pxuaw/image/upload/v1590746650/TSR_dgeagr.jpg")
-coach9 = User.create! password: "123456", email: "hugo@gmail.com", coach: true, first_name: "Hugo", last_name: "TSR", phone: "0752708080", address: "90 Rue des Moines, Paris 17e Arrondissement, Île-de-France, France", latitude: 49.5779962, longitude: 2.3005532, licence: "BPJEPS", location: 10
+coach9 = User.create! password: "123456", email: "hugo@gmail.com", coach: true, first_name: "Hugo", last_name: "TSR", phone: "0752708080", address: "65 Rue Beaubourg, Paris 3e Arrondissement, Île-de-France, France", legal: "Ticket Restaurant", licence: "BPJEPS", location: 6
 coach9.photo.attach(io: photo_coach, filename: 'coach_picture', content_type: 'image/jpg')
 
 photo_coach = URI.open("https://res.cloudinary.com/dw22pxuaw/image/upload/v1590746650/Strife_gtfphi.jpg")
-coach10 = User.create! password: "123456", email: "cloud@gmail.com", coach: true, first_name: "Cloud", last_name: "Strife", phone: "0752707979", address: "90 Rue des Moines, Paris 17e Arrondissement, Île-de-France, France", latitude: 49.6779962, longitude: 2.3105532, licence: "BPJEPS", location: 10
+coach10 = User.create! password: "123456", email: "cloud@gmail.com", coach: true, first_name: "Cloud", last_name: "Strife", phone: "0752707979", address: "12 Rue Montmartre, Paris 1er Arrondissement, Île-de-France, France", legal: "Ticket Restaurant", licence: "BPJEPS", location: 6
 coach10.photo.attach(io: photo_coach, filename: 'coach_picture', content_type: 'image/jpg')
 
 Activity.create! name: "Boxe thaïlandaise", category: "Sport de combat", description: "La boxe thaïlandaise abrégée boxe thaï ou encore muay-thaï est un art marial pieds points. C’est probablement la boxe la plus complète puisqu’on utilise toutes les parties du corps pour frapper son opposant. La boxe anglaise utilise les poings, la boxe française utilise les pieds et les poings, et la boxe thaï ajoute les coudes et les genoux."
