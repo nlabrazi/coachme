@@ -12,9 +12,9 @@ class BookingsController < ApplicationController
   end
 
    def show
-    @coach_activity = CoachActivity.find(params[:coach_activity_id])
+    @booking =  Booking.find(params[:id])
+    @coach_activity = @booking.coach_activity
     @coach = @coach_activity.user
-    @booking =  Booking.find(params[:booking_id])
   end
 
   def create
@@ -26,7 +26,7 @@ class BookingsController < ApplicationController
     @booking.sum_price = @coach_activity.price
     @booking.status = "pending"
       if @booking.save!
-        redirect_to coach_activity_bookings_url(@coach_activity, booking_id: @booking.id)
+        redirect_to booking_path(@booking)
       else
         render "coach_activities/show"
       end
