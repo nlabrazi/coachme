@@ -10,6 +10,7 @@ require "open-uri"
 User.destroy_all
 Activity.destroy_all
 CoachActivity.destroy_all
+Booking.destroy_all
 
 photo_user = URI.open("https://res.cloudinary.com/dw22pxuaw/image/upload/v1590157221/yg4ud6gwj6cbtmxvt9ntg9pue9fj.png")
 photo_coach = URI.open("https://res.cloudinary.com/dw22pxuaw/image/upload/v1590659169/guv4oxvs285ihpwqhb8tt54w48nv.jpg")
