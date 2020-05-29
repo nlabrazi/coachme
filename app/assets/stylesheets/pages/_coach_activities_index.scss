@@ -7,6 +7,16 @@
     background-color: #181a1b;
   }
 
+  .search-coach {
+    margin-top: 30px;
+  }
+
+  .search-coach input {
+    height: 60px;
+    width: 100%;
+    font-size: 20px;
+  }
+
   .col-8 a {
     color: white;
     text-decoration: none;
@@ -14,5 +24,15 @@
 
   .col-8 a :hover {
     color: #861388;
+  }
+
+  .mapboxgl-popup {
+  max-width: 200px;
+  }
+
+  .mapboxgl-popup-content {
+  color: black;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
   }
 }
