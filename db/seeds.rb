@@ -7,71 +7,68 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require "open-uri"
 
-User.destroy_all
-Activity.destroy_all
+Booking.destroy_all
 CoachActivity.destroy_all
+Activity.destroy_all
+User.destroy_all
 
-photo_user = URI.open("https://res.cloudinary.com/dw22pxuaw/image/upload/v1590157221/yg4ud6gwj6cbtmxvt9ntg9pue9fj.png")
-photo_coach = URI.open("https://res.cloudinary.com/dw22pxuaw/image/upload/v1590659169/guv4oxvs285ihpwqhb8tt54w48nv.jpg")
-
-
+photo_user = URI.open("https://res.cloudinary.com/dw22pxuaw/image/upload/v1590746650/loic_baitrx.jpg")
 user1 = User.create! password: "123456", email: "loic.redon@gmail.com", first_name: "Loïc", last_name: "Redon", phone: "0652770554", address: "90 Rue des Moines, Paris 17e Arrondissement, Île-de-France, France"
-user1.photo.attach(io: photo_user, filename: 'user_picture', content_type: 'image/png')
-photo_user = URI.open("https://res.cloudinary.com/dw22pxuaw/image/upload/v1590157221/yg4ud6gwj6cbtmxvt9ntg9pue9fj.png")
+user1.photo.attach(io: photo_user, filename: 'user_picture', content_type: 'image/jpg')
 
+photo_user = URI.open("https://res.cloudinary.com/dw22pxuaw/image/upload/v1590746650/Nabs_ya13ra.jpg")
 user2 = User.create! password: "123456", email: "nabster@gmail.com", first_name: "Nabil", last_name: "Labrazouf", phone: "0652770555", address: "93 Rue des Moines, Paris 17e Arrondissement, Île-de-France, France"
-user2.photo.attach(io: photo_user, filename: 'user_picture', content_type: 'image/png')
-photo_user = URI.open("https://res.cloudinary.com/dw22pxuaw/image/upload/v1590157221/yg4ud6gwj6cbtmxvt9ntg9pue9fj.png")
+user2.photo.attach(io: photo_user, filename: 'user_picture', content_type: 'image/jpg')
 
+photo_user = URI.open("https://res.cloudinary.com/dw22pxuaw/image/upload/v1590668053/j773fl0ki26qrq4x8g3b96m0ez2i.jpg")
 user3 = User.create! password: "123456", email: "tomtom@gmail.com", first_name: "Tom", last_name: "Oeuf", phone: "0652770560", address: "70 Rue Rodier, Paris 9e Arrondissement, Île-de-France, France"
 user3.photo.attach(io: photo_user, filename: 'user_picture', content_type: 'image/png')
-photo_user = URI.open("https://res.cloudinary.com/dw22pxuaw/image/upload/v1590157221/yg4ud6gwj6cbtmxvt9ntg9pue9fj.png")
 
+photo_user = URI.open("https://res.cloudinary.com/dw22pxuaw/image/upload/v1590746650/zaken_av1lw9.jpg")
 user4 = User.create! password: "123456", email: "monaco@gmail.com", first_name: "Zaken", last_name: "Marezzi", phone: "0652770599", address: "60 Rue Rodier, Paris 9e Arrondissement, Île-de-France, France"
-user4.photo.attach(io: photo_user, filename: 'user_picture', content_type: 'image/png')
-photo_user = URI.open("https://res.cloudinary.com/dw22pxuaw/image/upload/v1590157221/yg4ud6gwj6cbtmxvt9ntg9pue9fj.png")
+user4.photo.attach(io: photo_user, filename: 'user_picture', content_type: 'image/jpg')
 
+photo_user = URI.open("https://res.cloudinary.com/dw22pxuaw/image/upload/v1590746650/zaken_av1lw9.jpg")
 user5 = User.create! password: "123456", email: "corniaud@gmail.com", first_name: "Alex", last_name: "Corniaud", phone: "0652776069", address: "91 Rue des Moines, Paris 17e Arrondissement, Île-de-France, France"
-user5.photo.attach(io: photo_user, filename: 'user_picture', content_type: 'image/png')
-photo_user = URI.open("https://res.cloudinary.com/dw22pxuaw/image/upload/v1590157221/yg4ud6gwj6cbtmxvt9ntg9pue9fj.png")
+user5.photo.attach(io: photo_user, filename: 'user_picture', content_type: 'image/jpg')
 
-photo_coach = URI.open("https://res.cloudinary.com/dw22pxuaw/image/upload/v1590659169/guv4oxvs285ihpwqhb8tt54w48nv.jpg")
+photo_coach = URI.open("https://res.cloudinary.com/dw22pxuaw/image/upload/v1590746649/larque_d3dkcc.jpg")
 coach1 = User.create! password: "123456", email: "larque@gmail.com", coach: true, first_name: "Jean-Michel", last_name: "Larqué", phone: "0652770202", address: "90 Rue des Moines, Paris 17e Arrondissement, Île-de-France, France", latitude: 48.8779962, longitude: 2.2505532, licence: "BPJEPS", location: 10
 coach1.photo.attach(io: photo_coach, filename: 'coach_picture', content_type: 'image/jpg')
 
-photo_coach = URI.open("https://res.cloudinary.com/dw22pxuaw/image/upload/v1590659169/guv4oxvs285ihpwqhb8tt54w48nv.jpg")
+photo_coach = URI.open("https://res.cloudinary.com/dw22pxuaw/image/upload/v1590746649/Courbis_wqcrvm.jpg")
 coach2 = User.create! password: "123456", email: "courbis@gmail.com", coach: true, first_name: "Rolland", last_name: "Courbis", phone: "0652770245", address: "90 Rue des Moines, Paris 17e Arrondissement, Île-de-France, France", latitude: 48.9779962, longitude: 2.3505532, licence: "La Street", location: 5
 coach2.photo.attach(io: photo_coach, filename: 'coach_picture', content_type: 'image/jpg')
 
-photo_coach = URI.open("https://res.cloudinary.com/dw22pxuaw/image/upload/v1590659169/guv4oxvs285ihpwqhb8tt54w48nv.jpg")
+photo_coach = URI.open("https://res.cloudinary.com/dw22pxuaw/image/upload/v1590746649/Garcia_ovirej.jpg")
 coach3 = User.create! password: "123456", email: "garcia@gmail.com", coach: true, first_name: "Roudy", last_name: "Garcia", phone: "0652707070", address: "90 Rue des Moines, Paris 17e Arrondissement, Île-de-France, France", latitude: 49.0779962, longitude: 2.4505532, licence: "BPJEPS", location: 8
 coach3.photo.attach(io: photo_coach, filename: 'coach_picture', content_type: 'image/jpg')
 
-photo_coach = URI.open("https://res.cloudinary.com/dw22pxuaw/image/upload/v1590659169/guv4oxvs285ihpwqhb8tt54w48nv.jpg")
+photo_coach = URI.open("https://res.cloudinary.com/dw22pxuaw/image/upload/v1590746649/Genesio_p8xjix.jpg")
 coach4 = User.create! password: "123456", email: "genesio@gmail.com", coach: true, first_name: "Bruno", last_name: "Genesio", phone: "0652708080", address: "90 Rue des Moines, Paris 17e Arrondissement, Île-de-France, France", latitude: 49.1779962, longitude: 2.5505532, licence: "BPJEPS", location: 4
 coach4.photo.attach(io: photo_coach, filename: 'coach_picture', content_type: 'image/jpg')
 
-photo_coach = URI.open("https://res.cloudinary.com/dw22pxuaw/image/upload/v1590659169/guv4oxvs285ihpwqhb8tt54w48nv.jpg")
+photo_coach = URI.open("https://res.cloudinary.com/dw22pxuaw/image/upload/v1590746649/Amraoui_w0hqkd.jpg")
 coach5 = User.create! password: "123456", email: "amraoui@gmail.com", coach: true, first_name: "Myriam", last_name: "Amraoui", phone: "0652707979", address: "90 Rue des Moines, Paris 17e Arrondissement, Île-de-France, France", latitude: 49.2779962, longitude: 2.6505532, licence: "BPJEPS", location: 6
 coach5.photo.attach(io: photo_coach, filename: 'coach_picture', content_type: 'image/jpg')
 
-photo_coach = URI.open("https://res.cloudinary.com/dw22pxuaw/image/upload/v1590659169/guv4oxvs285ihpwqhb8tt54w48nv.jpg")
-coach6 = User.create! password: "123456", email: "laurent@gmail.com", coach: true, first_name: "Laurent", last_name: "Voulzy", phone: "0752770202", address: "90 Rue des Moines, Paris 17e Arrondissement, Île-de-France, France", latitude: 49.3779962, longitude: 2.7505532, licence: "BPJEPS", location: 7
+photo_coach = URI.open("https://res.cloudinary.com/dw22pxuaw/image/upload/v1590746650/Lescault_sqrsu6.jpg")
+coach6 = User.create! password: "123456", email: "julielescault@gmail.com", coach: true, first_name: "Julie", last_name: "Lescault", phone: "0752770202", address: "90 Rue des Moines, Paris 17e Arrondissement, Île-de-France, France", latitude: 49.3779962, longitude: 2.7505532, licence: "BPJEPS", location: 7
 coach6.photo.attach(io: photo_coach, filename: 'coach_picture', content_type: 'image/jpg')
 
-photo_coach = URI.open("https://res.cloudinary.com/dw22pxuaw/image/upload/v1590659169/guv4oxvs285ihpwqhb8tt54w48nv.jpg")
-coach7 = User.create! password: "123456", email: "patrick@gmail.com", coach: true, first_name: "Patrick", last_name: "Fiori", phone: "0752770245", address: "90 Rue des Moines, Paris 17e Arrondissement, Île-de-France, France", latitude: 49.3779962, longitude: 2.8505532, licence: "La Street", location: 9
+photo_coach = URI.open("https://res.cloudinary.com/dw22pxuaw/image/upload/v1590746649/demonac_gpk78h.jpg")
+coach7 = User.create! password: "123456", email: "stefdemonac@gmail.com", coach: true, first_name: "Stéphanie", last_name: "De Monaco", phone: "0752770245", address: "90 Rue des Moines, Paris 17e Arrondissement, Île-de-France, France", latitude: 49.3779962, longitude: 2.8505532, licence: "La Street", location: 9
 coach7.photo.attach(io: photo_coach, filename: 'coach_picture', content_type: 'image/jpg')
 
-photo_coach = URI.open("https://res.cloudinary.com/dw22pxuaw/image/upload/v1590659169/guv4oxvs285ihpwqhb8tt54w48nv.jpg")
+photo_coach = URI.open("https://res.cloudinary.com/dw22pxuaw/image/upload/v1590746650/LeSerpent_s4uzzi.jpg")
 coach8 = User.create! password: "123456", email: "moha@gmail.com", coach: true, first_name: "Moha", last_name: "Le Serpent", phone: "0752707070", address: "90 Rue des Moines, Paris 17e Arrondissement, Île-de-France, France", latitude: 49.4779962, longitude: 2.9505532, licence: "BPJEPS", location: 12
 coach8.photo.attach(io: photo_coach, filename: 'coach_picture', content_type: 'image/jpg')
 
-photo_coach = URI.open("https://res.cloudinary.com/dw22pxuaw/image/upload/v1590659169/guv4oxvs285ihpwqhb8tt54w48nv.jpg")
+photo_coach = URI.open("https://res.cloudinary.com/dw22pxuaw/image/upload/v1590746650/TSR_dgeagr.jpg")
 coach9 = User.create! password: "123456", email: "hugo@gmail.com", coach: true, first_name: "Hugo", last_name: "TSR", phone: "0752708080", address: "90 Rue des Moines, Paris 17e Arrondissement, Île-de-France, France", latitude: 49.5779962, longitude: 2.3005532, licence: "BPJEPS", location: 10
 coach9.photo.attach(io: photo_coach, filename: 'coach_picture', content_type: 'image/jpg')
 
-photo_coach = URI.open("https://res.cloudinary.com/dw22pxuaw/image/upload/v1590659169/guv4oxvs285ihpwqhb8tt54w48nv.jpg")
+photo_coach = URI.open("https://res.cloudinary.com/dw22pxuaw/image/upload/v1590746650/Strife_gtfphi.jpg")
 coach10 = User.create! password: "123456", email: "cloud@gmail.com", coach: true, first_name: "Cloud", last_name: "Strife", phone: "0752707979", address: "90 Rue des Moines, Paris 17e Arrondissement, Île-de-France, France", latitude: 49.6779962, longitude: 2.3105532, licence: "BPJEPS", location: 10
 coach10.photo.attach(io: photo_coach, filename: 'coach_picture', content_type: 'image/jpg')
 
