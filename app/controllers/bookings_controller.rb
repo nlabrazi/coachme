@@ -50,7 +50,8 @@ class BookingsController < ApplicationController
   def refused
     @booking = Booking.find(params[:booking_id])
     @coach_activity = CoachActivity.find(params[:coach_activity_id])
-    @booking.update(status: "Refused")
+    @booking.status = "Refused"
+    @booking.save
     respond_to do |format|
       format.html { updated ? (redirect_to dashboard_path) : (render "dashboards/dashboard") }
       format.js
