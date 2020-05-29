@@ -38,6 +38,7 @@ class BookingsController < ApplicationController
 
   def validate
     @booking = Booking.find(params[:booking_id])
+    @coach_activity = CoachActivity.find(params[:coach_activity_id])
     updated = @booking.update(status: "Accepted")
     respond_to do |format|
       format.html { updated ? (redirect_to dashboard_path) : (render "dashboards/dashboard") }
@@ -47,6 +48,7 @@ class BookingsController < ApplicationController
 
   def refused
     @booking = Booking.find(params[:booking_id])
+    @coach_activity = CoachActivity.find(params[:coach_activity_id])
     @booking.update(status: "Refused")
     respond_to do |format|
       format.html { updated ? (redirect_to dashboard_path) : (render "dashboards/dashboard") }
