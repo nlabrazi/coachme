@@ -1,22 +1,36 @@
-<div class= "zone-center">
-
-<% if current_user.coach? %>
-  <% @coach_activities.each do |coach_activity| %>
-   <div>
-  <p> <%= "#{coach_activity.activity.name} du #{coach_activity.start_date} au #{coach_activity.end_date}. Prix : #{coach_activity.price} €" %> </p>
-  <%= link_to "voir ce cours", coach_activity_path(coach_activity) %>
-  <% end %>
-   </div>
-  <%= link_to "créez votre cours", new_coach_activity_path  %>
-<% end %>
-
-<% if current_user.coach? == false %>
-  <% @bookings.each do |booking| %>
-  <div>
-    <p> <%= "#{booking.coach_activity.activity.name} le #{booking.start_time} avec #{booking.coach.first_name}" %> </p>
-    <%= link_to "voir ce cours", coach_activity_booking_path(booking) %>
-  <% end %>
+<div class= "container">
+  <!-- Coach View -->
+  <% if current_user.coach? %>
+  <div class="row">
+    <% @coach_activities.each do |coach_activity| %>
+    <div>
+      <p> <%= "#{coach_activity.activity.name} du #{coach_activity.start_date} au #{coach_activity.end_date}. Prix : #{coach_activity.price} €" %> </p>
+      <%= link_to "voir ce cours", coach_activity_path(coach_activity) %>
+      <% end %>
+    </div>
+    <%= link_to "créez votre cours", new_coach_activity_path  %>
+    <% end %>
+    <% if current_user.coach? %>
+    <div class="row">
+      <% @coach_activities.each do |coach_activity| %>
+      <% coach_activity.bookings.each do |booking| %>
+      <div>
+        <p> <%= "#{booking.user.first_name} le #{booking.start_time} au #{booking.end_time}. Montant : #{booking.sum_price} € || Status: #{booking.status}" %> </p>
+        <%= link_to "Valider", coach_activity_booking_validate_path(coach_activity, booking), class: "btn btn-primary btn-block", method: :patch %>
+        <%= link_to "Refuser", coach_activity_booking_refused_path(coach_activity, booking), class: "btn btn-danger btn-block", method: :patch %>
+        <% end %>
+        <% end %>
+      </div>
+      <% end %>
+      <!-- User View -->
+      <% if current_user.coach? == false %>
+      <% @bookings.each do |booking| %>
+      <div>
+        <p> <%= "#{booking.coach_activity.activity.name} le #{booking.start_time} avec #{booking.coach.first_name} || Status : #{booking.status}" %> </p>
+        <%= link_to "voir ce cours", coach_activity_bookings_url(booking.coach_activity, booking_id: booking.id) %>
+        <% end %>
+      </div>
+      <% end %>
+    </div>
   </div>
-<% end %>
-
 </div>

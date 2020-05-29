@@ -1,14 +1,11 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/stylesheets/pages/home">
 <script src="https://kit.fontawesome.com/e7e4303548.js" crossorigin="anonymous"></script>
 
 <title>Home</title>
 
-
 <!-- BEGIN NAVBAR -->
 <!-- END NAVBAR -->
-
 
 <!-- BEGIN BANNER PROMO -->
 <div class="index_promo">
@@ -19,20 +16,20 @@
 </div>
 <!-- END BANNER PROMO -->
 
-<!-- BEGIN BIG SEARCH BAR -->
-<div class="zone-center">
-  <h1>Partez à la recherche de votre coach</h1>
+<div class="container">
+  <!-- BEGIN BIG SEARCH BAR -->
+  <h1>Trouvez le coach de vos rêves :</h1>
   <div class="home-searchbar">
     <%= form_tag coach_activities_path, class: "barsearch", method: :get do %>
     <%= text_field_tag :query, params[:query], class: "form-control search-input", placeholder:"Coach, spécialité..."%>
-    <%= submit_tag "Rechercher", class: "btn-purple searchbar-submit" %>
+    <%= button_tag "Rechercher", class: "btn-purple" %>
     <% end %>
-    <%= link_to "Parcourir", activities_path, class: "btn-purple searchbar-submit" %>
+  </div>
+  <div class="browse">
+    <h1>Partez à la découverte...</h1>
+    <%= link_to "Parcourir", activities_path, class: "btn-purple" %>
   </div>
   <!-- END BIG SEARCH BAR  -->
-
-
-
 
   <div class="container home-politik">
     <h1>Notre politique</h1>
@@ -61,7 +58,5 @@
   </div>
 </div>
 
-
-
-  <!-- *** BEGIN FOOTER *** -->
-  <!-- *** END FOOTER *** -->
+<!-- *** BEGIN FOOTER *** -->
+<!-- *** END FOOTER *** -->

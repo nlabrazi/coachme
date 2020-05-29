@@ -21,8 +21,6 @@
           <h2> <span class="text-secondary font-weight-bold"></span></h2>
         </div>
         <div>
-
-
         </div>
       </div>
 
@@ -33,7 +31,7 @@
           <%= f.input  :start_time, as: :string, required: false, input_html: {class: "flatpickr"}, placeholder:"Heure de début du cours" %>
           <%= f.input  :end_time, as: :string, required: false, input_html: {class: "flatpickr"}, placeholder:"Heure de fin du cours" %>
           <%= f.input :participant_number, input_html: { min: 0, max: 5 }, placeholder:"nombre de participants" %>
-          <%= f.button :submit, "Book", class: "bouton_form" %>
+          <%= f.button :submit, "transpirer avec #{@coach_activity.user.first_name}", class: "btn btn-primary btn-block" %>
           <% end %>
         </div>
         <div id="booking-form-div" data-bookings="<%= @bookings_datetime.to_json %>" >
@@ -41,9 +39,6 @@
         total :<%= @booking.sum_price %> €</p>
       </div>
     </div>
-
-
-
     <div class="row mb-5">
       <div class="col-8 d-block">
         <h2 class= "font-weight-bold">En quoi consiste cette activité ? </h2>

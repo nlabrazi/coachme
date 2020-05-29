@@ -12,10 +12,9 @@ class BookingsController < ApplicationController
   end
 
    def show
-    @booking = current_user.bookings.last
     @coach_activity = CoachActivity.find(params[:coach_activity_id])
-    @booking.user = current_user
-    @booking.coach_activity = @coach_activity
+    @coach = @coach_activity.user
+    @booking =  Booking.find(params[:booking_id])
   end
 
   def create
@@ -27,7 +26,7 @@ class BookingsController < ApplicationController
     @booking.sum_price = @coach_activity.price
     @booking.status = "pending"
       if @booking.save!
-        redirect_to coach_activity_bookings_path
+        redirect_to coach_activity_bookings_url(@coach_activity, booking_id: @booking.id)
       else
         render "coach_activities/show"
       end
@@ -37,10 +36,15 @@ class BookingsController < ApplicationController
 
   end
 
-
   def validate
     @booking = Booking.find(params[:booking_id])
     @booking.update(status: "Accepted")
+    redirect_to dashboard_path
+  end
+
+  def refused
+    @booking = Booking.find(params[:booking_id])
+    @booking.update(status: "Refused")
     redirect_to dashboard_path
   end
 
