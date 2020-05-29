@@ -1,0 +1,18 @@
+// Specific CSS for your index_coach_activities
+
+#coach_activities-index {
+  .card-product {
+    margin: 15px 0 15px 0;
+    border-radius: 15px;
+    background-color: #181a1b;
+  }
+
+  .col-8 a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .col-8 a :hover {
+    color: #861388;
+  }
+}
