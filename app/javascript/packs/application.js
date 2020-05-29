@@ -1,8 +1,10 @@
 require("@rails/ujs").start()
 require("@rails/activestorage").start()
 require("channels")
-require("turbolinks").start()
-require("flatpickr/dist/themes/dark.css");
+require("flatpickr/dist/themes/dark.css")
+const TurboLinks = require("turbolinks")
+TurboLinks.start()
+
 
 import "bootstrap";
 import { initMapbox } from '../plugins/init_mapbox';
