@@ -4,7 +4,7 @@
   .card-product {
     margin: 15px 0 15px 0;
     border-radius: 15px;
-    background-color: #181a1b;
+    background-color: #292F36;
   }
 
   .search-coach {
@@ -17,13 +17,14 @@
     font-size: 20px;
   }
 
-  .col-8 a {
+  .cards-product a {
     color: white;
     text-decoration: none;
   }
 
-  .col-8 a :hover {
-    color: #861388;
+  .card-product:hover {
+    transform: scale(1.03);
+    transition: ease 0.5s;
   }
 
   .mapboxgl-popup {
@@ -34,5 +35,21 @@
   color: black;
   text-align: center;
   font-family: 'Open Sans', sans-serif;
+  }
+
+  .container-wrapper {
+    width: 100vw;
+    display: flex;
+  }
+
+  .list-coaches {
+    padding: 30px;
+    width: 50%;
+  }
+
+  #map {
+    width: 50%;
+    position: sticky;
+    top: 0;
   }
 }
