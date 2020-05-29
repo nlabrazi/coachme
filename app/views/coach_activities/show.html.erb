@@ -10,7 +10,7 @@
     <div class="row mb-5 ">
       <div class="col-8 d-inblock vh-50">
         <div class="card-product-coach-activity">
-          <div><%= cl_image_tag current_user.photo.key, height: 250, width: 250, gravity: :face, id: "coach_avatar", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %></div>
+          <div><%= cl_image_tag @coach_activity.user.photo.key, height: 250, width: 250, gravity: :face, id: "coach_avatar", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %></div>
           <div class="card-product-infos">
             <h2><%= @coach_activity.user.first_name %></h2>
             <p><em><%= @coach_activity.activity.category %></em> <strong><%= @coach_activity.activity.name %></strong></p>
