@@ -10,11 +10,11 @@
       <% @coach_activities.each do |coach_activity| %>
       <%= link_to coach_activity_path(coach_activity) do %>
       <div class="card-product">
-        <%= cl_image_tag coach_activity.user.photo.key %>
+        <%= cl_image_tag coach_activity.user.photo.key, height: 10, width: 10, id: "activity_avatar", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         <div class="card-product-infos">
           <h2><%= coach_activity.user.first_name %></h2>
           <ul>
-            <li><%= coach_activity.price %>€ de l'heure</li>
+            <li><%= coach_activity.price.round %>€ de l'heure</li>
             <li>Diplome :<%= coach_activity.user.licence %></li>
             <li><%= coach_activity.user.address %></li>
           </ul>

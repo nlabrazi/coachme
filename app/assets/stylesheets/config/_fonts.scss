@@ -1,9 +1,10 @@
 // Import Google fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&display=swap');
 
 // Define fonts for body and headers
-$body-font: "Work Sans", "Helvetica", "sans-serif";
-$headers-font: "Nunito", "Helvetica", "sans-serif";
+$body-font: "Arvo", "serif";
+$headers-font: "Arvo", "serif";
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
@@ -15,7 +16,7 @@ $headers-font: "Nunito", "Helvetica", "sans-serif";
 // }
 // $my-font: "Font Name";
 
-@font-face{
-    font-family: "Myriad-Pro";
-    src: url(http://www.anaveer.in/honda/font/MYRIADPRO-REGULAR.OTF) format("truetype");
-}
+// @font-face{
+//     font-family: "Arvo";
+//     src: url(http://www.anaveer.in/honda/font/MYRIADPRO-REGULAR.OTF) format("truetype");
+// }
