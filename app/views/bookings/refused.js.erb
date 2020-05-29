@@ -1,0 +1,4 @@
+const bookingInfos = document.querySelector("booking-container-<%= @booking.id %>")
+if bookingInfos {
+  bookingInfos.innerHTML = "<%= j render 'bookings/infos', coach_activity: @coach_activity, booking: @booking %>"
+}
