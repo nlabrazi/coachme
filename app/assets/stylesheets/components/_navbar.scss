@@ -3,7 +3,6 @@
   background-color: #181a1b;
   height: 50px;
   top: 0;
-  margin-bottom: 20px;
 }
 
 /* Stick to right login/register */
@@ -34,9 +33,18 @@
   font-size: 17px;
 }
 
+.navbar-nav .nav-item a.nav-link:hover {
+  color: #FCDF45;
+}
+
+
+.navbar-nav .nav-item a.nav-link {
+  color: white;
+}
+
 /* Change the color of links on hover */
 .navbar a:hover {
-  color: #861388;
+  color: #FCDF45;
 }
 
 /* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */

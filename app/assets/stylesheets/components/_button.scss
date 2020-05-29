@@ -1,9 +1,21 @@
-.btn-purple {
-  background-color: #861388;
+.btn-yellow {
+  background-color: #FDCF45;
   color: white;
-  height: 35px;
-  padding: 10px;
+  border-radius: 5px;
+  padding: 10px 10px;
   text-align: center;
+}
+
+.btn-yellow:hover {
+  box-shadow: 0 0 10px white;
+}
+
+a.btn-yellow {
+  text-decoration: none;
+}
+
+a.btn-yellow:hover {
+  color: white;
 }
 
 .btn-grey {

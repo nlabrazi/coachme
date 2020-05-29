@@ -15,19 +15,20 @@
   <a href="#" class="promo_trial">Essai GRATUIT</a>
 </div> -->
 <!-- END BANNER PROMO -->
-
-<div class="container">
-  <!-- BEGIN BIG SEARCH BAR -->
-  <h1>Trouvez le coach de vos rêves :</h1>
-  <div class="home-searchbar">
-    <%= form_tag coach_activities_path, class: "barsearch", method: :get do %>
-    <%= text_field_tag :query, params[:query], class: "form-control search-input", placeholder:"Coach, spécialité..."%>
-    <%= button_tag "Rechercher", class: "btn-purple" %>
-    <% end %>
-  </div>
-  <div class="browse">
-    <h1>Partez à la découverte...</h1>
-    <%= link_to "Parcourir", activities_path, class: "btn-purple" %>
+<div class="background">
+  <div class="container">
+    <!-- BEGIN BIG SEARCH BAR -->
+    <h1>Trouvez le coach de vos rêves :</h1>
+    <div class="home-searchbar">
+      <%= form_tag coach_activities_path, class: "barsearch", method: :get do %>
+      <%= text_field_tag :query, params[:query], class: "form-control search-input", placeholder:"Coach, spécialité..."%>
+      <%= button_tag "Rechercher", class: "btn-yellow" %>
+      <% end %>
+    </div>
+    <div class="browse">
+      <h1>Partez à la découverte...</h1>
+      <%= link_to "Parcourir", activities_path, class: "btn-yellow" %>
+    </div>
   </div>
   <!-- END BIG SEARCH BAR  -->
 
