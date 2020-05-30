@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="text-center m-4">
+      <h1>Postez un commentaire</h1>
+    </div>
+      <%= simple_form_for [@booking, @review] do |f| %>
+        <%= f.input :content, label: "Comment s'est passé votre cours?", placeholder: "Votre message" %>
+        <%= f.input :rating, collection: (1..5).to_a, label: "Notez ce cours" %>
+        <%= f.submit "Postez votre commentaire" %>
+      <% end %>
+  </div>
+</div>

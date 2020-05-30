@@ -10,8 +10,8 @@ class CoachActivitiesController < ApplicationController
             {
               lat: user.latitude,
               lng: user.longitude,
-              infoWindow: render_to_string(partial: "info_window", locals: { user: user })
-              #id: user.id
+              infoWindow: render_to_string(partial: "info_window", locals: { user: user }),
+              id: user.id
             }
           end
         end

@@ -1,30 +1,28 @@
 class ReviewsController < ApplicationController
-  before_action :set_review
-
-  def index
-    @reviews = Review.all
-  end
-
-  def show
-  end
 
   def new
     @review = Review.new
+    authorize @review
+    @booking = Booking.find(params[:booking_id])
   end
 
   def create
     @review = Review.new(review_params)
-    if @review.save
-      redirect_to review_path(@review)
+    authorize @review
+    @review.booking = booking.find(params[:booking_id])
+    @review.user = current_user
+    if @review.save!
+      redirect_to booking_path(@booking), notice: 'Votre commentaire a été ajouté. Merci!'
     else
+      flash[:alert] = "Oups! Une erreur est survenue."
       render :new
     end
   end
 
   private
 
-  def set_review
-    @review = Review.find(params[:id])
+  def review_params
+    params.require(:review).permit(:rating, :content)
   end
 
 end

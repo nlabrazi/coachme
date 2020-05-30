@@ -1,2 +1,8 @@
-<p> <%= user.first_name %> </p>
-<p> <%= user.legal %> </p>
+
+<div class="coach-markers"; data-user-id="<%= user.id %>">
+  <p> <%= cl_image_tag user.photo.key %> </p>
+  <ul>
+    <li> <%= user.first_name %> </li>
+    <li> <%= user.legal %> </li>
+  </ul>
+</div>

@@ -52,11 +52,11 @@ const openInfoWindow = (markers) => {
   });
 }
 
-const toggleCardHighlighting = (event) => {
-  // We select the card corresponding to the marker's id
-  const card = document.querySelector(`[data-user-id="${event.currentTarget.dataset.markerId}"]`);
-  // Then we toggle the class "highlight github" to the card
-  card.classList.toggle('highlight');
-}
+  const toggleCardHighlighting = (event) => {
+    // We select the card corresponding to the marker's id
+    const card = document.querySelector(`[data-user-id="${event.currentTarget.dataset.markerId}"]`);
+    // Then we toggle the class "highlight github" to the card
+    card.classList.toggle('highlight');
+  }
 
 export { initMapbox };
