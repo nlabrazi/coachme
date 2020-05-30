@@ -27,6 +27,8 @@ const initMapbox = () => {
       newMarker.getElement().addEventListener('mouseenter', (e) => toggleCardHighlighting(e) );
       // We put a microphone on listening for a mouseleave event
       newMarker.getElement().addEventListener('mouseleave', (e) => toggleCardHighlighting(e) );
+      // try to add a CLICK Event to link to goto card
+      newMarker.getElement().addEventListener('click', (e) => toggleCardHighlighting(e) );
     });
 
     fitMapToMarkers(map, markers);
@@ -41,12 +43,15 @@ const fitMapToMarkers = (map, markers) => {
 };
 
 const openInfoWindow = (markers) => {
-  const cards = document.querySelectorAll('.card');
+  const cards = document.querySelectorAll('.card-product');
   cards.forEach((card, index) => {
     card.addEventListener('mouseenter', () => {
       markers[index].togglePopup();
     });
     card.addEventListener('mouseleave', () => {
+      markers[index].togglePopup();
+    });
+    card.addEventListener('click', () => {
       markers[index].togglePopup();
     });
   });
@@ -55,8 +60,9 @@ const openInfoWindow = (markers) => {
   const toggleCardHighlighting = (event) => {
     // We select the card corresponding to the marker's id
     const card = document.querySelector(`[data-user-id="${event.currentTarget.dataset.markerId}"]`);
+    console.log(card)
     // Then we toggle the class "highlight github" to the card
-    card.classList.toggle('highlight');
+    card.classList.toggle('active-card');
   }
 
 export { initMapbox };

@@ -15,6 +15,7 @@
     height: 60px;
     width: 100%;
     font-size: 20px;
+    border-radius: 4px;
   }
 
   .cards-product a {
@@ -37,4 +38,9 @@
     width: 50%;
   }
 
+  .active-card {
+    background-color: red;
+    transform: scale(1.03);
+    transition: ease 0.5s;
+  }
 }

@@ -3,243 +3,41 @@
     <div class="search-coach">
       <input class="search-coch-int" type="text" placeholder= "Nouvelle recherche...">
     </div>
-    <div class="filter-search">
-
-<div class="search-filters">
-  <div class="dl-filters row-center row-padding">
-    <div class="dl-filters-item">
-      <span class="dl-filters-title">FILTRER PAR</span>
-    </div>
-    <div class="dl-filters-item dropdown">
-      <div class="dropdown-toggle availabilities_dropdown" data-toggle="dropdown">
-        <div class="dl-filters-filter-text">Disponibilités</div>
-        <svg class="dl-chevron" height="20px" version="1.1" viewBox="0 0 20 20" width="20px"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink">
-          <path d="M15.6756757,9.08783775 L10.8108108,13.7499997 C10.5675672,13.9932433 10.2972976,14.1148648 10,14.1148648 C9.70270236,14.1148648 9.43243278,13.9932433 9.18918919,13.7499997 L4.32432432,9.08783775 C4.10810811,8.89864891 4,8.6148653 4,8.23648623 C4,7.88513522 4.10810811,7.60135161 4.32432432,7.38513539 C4.83783749,6.87162154 5.37837803,6.87162154 5.94594595,7.38513539 L10,11.2770273 L14.0540541,7.38513539 C14.621622,6.87162154 15.1621625,6.87162154 15.6756757,7.38513539 C15.8918919,7.60135161 16,7.88513522 16,8.23648623 C16,8.6148653 15.8918919,8.89864891 15.6756757,9.08783775 L15.6756757,9.08783775 Z" fill="#435F71"></path>
-        </svg>
+    <div class="filter-search row">
+      <div id="datetime" class="filter" filter-name="Date">
+        <span class="title"> Date </span>
       </div>
-      <ul class="dropdown-menu">
-        <li>
-          <span class="dl-filters-filter-item" data-no-follow="true" onclick="window.dataLayer.push({
-  event: 'ga_event',
-  eventCategory: 'searchResultsSpecialityPlace',
-  eventAction: 'setFilter',
-  eventLabel: 'availabilities'
-})
-" data-u="x0zcllGdpxWaiFGbpFmdh9De1FWZ0VHcvUGa0FGcvVGdz92L">Aujourd'hui</span>
-        </li>
-        <hr class="dl-divider">
-          <li>
-            <span class="dl-filters-filter-item" data-no-follow="true" onclick="window.dataLayer.push({
-  event: 'ga_event',
-  eventCategory: 'searchResultsSpecialityPlace',
-  eventAction: 'setFilter',
-  eventLabel: 'availabilities'
-})
-" data-u="z0zcllGdpxWaiFGbpFmdh9De1FWZ0VHcvUGa0FGcvVGdz92L">Dans les trois prochains jours</span>
-          </li>
-        </ul>
+      <div id="hour" class="filter" filter-name="Heure">
+        <span class="title"> Heure </span>
       </div>
-      <div class="dl-filters-item dropdown">
-        <div class="dropdown-toggle ref_visit_motive_id_dropdown" data-toggle="dropdown">
-          <div class="dl-filters-filter-text">Motif de consultation</div>
-          <svg class="dl-chevron" height="20px" version="1.1" viewBox="0 0 20 20" width="20px"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink">
-            <path d="M15.6756757,9.08783775 L10.8108108,13.7499997 C10.5675672,13.9932433 10.2972976,14.1148648 10,14.1148648 C9.70270236,14.1148648 9.43243278,13.9932433 9.18918919,13.7499997 L4.32432432,9.08783775 C4.10810811,8.89864891 4,8.6148653 4,8.23648623 C4,7.88513522 4.10810811,7.60135161 4.32432432,7.38513539 C4.83783749,6.87162154 5.37837803,6.87162154 5.94594595,7.38513539 L10,11.2770273 L14.0540541,7.38513539 C14.621622,6.87162154 15.1621625,6.87162154 15.6756757,7.38513539 C15.8918919,7.60135161 16,7.88513522 16,8.23648623 C16,8.6148653 15.8918919,8.89864891 15.6756757,9.08783775 L15.6756757,9.08783775 Z" fill="#435F71"></path>
-          </svg>
-        </div>
-        <ul class="dropdown-menu">
-          <li>
-            <span class="dl-filters-filter-item" data-no-follow="true" onclick="window.dataLayer.push({
-  event: 'ga_event',
-  eventCategory: 'searchResultsSpecialityPlace',
-  eventAction: 'setFilter',
-  eventLabel: 'ref_visit_motive_id'
-})
-" data-u="==AO1QTPkl2XlZXa09WbfRXazlmdfZWZy9De1FWZ0VHcvUGa0FGcvVGdz92L">Première consultation d'ostéopathie</span>
-          </li>
-          <hr class="dl-divider">
-            <li>
-              <span class="dl-filters-filter-item" data-no-follow="true" onclick="window.dataLayer.push({
-  event: 'ga_event',
-  eventCategory: 'searchResultsSpecialityPlace',
-  eventAction: 'setFilter',
-  eventLabel: 'ref_visit_motive_id'
-})
-" data-u="==wN2QTPkl2XlZXa09WbfRXazlmdfZWZy9De1FWZ0VHcvUGa0FGcvVGdz92L">Enfant - Première consultation d'ostéopathie</span>
-            </li>
-            <hr class="dl-divider">
-              <li>
-                <span class="dl-filters-filter-item" data-no-follow="true" onclick="window.dataLayer.push({
-  event: 'ga_event',
-  eventCategory: 'searchResultsSpecialityPlace',
-  eventAction: 'setFilter',
-  eventLabel: 'ref_visit_motive_id'
-})
-" data-u="==QO2QTPkl2XlZXa09WbfRXazlmdfZWZy9De1FWZ0VHcvUGa0FGcvVGdz92L">Nourrisson - Première consultation d'ostéopathie</span>
-              </li>
-              <hr class="dl-divider">
-                <li>
-                  <span class="dl-filters-filter-item" data-no-follow="true" onclick="window.dataLayer.push({
-  event: 'ga_event',
-  eventCategory: 'searchResultsSpecialityPlace',
-  eventAction: 'setFilter',
-  eventLabel: 'ref_visit_motive_id'
-})
-" data-u="==QM3QTPkl2XlZXa09WbfRXazlmdfZWZy9De1FWZ0VHcvUGa0FGcvVGdz92L">Femme enceinte - Première consultation d'ostéopathie</span>
-                </li>
-                <hr class="dl-divider">
-                  <li>
-                    <span class="dl-filters-filter-item" data-no-follow="true" onclick="window.dataLayer.push({
-  event: 'ga_event',
-  eventCategory: 'searchResultsSpecialityPlace',
-  eventAction: 'setFilter',
-  eventLabel: 'ref_visit_motive_id'
-})
-" data-u="==wM3QTPkl2XlZXa09WbfRXazlmdfZWZy9De1FWZ0VHcvUGa0FGcvVGdz92L">Sportif - Première consultation d'ostéopathie</span>
-                  </li>
-                </ul>
-              </div>
-              <div class="dl-filters-item dropdown">
-                <div class="dropdown-toggle language_dropdown" data-toggle="dropdown">
-                  <div class="dl-filters-filter-text">Langues parlées</div>
-                  <svg class="dl-chevron" height="20px" version="1.1" viewBox="0 0 20 20" width="20px"
-                    xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <path d="M15.6756757,9.08783775 L10.8108108,13.7499997 C10.5675672,13.9932433 10.2972976,14.1148648 10,14.1148648 C9.70270236,14.1148648 9.43243278,13.9932433 9.18918919,13.7499997 L4.32432432,9.08783775 C4.10810811,8.89864891 4,8.6148653 4,8.23648623 C4,7.88513522 4.10810811,7.60135161 4.32432432,7.38513539 C4.83783749,6.87162154 5.37837803,6.87162154 5.94594595,7.38513539 L10,11.2770273 L14.0540541,7.38513539 C14.621622,6.87162154 15.1621625,6.87162154 15.6756757,7.38513539 C15.8918919,7.60135161 16,7.88513522 16,8.23648623 C16,8.6148653 15.8918919,8.89864891 15.6756757,9.08783775 L15.6756757,9.08783775 Z" fill="#435F71"></path>
-                  </svg>
-                </div>
-                <ul class="dropdown-menu">
-                  <li>
-                    <span class="dl-filters-filter-item" data-no-follow="true" onclick="window.dataLayer.push({
-  event: 'ga_event',
-  eventCategory: 'searchResultsSpecialityPlace',
-  eventAction: 'setFilter',
-  eventLabel: 'language'
-})
-" data-u="10TZnFWdn5WYs9De1FWZ0VHcvUGa0FGcvVGdz92L">Allemand</span>
-                  </li>
-                  <hr class="dl-divider">
-                    <li>
-                      <span class="dl-filters-filter-item" data-no-follow="true" onclick="window.dataLayer.push({
-  event: 'ga_event',
-  eventCategory: 'searchResultsSpecialityPlace',
-  eventAction: 'setFilter',
-  eventLabel: 'language'
-})
-" data-u="y0TZnFWdn5WYs9De1FWZ0VHcvUGa0FGcvVGdz92L">Anglais</span>
-                    </li>
-                    <hr class="dl-divider">
-                      <li>
-                        <span class="dl-filters-filter-item" data-no-follow="true" onclick="window.dataLayer.push({
-  event: 'ga_event',
-  eventCategory: 'searchResultsSpecialityPlace',
-  eventAction: 'setFilter',
-  eventLabel: 'language'
-})
-" data-u="50TZnFWdn5WYs9De1FWZ0VHcvUGa0FGcvVGdz92L">Arabe</span>
-                      </li>
-                      <hr class="dl-divider">
-                        <li>
-                          <span class="dl-filters-filter-item" data-no-follow="true" onclick="window.dataLayer.push({
-  event: 'ga_event',
-  eventCategory: 'searchResultsSpecialityPlace',
-  eventAction: 'setFilter',
-  eventLabel: 'language'
-})
-" data-u="z0TZnFWdn5WYs9De1FWZ0VHcvUGa0FGcvVGdz92L">Espagnol</span>
-                        </li>
-                        <hr class="dl-divider">
-                          <li>
-                            <span class="dl-filters-filter-item" data-no-follow="true" onclick="window.dataLayer.push({
-  event: 'ga_event',
-  eventCategory: 'searchResultsSpecialityPlace',
-  eventAction: 'setFilter',
-  eventLabel: 'language'
-})
-" data-u="00TZnFWdn5WYs9De1FWZ0VHcvUGa0FGcvVGdz92L">Italien</span>
-                          </li>
-                          <hr class="dl-divider">
-                            <li>
-                              <span class="dl-filters-filter-item" data-no-follow="true" onclick="window.dataLayer.push({
-  event: 'ga_event',
-  eventCategory: 'searchResultsSpecialityPlace',
-  eventAction: 'setFilter',
-  eventLabel: 'language'
-})
-" data-u="==QNx0TZnFWdn5WYs9De1FWZ0VHcvUGa0FGcvVGdz92L">Polonais</span>
-                            </li>
-                            <hr class="dl-divider">
-                              <li>
-                                <span class="dl-filters-filter-item" data-no-follow="true" onclick="window.dataLayer.push({
-  event: 'ga_event',
-  eventCategory: 'searchResultsSpecialityPlace',
-  eventAction: 'setFilter',
-  eventLabel: 'language'
-})
-" data-u="20TZnFWdn5WYs9De1FWZ0VHcvUGa0FGcvVGdz92L">Portugais</span>
-                              </li>
-                              <hr class="dl-divider">
-                                <li>
-                                  <span class="dl-filters-filter-item" data-no-follow="true" onclick="window.dataLayer.push({
-  event: 'ga_event',
-  eventCategory: 'searchResultsSpecialityPlace',
-  eventAction: 'setFilter',
-  eventLabel: 'language'
-})
-" data-u="==ANx0TZnFWdn5WYs9De1FWZ0VHcvUGa0FGcvVGdz92L">Roumain</span>
-                                </li>
-                                <hr class="dl-divider">
-                                  <li>
-                                    <span class="dl-filters-filter-item" data-no-follow="true" onclick="window.dataLayer.push({
-  event: 'ga_event',
-  eventCategory: 'searchResultsSpecialityPlace',
-  eventAction: 'setFilter',
-  eventLabel: 'language'
-})
-" data-u="==gNx0TZnFWdn5WYs9De1FWZ0VHcvUGa0FGcvVGdz92L">Russe</span>
-                                  </li>
-                                  <hr class="dl-divider">
-                                    <li>
-                                      <span class="dl-filters-filter-item" data-no-follow="true" onclick="window.dataLayer.push({
-  event: 'ga_event',
-  eventCategory: 'searchResultsSpecialityPlace',
-  eventAction: 'setFilter',
-  eventLabel: 'language'
-})
-" data-u="==QOy0TZnFWdn5WYs9De1FWZ0VHcvUGa0FGcvVGdz92L">Turc</span>
-                                    </li>
-                                  </ul>
-                                </div>
-                              </div>
-                            </div>
-
+      <div id="price_range" class="filter" filter-name="Prix">
+        <span class="title"> Prix </span>
+      </div>
+      <div id="sexe" class="filter" filter-name="Sexe">
+        <span class="title"> Sexe </span>
+      </div>
+      <i class="fa fa-search"></i> <input id="search-box" type="text" autocomplete="off" placeholder="Recherche par mots clés"><span id="reset">Réinitialiser les filtres</span>
     </div>
     <div class="cards-product">
-        <% @coach_activities.each do |coach_activity| %>
-        <%= link_to coach_activity_path(coach_activity) do %>
-        <div class="card-product">
-          <%= cl_image_tag coach_activity.user.photo.key, id: "activity_avatar", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <div class="card-product-infos">
-            <h2><%= coach_activity.user.first_name %></h2>
-            <ul>
-              <li>Diplôme :<%= coach_activity.user.licence %></li>
-              <li><%= coach_activity.user.address %></li>
-            </ul>
-          </div>
-          <div class="card-price">
-            <h3><%= coach_activity.price.round %>€/h</h3>
-          </div>
+      <% @coach_activities.each do |coach_activity| %>
+      <%= link_to coach_activity_path(coach_activity) do %>
+      <div class="card-product" data-user-id="<%= coach_activity.user.id %>">
+        <%= cl_image_tag coach_activity.user.photo.key, id: "activity_avatar", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <div class="card-product-infos">
+          <h2><%= coach_activity.user.first_name %></h2>
+          <ul>
+            <li>Diplôme :<%= coach_activity.user.licence %></li>
+            <li><%= coach_activity.user.address %></li>
+          </ul>
         </div>
-        <% end %>
-        <% end %>
+        <div class="card-price">
+          <h3><%= coach_activity.price.round %>€/h</h3>
+        </div>
+      </div>
+      <% end %>
+      <% end %>
     </div>
   </div>
-  <div id="map"
-  class="position-sticky vh-100"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  <div id="map" class="position-sticky vh-100" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 </div>
