@@ -4,14 +4,18 @@ Rails.application.routes.draw do
   get "/dashboard", to: 'dashboards#dashboard'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  get "/search", to:'searches#search'
+
+  get "/search", to: 'searches#search'
   get "/activities", to:'searches#browse'
 
   resources :coach_activities, only: [:index, :show, :new, :create] do
     resources :bookings, only: [:create] do
-      put "validate", to: "bookings#validate"
-      put "refused", to: "bookings#refused"
+      put "Accepté", to: "bookings#validate"
+      put "Refusé", to: "bookings#refused"
     end
   end
-  resources :bookings, only: [:show]
+
+  resources :bookings, only: [:show] do
+    resources :reviews, only: [:new]
+  end
 end

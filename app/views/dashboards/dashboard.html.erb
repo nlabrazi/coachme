@@ -18,19 +18,18 @@
       <%= link_to "créez votre cours", new_coach_activity_path  %>
     </div>
   <% end %>
-
-      <!-- User View -->
-  <% if current_user.coach? == false %>
+    <!-- User View -->
+    <% if current_user.coach? == false %>
     <% @bookings.each do |booking| %>
-      <div>
-        <p> <%= "#{booking.coach_activity.activity.name} le #{booking.start_time} avec #{booking.coach.first_name} || Status : #{booking.status}" %> </p>
-        <%= link_to "voir ce cours", coach_activity_bookings_url(booking.coach_activity, booking_id: booking.id) %>
-      </div>
+    <div>
+      <p> <%= "#{booking.coach_activity.activity.name} le #{booking.start_time} avec #{booking.coach.first_name} || Status : #{booking.status}" %> </p>
+      <%= link_to "voir ce cours", coach_activity_bookings_url(booking.coach_activity, booking_id: booking.id) %>
+    </div>
+    <div>
+      <%= link_to "Donnez votre avis", new_booking_review_path(booking.user), class: "btn btn-primary", id: "add-button" %>
+    </div>
     <% end %>
-<!--       <div>
-        <#%= link_to "Add a review",  new_review_path(booking.coach_activity), class: "btn btn-primary", id: "add-button", data: { turbolinks: false } %>
-      </div> -->
-      <% end %>
+    <% end %>
 </div>
 
 
