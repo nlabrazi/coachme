@@ -2,9 +2,18 @@
   <div class="text-center m-4">
     <h1>Postez un commentaire</h1>
   </div>
-<!--   <#%= simple_form_for [@booking, @review] do |f| %>
-  <#%= f.input :content, label: "Comment s'est passé votre cours?", placeholder: "Votre message" %>
-  <#%= f.input :rating, collection: (1..5).to_a, label: "Notez ce cours" %>
-  <#%= f.submit "Postez votre commentaire" %>
-  <#% end %> -->
+
+  <div id="star-rating" style="cursor: pointer;">
+    <img alt="1" src="https://s3.amazonaws.com/yelpdemo/stars/star-off.png" title="bad">&nbsp;
+    <img alt="2" src="https://s3.amazonaws.com/yelpdemo/stars/star-off.png" title="poor">&nbsp;
+    <img alt="3" src="https://s3.amazonaws.com/yelpdemo/stars/star-off.png" title="regular">&nbsp;
+    <img alt="4" src="https://s3.amazonaws.com/yelpdemo/stars/star-off.png" title="good">&nbsp;
+    <img alt="5" src="https://s3.amazonaws.com/yelpdemo/stars/star-off.png" title="gorgeous">
+    <input name="review[rating]" type="hidden">
+  </div>
+<!--  <#%= simple_form_for [@review] do |f| %>
+      <#%= f.input :content, label: "Comment s'est passé votre cours?", placeholder: "Votre message" %>
+      <#%= f.input :rating, collection: (1..5).to_a, label: "Notez ce cours" %>
+      <#%= f.submit "Postez votre commentaire" %>
+      <#% end %> -->
 </div>

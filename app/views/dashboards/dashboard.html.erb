@@ -1,23 +1,33 @@
-<div class= "container">
-  <!-- Coach View -->
-  <% if current_user.coach? %>
+<div class="dashboard">
+  <div class="nav flex-column nav-pills col-md-2" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+    <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Accueil</a>
+    <a class="nav-link" id="v-my-bookings-tab" data-toggle="pill" href="#v-my-bookings" role="tab" aria-controls="v-my-bookings" aria-selected="false">Historique</a>
+    <a class="nav-link" id="v-my-deals-tab" data-toggle="pill" href="#v-my-deals" role="tab" aria-controls="v-my-deals" aria-selected="false">Paiements</a>
+    <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Paramètres</a>
+  </div>
+
+  <div class= "container">
+
+    <!-- Coach View -->
+    <% if current_user.coach? %>
     <div class="row">
       <% @coach_activities.each do |coach_activity| %>
-        <div>
-          <p> <%= "#{coach_activity.activity.name} du #{coach_activity.start_date} au #{coach_activity.end_date}. Prix : #{coach_activity.price} €" %> </p>
-          <%= link_to "voir ce cours", coach_activity_path(coach_activity) %>
-        </div>
-        <% coach_activity.bookings.each do |booking| %>
-        <div class="booking-container-<%= booking.id %>">
-          <%= render "bookings/infos", coach_activity: coach_activity, booking: booking %>
-        </div>
-        <% end %>
+      <div>
+        <p> <%= "#{coach_activity.activity.name} du #{coach_activity.start_date} au #{coach_activity.end_date}. Prix : #{coach_activity.price} €" %> </p>
+        <%= link_to "voir ce cours", coach_activity_path(coach_activity) %>
+      </div>
+      <% coach_activity.bookings.each do |booking| %>
+      <div class="booking-container-<%= booking.id %>">
+        <%= render "bookings/infos", coach_activity: coach_activity, booking: booking %>
+      </div>
+      <% end %>
       <% end %>
     </div>
     <div>
       <%= link_to "créez votre cours", new_coach_activity_path  %>
     </div>
-  <% end %>
+    <% end %>
+
     <!-- User View -->
     <% if current_user.coach? == false %>
     <% @bookings.each do |booking| %>
@@ -30,7 +40,6 @@
     </div>
     <% end %>
     <% end %>
+
+  </div>
 </div>
-
-
-
