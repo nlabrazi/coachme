@@ -34,7 +34,7 @@
           <%= f.button :submit, "Transpirer avec #{@coach_activity.user.first_name}", class: "btn btn-primary btn-block" %>
           <% end %>
         </div>
-        <div id="booking_confirmation"></div>
+        <div id="booking-confirmation"></div>
         <div id="booking-form-div" data-bookings="<%= @bookings_datetime.to_json %>" >
         </div>
         <p>Total : <%= @coach_activity.price.round %> €</p>
