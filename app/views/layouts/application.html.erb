@@ -12,6 +12,8 @@
   <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
 </head>
 <body id="<%= controller.controller_name %>-<%= controller.action_name %>" >
+  <div class="modal" style="display:none;">
+  </div>
   <%= render 'shared/navbar' %>
   <%= render 'shared/flashes' %>
   <div class="content-wrapper"><%= yield %></div>
