@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
+  # get 'reviews/new'
+  # get 'reviews/create'
   devise_for :users
+
   root to: 'pages#home'
   get "/dashboard", to: 'dashboards#dashboard'
 
@@ -9,13 +12,13 @@ Rails.application.routes.draw do
   get "/activities", to:'searches#browse'
 
   resources :coach_activities, only: [:index, :show, :new, :create] do
-    resources :bookings, only: [:create] do
+    resources :bookings, only: [:create, :show] do
       put "Accepté", to: "bookings#validate"
       put "Refusé", to: "bookings#refused"
     end
   end
-
   resources :bookings, only: [:show] do
-    resources :reviews, only: [:new]
+    resources :reviews, only: [:show, :edit, :new]
   end
+
 end

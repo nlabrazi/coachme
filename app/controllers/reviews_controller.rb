@@ -1,8 +1,18 @@
 class ReviewsController < ApplicationController
+  before_action :set_review, only: [:show, :edit, :update, :destroy]
+
+  def show
+    @booking = Booking.find(params[:id])
+    @review = Review.find(params[:id])
+  end
 
   def new
     @review = Review.new
-    @booking = Booking.find(params[:booking_id])
+  end
+
+  def edit
+    @booking = Picture.find(params[:booking_id])
+    @review = Review.find(params[:id])
   end
 
   def create
