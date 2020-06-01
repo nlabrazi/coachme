@@ -36,7 +36,7 @@
       <%= link_to "voir ce cours", coach_activity_bookings_url(booking.coach_activity, booking_id: booking.id) %>
     </div>
     <div>
-      <%= link_to "Donnez votre avis", new_booking_review_path(booking.user), class: "btn btn-primary", id: "add-button" %>
+      <%= link_to "Donnez votre avis", new_booking_review_path(booking), class: "btn btn-primary", id: "add-button" %>
     </div>
     <% end %>
     <% end %>

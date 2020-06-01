@@ -11,9 +11,9 @@
     <img alt="5" src="https://s3.amazonaws.com/yelpdemo/stars/star-off.png" title="gorgeous">
     <input name="review[rating]" type="hidden">
   </div>
-<!--  <#%= simple_form_for [@review] do |f| %>
-      <#%= f.input :content, label: "Comment s'est passé votre cours?", placeholder: "Votre message" %>
-      <#%= f.input :rating, collection: (1..5).to_a, label: "Notez ce cours" %>
-      <#%= f.submit "Postez votre commentaire" %>
-      <#% end %> -->
+ <%= simple_form_for [@booking, @review] do |f| %>
+      <%= f.input :content, label: "Comment s'est passé votre cours?", placeholder: "Votre message" %>
+      <%= f.input :rating, collection: (1..5).to_a, label: "Notez ce cours" %>
+      <%= f.submit "Postez votre commentaire" %>
+      <% end %>
 </div>

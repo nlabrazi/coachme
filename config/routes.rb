@@ -20,7 +20,7 @@ Rails.application.routes.draw do
     end
   end
   resources :bookings, only: [:show] do
-    resources :reviews, only: [:show, :edit, :new]
+    resources :reviews, only: [:create, :new]
   end
   resources :rooms, only: [:show] do
     resources :messages, only: [:create]
