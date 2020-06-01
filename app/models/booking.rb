@@ -3,6 +3,6 @@ class Booking < ApplicationRecord
   belongs_to :coach_activity
   belongs_to :coach, class_name: "User"
 
-  has_many :user_reviews
+  has_many :reviews
   has_one :room
 end

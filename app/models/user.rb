@@ -18,6 +18,8 @@ class User < ApplicationRecord
   has_many :activities, through: :coach_activities
   has_many :messages, dependent: :destroy
 
+  has_many :reviews
+
   has_one_attached :photo
 
 end
