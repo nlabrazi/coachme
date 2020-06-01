@@ -16,6 +16,7 @@ class User < ApplicationRecord
   has_many :coach_bookings, class_name: "Booking", foreign_key: "coach_id"
   has_many :coach_activities, dependent: :destroy
   has_many :activities, through: :coach_activities
+  has_many :messages, dependent: :destroy
 
   has_one_attached :photo
 

@@ -1,0 +1,25 @@
+<div class="container">
+  <div>
+    <h1> Votre réservation : <%= @coach_activity.activity.name %></h1>
+  </div>
+  <div class="row">
+    <div class="col-12 d-flex">
+      <div class="m-3">
+        <%= cl_image_tag @coach.photo.key, height: 200, width: 200, gravity: :face, id: "coach_avatar", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+      </div>
+      <div class="m-3">
+        <p> <%= @coach_activity.activity.category %> </p>
+        <p> Avec <%= @coach.first_name %> </p>
+        <p> Le <%= @booking.start_time %> </p>
+        <p> Montant à payer <%= @booking.sum_price %> € </p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <%= link_to "Votre Dashboard", dashboard_path, class: "btn btn-primary btn-block", method: :get %>
+      <%= link_to "Discuter avec votre Coach", room_path(@booking.room)  %>
+    </div>
+  </div>
+</div>
+

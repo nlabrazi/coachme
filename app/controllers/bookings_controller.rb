@@ -28,6 +28,8 @@ class BookingsController < ApplicationController
     @booking.status = "pending"
       if @booking.save!
         # redirect_to booking_path(@booking)
+        Room.create(booking: @booking)
+        redirect_to booking_path(@booking)
       else
         render "coach_activities/show"
       end
