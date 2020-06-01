@@ -3,7 +3,7 @@
       <p>mes autres cours: </p>
       <% @coach_activity.user.coach_activities.first(3).each do |coach_activity| %>
       <% unless coach_activity == @coach_activity %>
-       <%= link_to coach_activity.activity.name, coach_activity_path(coach_activity) %>
+      <%= link_to coach_activity.activity.name, coach_activity_path(coach_activity) %>
       <% end %>
       <% end %>
     </div>
@@ -40,6 +40,17 @@
         <p>Total : <%= @coach_activity.price.round %> €</p>
       </div>
     </div>
+
+    <div class="reviews">
+<!--       <#% if @coach_activity.bookings.nil? %> -->
+      <% @coach_activity.bookings.each do |booking| %>
+        <% booking.reviews.each do |review|  %>
+          <p> <%= review.content %> </p>
+          <p> <%= review.rating %> </p>
+        <% end %>
+      <% end %>
+    </div>
+
     <div class="row mb-5">
       <div class="col-8 d-block">
         <h2 class= "font-weight-bold">En quoi consiste cette activité ? </h2>

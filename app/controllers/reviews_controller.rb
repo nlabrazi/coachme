@@ -8,20 +8,20 @@ class ReviewsController < ApplicationController
 
   def new
     @review = Review.new
+    @booking = Booking.find(params[:booking_id])
   end
 
   def edit
-    @booking = Picture.find(params[:booking_id])
+    @booking = Booking.find(params[:booking_id])
     @review = Review.find(params[:id])
   end
 
   def create
     @review = Review.new(review_params)
-    authorize @review
-    @review.booking = booking.find(params[:id])
+    @review.booking = Booking.find(params[:booking_id])
     @review.user = current_user
     if @review.save!
-      redirect_to dashboard_path(@user), notice: 'Votre commentaire a été ajouté. Merci!'
+      redirect_to coach_activity_path(@review.booking.coach_activity), notice: 'Votre commentaire a été ajouté. Merci!'
     else
       flash[:alert] = "Oups! Une erreur est survenue."
       render :new
