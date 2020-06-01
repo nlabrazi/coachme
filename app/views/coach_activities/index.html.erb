@@ -1,33 +1,43 @@
 <div class="container-wrapper">
   <div class="list-coaches">
-    <div class="cold-12 search-coach">
-      <input class="search-coch-int" type="text" placeholder= "Ajustez votre recherche...">
+    <div class="search-coach">
+      <input class="search-coch-int" type="text" placeholder= "Nouvelle recherche...">
     </div>
-    <div class="filter-search">
+    <div class="filter-search row">
+      <div id="datetime" class="filter" filter-name="Date">
+        <span class="title"> Date </span>
+      </div>
+      <div id="hour" class="filter" filter-name="Heure">
+        <span class="title"> Heure </span>
+      </div>
+      <div id="price_range" class="filter" filter-name="Prix">
+        <span class="title"> Prix </span>
+      </div>
+      <div id="sexe" class="filter" filter-name="Sexe">
+        <span class="title"> Sexe </span>
+      </div>
+      <i class="fa fa-search"></i> <input id="search-box" type="text" autocomplete="off" placeholder="Recherche par mots clés"><span id="reset">Réinitialiser les filtres</span>
     </div>
     <div class="cards-product">
-        <% @coach_activities.each do |coach_activity| %>
-        <%= link_to coach_activity_path(coach_activity) do %>
-        <div class="card-product">
-          <%= cl_image_tag coach_activity.user.photo.key, height: 10, width: 10, id: "activity_avatar", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <div class="card-product-infos">
-            <h2><%= coach_activity.user.first_name %></h2>
-            <ul>
-              <li>Diplôme :<%= coach_activity.user.licence %></li>
-              <li><%= coach_activity.user.address %></li>
-            </ul>
-          </div>
-          <div class="card-price">
-            <h3><%= coach_activity.price.round %>€/h</h3>
-          </div>
+      <% @coach_activities.each do |coach_activity| %>
+      <%= link_to coach_activity_path(coach_activity) do %>
+      <div class="card-product" data-user-id="<%= coach_activity.user.id %>">
+        <%= cl_image_tag coach_activity.user.photo.key, id: "activity_avatar", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <div class="card-product-infos">
+          <h2><%= coach_activity.user.first_name %></h2>
+          <ul>
+            <li>Diplôme :<%= coach_activity.user.licence %></li>
+            <li><%= coach_activity.user.address %></li>
+          </ul>
         </div>
-        <% end %>
-        <% end %>
+        <div class="card-price">
+          <h3><%= coach_activity.price.round %>€/h</h3>
+        </div>
+      </div>
+      <% end %>
+      <% end %>
     </div>
   </div>
-  <div id="map"
-  class="position-sticky vh-100"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  <div id="map" class="position-sticky vh-100" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 </div>
