@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'messages/create'
+  get 'rooms/show'
   # get 'reviews/new'
   # get 'reviews/create'
   devise_for :users
@@ -20,5 +22,7 @@ Rails.application.routes.draw do
   resources :bookings, only: [:show] do
     resources :reviews, only: [:show, :edit, :new]
   end
-
+  resources :rooms, only: [:show] do
+    resources :messages, only: [:create]
+  end
 end
