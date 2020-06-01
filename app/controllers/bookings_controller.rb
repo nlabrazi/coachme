@@ -27,7 +27,7 @@ class BookingsController < ApplicationController
     @booking.sum_price = @coach_activity.price
     @booking.status = "pending"
       if @booking.save!
-        redirect_to booking_path(@booking)
+        # redirect_to booking_path(@booking)
       else
         render "coach_activities/show"
       end

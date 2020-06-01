@@ -1,7 +1,7 @@
   <div class="container">
     <div>
       <p>mes autres cours: </p>
-      <% @coach.coach_activities.first(3).each do |coach_activity| %>
+      <% @coach_activity.user.coach_activities.first(3).each do |coach_activity| %>
       <% unless coach_activity == @coach_activity %>
        <%= link_to coach_activity.activity.name, coach_activity_path(coach_activity) %>
       <% end %>
@@ -27,13 +27,14 @@
       <div class="position-sticky vh-50 col-4">
         <div class="form-wrapper ">
           <h2>Réservez un cours</h2>
-          <%= simple_form_for [@coach_activity, @booking] do |f| %>
+          <%= simple_form_for [@coach_activity, @booking], url: coach_activity_bookings_path(@coach_activity), method: :post, remote: true do |f| %>
           <%= f.input  :start_time, as: :string, required: false, input_html: {class: "flatpickr"}, placeholder:"Heure de début du cours" %>
           <%= f.input  :end_time, as: :string, required: false, input_html: {class: "flatpickr"}, placeholder:"Heure de fin du cours" %>
           <%= f.input :participant_number, input_html: { min: 0, max: 5 }, placeholder:"Nombre de participants" %>
           <%= f.button :submit, "Transpirer avec #{@coach_activity.user.first_name}", class: "btn btn-primary btn-block" %>
           <% end %>
         </div>
+        <div id="booking_confirmation"></div>
         <div id="booking-form-div" data-bookings="<%= @bookings_datetime.to_json %>" >
         </div>
         <p>Total : <%= @coach_activity.price.round %> €</p>

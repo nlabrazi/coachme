@@ -13,8 +13,8 @@ Rails.application.routes.draw do
 
   resources :coach_activities, only: [:index, :show, :new, :create] do
     resources :bookings, only: [:create, :show] do
-      put "Accepté", to: "bookings#validate"
-      put "Refusé", to: "bookings#refused"
+      put "/validate", to: "bookings#validate"
+      put "/refused", to: "bookings#refused"
     end
   end
   resources :bookings, only: [:show] do
