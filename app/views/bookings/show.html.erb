@@ -18,6 +18,7 @@
   <div class="row">
     <div class="col">
       <%= link_to "Votre Dashboard", dashboard_path, class: "btn btn-primary btn-block", method: :get %>
+      <%= link_to "Discuter avec votre Coach", room_path(@booking.room)  %>
     </div>
   </div>
 </div>
