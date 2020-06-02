@@ -43,6 +43,55 @@
   font-size: 30px;
 }
 
+
+
+/* to check car noms déjà use peut-être */
+
+.card-container {
+  display: block;
+}
+
+.card-coach {
+  margin-top: -796px;
+  margin-left: 23px;
+  width: 680px;
+  height: 439px;
+  left: 145px;
+  top: 192px;
+  background: #3D3D3D;
+  box-shadow: 5px 4px 20px #1B1F23;
+  border-radius: 10px;
+}
+
+.card-activity {
+  margin-top: 376px;
+  margin-left: 118px;
+  width: 699px;
+  height: 451px;
+  left: 248px;
+  top: 604px;
+  background: #0D0D0D;
+  box-shadow: 5px 4px 20px #1B1F23;
+  border-radius: 10px;
+}
+
+.card-booking {
+  margin-top: -385px;
+  margin-left: 649px;
+  width: 529px;
+  height: 549px;
+  left: 781px;
+  top: 262px;
+
+  background: #FF9900;
+  box-shadow: 5px 4px 20px #1B1F23;
+  border-radius: 10px;
+}
+
+/* end check */
+
+
+
 .card-product-coach-activity {
   background: transparent;
   overflow: hidden;
