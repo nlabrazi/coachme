@@ -1,0 +1,32 @@
+#reviews-new {
+
+  .star-rating img {
+    height: 25px;
+    widht: 25px;
+  }
+
+  .title-review {
+    text-align: center;
+    margin-top: 40px;
+    border-radius: 8px;
+    background-color: #DEDADD;
+  }
+
+  .content {
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+    padding: 32px 93px 0;
+    max-width: 800px;
+    margin: 40px auto;
+    background-color: #DEDADD;
+    color: #292F36;
+  }
+
+  .star-rating {
+    margin-bottom: 30px;
+  }
+
+  .btn {
+    margin-bottom: 30px;
+  }
+}

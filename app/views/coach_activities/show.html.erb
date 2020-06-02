@@ -24,35 +24,6 @@
             <h2> <%= @coach_activity.user.first_name %> </h2>
           </div>
           <%= rating_star(@bookings) %>
-          <div class="coach-rating">
-            <% booking_ratings = @bookings.each_with_object([0,0]) do |booking, result|  %>
-              <% booking.reviews.each do |review| %>
-                <%
-                result[0] += review.rating
-                result[1] += 1
-                %>
-              <% end %>
-            <% end %>
-            <%
-            average = if booking_ratings.last != 0
-                        booking_ratings.first / booking_ratings.last
-                      else
-                        "Ce coach n'a pas encore été noté"
-                      end
-            if average.is_a? Numeric
-              average.times do %>
-                <%= image_tag "dumbell.svg" %>
-              <% end
-              remaining = 5 - average
-              remaining.times do %>
-                <%= image_tag "dumbell_white.svg" %>
-              <% end
-            else %>
-              <%= average %>
-            <% end
-            %>
-
-          </div>
         </div>
       </div>
       <div class="speciality-coach">
@@ -114,7 +85,7 @@
                 <% end %>
                 <% less = 5 - review.rating.to_i  %>
                 <% less.times do  %>
-                  <%= image_tag "dumbell white.svg" %>
+                  <%= image_tag "dumbell_white.svg" %>
                 <% end %>
               </div>
             </div>
