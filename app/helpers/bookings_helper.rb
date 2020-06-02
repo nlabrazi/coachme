@@ -25,4 +25,18 @@ module BookingsHelper
       end
     end
   end
+
+  def booking_reviews(bookings)
+    booking_reviews = []
+    bookings.each do |booking|
+      booking.reviews.each do |review|
+        booking_reviews << review
+      end
+    end
+    if booking_reviews.count != 0
+      booking_reviews
+    else
+      "Cette activité n'a reçu aucun commentaires"
+    end
+  end
 end
