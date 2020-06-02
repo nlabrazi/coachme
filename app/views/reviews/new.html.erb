@@ -1,19 +1,22 @@
 <div class="container">
-  <div class="text-center m-4">
-    <h1>Postez un commentaire</h1>
+  <div class="title-review">
+    <div><%= cl_image_tag @booking.coach.photo.key, height: 218, width: 218, gravity: :face, name: "card-avatar-coach", id: "coach_avatar" %></div>
+    <h1>Exprimez-vous! Évaluez <%= @booking.coach.first_name %> </h1>
   </div>
-
-  <div id="star-rating" style="cursor: pointer;">
-    <img alt="1" src="https://image.flaticon.com/icons/png/512/2991/2991453.png" title="bad">&nbsp;
-    <img alt="2" src="https://image.flaticon.com/icons/png/512/2991/2991453.png" title="poor">&nbsp;
-    <img alt="3" src="https://image.flaticon.com/icons/png/512/2991/2991453.png" title="regular">&nbsp;
-    <img alt="4" src="https://image.flaticon.com/icons/png/512/2991/2991453.png" title="good">&nbsp;
-    <img alt="5" src="https://image.flaticon.com/icons/png/512/2991/2991453.png" title="gorgeous">
-    <input name="review[rating]" type="hidden">
+  <div class="content">
+    <h3>Note :</h3>
+    <div class="star-rating" style="cursor: pointer;">
+      <img alt="1" src="https://image.flaticon.com/icons/svg/2324/2324705.svg">
+      <img alt="2" src="https://image.flaticon.com/icons/svg/2324/2324705.svg">
+      <img alt="3" src="https://image.flaticon.com/icons/svg/2324/2324705.svg">
+      <img alt="4" src="https://image.flaticon.com/icons/svg/2324/2324705.svg">
+      <img alt="5" src="https://image.flaticon.com/icons/svg/2324/2324705.svg">
+      <input name="review[rating]" type="hidden">
+    </div>
+    <%= simple_form_for [@booking, @review] do |f| %>
+    <%= f.input :rating, collection: (1..5).to_a, label: "Notez ce cours" %>
+    <%= f.input :content, :as => :text, :input_html => { 'rows' => 6, 'cols' => 10 }, label: "Votre avis", placeholder: "Partagez votre expérience en toute honnêteté..." %>
+    <%= f.button :submit,  "Postez votre commentaire", class: 'btn-orange'  %>
+    <% end %>
   </div>
- <%= simple_form_for [@booking, @review] do |f| %>
-      <%= f.input :content, label: "Comment s'est passé votre cours?", placeholder: "Votre message" %>
-      <%= f.input :rating, collection: (1..5).to_a, label: "Notez ce cours" %>
-      <%= f.submit "Postez votre commentaire" %>
-      <% end %>
 </div>
