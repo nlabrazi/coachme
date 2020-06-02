@@ -1,7 +1,7 @@
 // Specific CSS for your home-page
 
 #pages-home {
-
+  
   h1 {
     margin: 0px 0 30px 0 ;
     font-size: 26px;
@@ -35,13 +35,74 @@
   }
 
   .background {
-    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url("https://images.unsplash.com/photo-1534258936925-c58bed479fcb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80");
+    height: 140vh;
+    background-image: url(homepage.png);
     background-size: cover;
-  }
+    background-position: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+   }
+
+ p {
+  color: white;
 }
 
-.browse {
-  margin-top: 80px;
-  text-align: center;
+.home_prez {
+  height: 60px;
 }
+
+.nav-item .btn-yellow {
+  height: 100%;
+}
+
+.headline-infos {
+  display: block;
+  text-align: left;
+}
+
+.headline-infos h1 {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 80px;
+}
+
+.headline-infos h3 {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 37px;
+  line-height: 45px;
+  padding-bottom: 40px;
+}
+
+.headline .headline-infos {
+}
+
+.arguments {
+  background-color: #3D3D3D;
+  color: #E5E5E5;
+  columns: 3;
+  column-rule-width: 4em;
+  display: flex;
+  justify-content: space-around;
+  margin: 10vh 10vw;
+}
+
+.arg-1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 30px;
+}
+}
+
+//.browse {
+  //margin-top: 80px;
+  //text-align: center;
+//}
 
