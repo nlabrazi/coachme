@@ -8,7 +8,7 @@
   }
 
   .search-coach {
-    margin-top: 30px;
+    margin-top: 20px;
   }
 
   .search-coach input {
@@ -30,6 +30,12 @@
 
   .cards-product {
     width: 660px;
+    height: 75vh;
+    overflow-y: scroll;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
   }
 
   .cards-product a {
