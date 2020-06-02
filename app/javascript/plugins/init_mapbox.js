@@ -16,7 +16,14 @@ const initMapbox = () => {
     markers.forEach((marker) => {
       const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
 
-      const newMarker = new mapboxgl.Marker()
+      // change markers
+      const element = document.createElement('div');
+      element.className = 'marker';
+      element.style.backgroundImage = `url('${marker.image_url}')`;
+      element.style.backgroundSize = 'contain';
+      element.style.width = '20px';
+      element.style.height = '20px';
+      const newMarker = new mapboxgl.Marker(element)
         .setLngLat([ marker.lng, marker.lat ])
         .setPopup(popup)
         .addTo(map);
@@ -29,6 +36,7 @@ const initMapbox = () => {
       newMarker.getElement().addEventListener('mouseleave', (e) => toggleCardHighlighting(e) );
       // try to add a CLICK Event to link to goto card
       newMarker.getElement().addEventListener('click', (e) => toggleCardHighlighting(e) );
+
     });
 
     fitMapToMarkers(map, markers);
