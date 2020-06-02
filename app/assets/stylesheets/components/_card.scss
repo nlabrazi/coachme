@@ -1,6 +1,6 @@
 .card-product {
   overflow: hidden;
-  //height: 120px;
+  height: 105px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
@@ -34,13 +34,18 @@
 }
 
 .card-product-infos h2 {
-  font-size: 40px;
+  font-size: 25px;
+  color: #E5E5E5;
 }
 
 .card-price h3 {
-  color: white;
+  color: #FF9900;
+  font-size: 30px;
 }
 
+
+
+/* to check car noms déjà use peut-être */
 
 .card-container {
   display: block;
@@ -83,8 +88,7 @@
   border-radius: 10px;
 }
 
-
-
+/* end check */
 
 
 
