@@ -1,20 +1,25 @@
-<div class="container">
+<div class="container-room">
+  <div>
+  </div>
   <div class="new_message">
     <%= simple_form_for [@room, Message.new] do |f| %>
-      <%= f.input :content %>
-      <%= f.submit %>
+    <%= f.input :content, input_html: {class: "input-message"}, placeholder:"Que souhaitez-vous demander au coach ?", label: false %>
+    <%= f.submit class: "input-btn" %>
     <% end %>
   </div>
   <div id="messages" data-room-id="<%= @room.id %>">
     <% @room.messages.each do |message| %>
-      <div class="message-container" id="message-<%= message.id %>">
-        <i class="author">
-          <span><%= message.user.email %></span>
-          <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
-        </i>
-        <p><%= message.content %></p>
+    <div class="message-container" id="message-<%= message.id %>">
+      <p><%= message.content %></p>
+      <i class="author">
+        <span><%= message.user.email %></span>
+        <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+      </i>
+
+      <div>
+        <%= cl_image_tag current_user.photo.key, id: "chat-avatar", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
       </div>
+    </div>
     <% end %>
   </div>
 </div>
-

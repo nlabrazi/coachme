@@ -1,0 +1,29 @@
+.container-room {
+  border-radius: 5px;
+  padding: 10px;
+  margin: 0 auto;
+  height: 100vh;
+  width: 100vw;
+  overflow-y: scroll;
+}
+
+.new_message {
+  height: 60px;
+  width: 500px;
+  min-width: 600px;
+  display: inline-flex;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.input-message {
+  height: 100%;
+  width: 300px;
+}
+
+.input-btn {
+  height: 100%;
+}
+
+#messages {
+  width: 500px;
+}
