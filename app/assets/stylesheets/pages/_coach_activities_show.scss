@@ -24,7 +24,7 @@
   }
 
   .speciality-coach {
-    margin-top: 50px;
+    margin-top: 20px;
     margin-left: 45px;
   }
 
@@ -165,7 +165,14 @@
     font-weight: 300;
     font-size: 20px;
     color: #282828 !important;
+    border-top: none;
+    border-left: none;
+    border-right: none;
     border-bottom: 2px solid #282828;
+  }
+
+  .form-control::placeholder {
+    color: #282828;
   }
 
   .button-form {
@@ -178,6 +185,51 @@
     border-radius: 10px;
     font-family: Montserrat;
   }
+
+  .row-review-count {
+    display: flex;
+  }
+
+  .row-review-count h2 {
+    padding-right: 15px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 35px;
+    color: #FF9900
+  }
+
+    .row-review-count h3 {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 35px;
+    color: #E5E5E5
+  }
+
+  .reviews p {
+    font-family: Montserrat;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 24px;
+    color: #E5E5E5;
+  }
+
+  .review-header {
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .review-map-container {
+    padding-top: 320px;
+    padding-bottom: 50px;
+    margin-block-start: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
 }
 
 
