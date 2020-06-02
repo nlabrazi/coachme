@@ -1,24 +1,19 @@
-<div class="container">
-  <div>
-    <h1> Votre réservation : <%= @booking.coach_activity.activity.name %></h1>
-  </div>
-  <div class="row">
-    <div class="col-12 d-flex">
-      <div class="m-3">
+<div class="content">
+  <h2> </h2>
+      <div class="coach_avatar">
         <%= cl_image_tag @booking.coach.photo.key, height: 200, width: 200, gravity: :face, id: "coach_avatar", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
       </div>
       <div class="m-3">
+        <%= rating_star(@booking.coach_activity.bookings) %>
         <p> <%= @booking.coach_activity.activity.category %> </p>
         <p> Avec <%= @booking.coach.first_name %> </p>
         <p> Date <%= @booking.start_time %> </p>
         <p> Montant à payer <%= @booking.sum_price %> € </p>
       </div>
-    </div>
   </div>
   <div class="row">
     <div class="col">
       <%= link_to "Votre Dashboard", dashboard_path, class: "btn btn-primary btn-block", method: :get %>
     </div>
   </div>
-</div>
 
