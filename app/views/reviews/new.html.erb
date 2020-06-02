@@ -6,17 +6,49 @@
   <div class="content">
     <h3>Note :</h3>
     <div class="star-rating" style="cursor: pointer;">
-      <img alt="1" src="https://image.flaticon.com/icons/svg/2324/2324705.svg">
-      <img alt="2" src="https://image.flaticon.com/icons/svg/2324/2324705.svg">
-      <img alt="3" src="https://image.flaticon.com/icons/svg/2324/2324705.svg">
-      <img alt="4" src="https://image.flaticon.com/icons/svg/2324/2324705.svg">
-      <img alt="5" src="https://image.flaticon.com/icons/svg/2324/2324705.svg">
+
+      <i class="far fa-star" id="1"></i>
+      <i class="far fa-star" id="2"></i>
+      <i class="far fa-star" id="3"></i>
+      <i class="far fa-star" id="4"></i>
+      <i class="far fa-star" id="5"></i>
+
+<!--       <img class="img-rating" id="1" src="/assets/dumbell_white.svg">
+      <img class="img-rating" id="2" src="/assets/dumbell_white.svg">
+      <img class="img-rating" id="3" src="/assets/dumbell_white.svg">
+      <img class="img-rating" id="4" src="/assets/dumbell_white.svg">
+      <img class="img-rating" id="5" src="/assets/dumbell_white.svg"> -->
+
+<!--       <%#= image_tag "dumbell_white.svg", class: "img-rating", id: "1" %>
+      <%#= image_tag "dumbell_white.svg", class: "img-rating", id: "2" %>
+      <%#= image_tag "dumbell_white.svg", class: "img-rating", id: "3" %>
+      <%#= image_tag "dumbell_white.svg", class: "img-rating", id: "4" %>
+      <%#= image_tag "dumbell_white.svg", class: "img-rating", id: "5" %> -->
+
       <input name="review[rating]" type="hidden">
     </div>
     <%= simple_form_for [@booking, @review] do |f| %>
-    <%= f.input :rating, collection: (1..5).to_a, label: "Notez ce cours" %>
+    <%= f.input :rating, as: :hidden %>
     <%= f.input :content, :as => :text, :input_html => { 'rows' => 6, 'cols' => 10 }, label: "Votre avis", placeholder: "Partagez votre expérience en toute honnêteté..." %>
     <%= f.button :submit,  "Postez votre commentaire", class: 'btn-orange'  %>
     <% end %>
   </div>
 </div>
+
+<script>
+  const stars = document.querySelectorAll(".far");
+  const rating_input = document.getElementById('review_rating');
+  stars.forEach(star => {
+    star.addEventListener("click", (event) => {
+      stars.forEach(star => {
+        if (parseInt(star.id,10) <= (parseInt(event.target.id,10)) ) {
+          star.style.color = "orange";
+        } else {
+          star.style.color = "grey";
+        }
+        console.log(star.attributes);
+      });
+      rating_input.value = event.target.id;
+    })
+  })
+</script>
