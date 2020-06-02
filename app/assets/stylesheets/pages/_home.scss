@@ -2,18 +2,6 @@
 
 #pages-home {
 
-  h1 {
-    margin: 0px 0 30px 0 ;
-    font-size: 26px;
-    line-height: 34px;
-    font-family: "Montserrat", arial, sans-serif;
-    font-weight: 700;
-    color: white;
-    text-align: center;
-    position: relative;
-    padding-top: 30px;
-  }
-
   h3 {
     color: white;
   }
@@ -67,19 +55,19 @@
     font-style: normal;
     font-weight: bold;
     font-size: 80px;
+    color: #1B1F23;
   }
 
   .headline-infos h3 {
     font-family: "Montserrat";
     font-style: normal;
-    font-weight: 500;
+    font-weight: 300;
     font-size: 37px;
     line-height: 45px;
     padding-bottom: 40px;
+    color: #1B1F23;
   }
 
-  .headline .headline-infos {
-  }
 
   .arguments {
     background-color: #3D3D3D;
@@ -101,6 +89,63 @@
     flex-direction: column;
     padding: 30px;
   }
+
+  .tendances {
+    color: white;
+  }
+
+  .card-home {
+    width: 290px;
+    height: 360px;
+    border-radius: 10px;
+    box-shadow: 5px 4px 20px #1B1F23;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .cards-home {
+    width: 100vh;
+    height: 360px;
+    box-shadow: 5px 4px 20px #1B1F23;
+    overflow-x: scroll;
+    display: flex;
+    border-radius: 10px;
+  }
+
+  .cards-home a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+  }
+
+  .arrow {
+    width: 25px;
+    height: 25px;
+  }
+
+  .check {
+    width: 100px;
+    height: 100px;
+  }
+
+  .tendances {
+    margin-top: -185px;
+    margin-left: 900px;
+  }
+
+  #card-image-home {
+    width: 100%;
+    object-fit: cover;
+    height: 360px;
+    filter: grayscale(1);
+    position: relative;
+    border-radius: 10px;
+  }
+
+  .card-home-infos {
+    height: 10px;
+  }
+
 }
 
 //.browse {
