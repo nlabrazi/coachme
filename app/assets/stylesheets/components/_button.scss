@@ -5,6 +5,11 @@
   font-size: 30px;
   line-height: 37px;
   color: #000000;
+  
+.btn-orange {
+  background-color: #FF9900;
+  color: white;
+  border-radius: 5px;
   padding: 10px 10px;
   text-align: center;
   border-top-right-radius: 10px;
@@ -15,15 +20,15 @@
   height: 40px;
 }
 
-.btn-yellow:hover {
+.btn-orange:hover {
   box-shadow: 0 0 10px white;
 }
 
-a.btn-yellow {
+a.btn-orange {
   text-decoration: none;
 }
 
-a.btn-yellow:hover {
+a.btn-orange:hover {
   color: white;
 }
 

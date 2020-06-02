@@ -1,8 +1,40 @@
 // Specific CSS for your home-page
 
 #pages-home {
+  
+  h1 {
+    margin: 0px 0 30px 0 ;
+    font-size: 26px;
+    line-height: 34px;
+    font-family: "Montserrat", arial, sans-serif;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+    position: relative;
+    padding-top: 30px;
+  }
 
-   .background {
+  h3 {
+    color: white;
+  }
+
+  p {
+    color: white;
+  }
+
+  .home_prez {
+    height: 60px;
+  }
+
+  .home-politik {
+    margin-top: 100px;
+  }
+
+  .nav-item .btn-orange {
+    height: 100%;
+  }
+
+  .background {
     height: 140vh;
     background-image: url(homepage.png);
     background-size: cover;

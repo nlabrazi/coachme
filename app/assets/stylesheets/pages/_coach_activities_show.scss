@@ -1,0 +1,235 @@
+#coach_activities-show {
+
+  .info-coach {
+    padding-top: 35px;
+    padding-left: 35px;
+  }
+
+  .coach-name h2 {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 35px;
+    line-height: 37px;
+    color: #E5E5E5
+  }
+
+  .coach-name-rating {
+    padding-top: 90px;
+    padding-left: 25px;
+  }
+
+  .coach-rating img {
+    width: 20px;
+  }
+
+  .speciality-coach {
+    margin-top: 20px;
+    margin-left: 45px;
+  }
+
+  .specialities h3 {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 25px;
+    line-height: 37px;
+    color: #E5E5E5
+  }
+
+  .button-specialities {
+    width: 155px;
+    height: 50px;
+    background: #FF9900;
+    border-radius: 24px;
+    margin-left: 15px;
+    display: flex;
+    text-align: center;
+    place-content: center
+  }
+
+    .button-specialities:hover {
+    background: #282828;
+  }
+
+  .button-specialities a {
+    color: #282828;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 24px;
+    place-self: center;
+  }
+
+    .button-specialities a:hover {
+    text-decoration: none;
+    color: #FF9900;
+  }
+
+  .row-button-specialities {
+    display: flex;
+  }
+
+  .activity {
+    width: 495px;
+    height: 330px;
+    padding-top: 130px;
+    padding-left: 65px;
+  }
+
+  .activity h3 {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 29px;
+
+    color: #E5E5E5
+  }
+
+  .activity p {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    color: #E5E5E5;
+  }
+
+  .card-booking-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+  }
+
+  .activity-price {
+    display: flex;
+  }
+
+  .activity-price h1 {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 45px;
+    color: #282828;
+  }
+
+  .activity-price h3 {
+    place-self: flex-end;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 30px;
+    color: #282828;
+  }
+
+  .activity-name h2 {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    color: #282828
+  }
+
+  .form-wrapper {
+    margin-block-start: 15px;
+    margin-left: 45px;
+    margin-right: 45px;
+  }
+
+  .string {
+    background: #FF9900;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    color: #282828
+  }
+
+    .integer {
+    background: #FF9900;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    color: #282828
+  }
+
+  .form-control{
+    background: #FF9900;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    color: #282828 !important;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid #282828;
+  }
+
+  .form-control::placeholder {
+    color: #282828;
+  }
+
+  .button-form {
+    width: 325px;
+    height: 70px;
+    margin-top: 20px;
+    margin-left: 60px;
+    border: 2px solid #000000;
+    box-sizing: border-box;
+    border-radius: 10px;
+    font-family: Montserrat;
+  }
+
+  .row-review-count {
+    display: flex;
+  }
+
+  .row-review-count h2 {
+    padding-right: 15px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 35px;
+    color: #FF9900
+  }
+
+    .row-review-count h3 {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 35px;
+    color: #E5E5E5
+  }
+
+  .reviews p {
+    font-family: Montserrat;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 24px;
+    color: #E5E5E5;
+  }
+
+  .review-header {
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .review-map-container {
+    padding-top: 320px;
+    padding-bottom: 50px;
+    margin-block-start: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+}
+
+

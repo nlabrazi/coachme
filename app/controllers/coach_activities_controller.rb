@@ -5,7 +5,7 @@ class CoachActivitiesController < ApplicationController
     if params[:query]
       @coach_activities = @coach_activities.search_by_activity(params[:query])
           #test markers
-          @users = User.geocoded
+          @users = User.coach.geocoded
           @markers = @users.map do |user|
             {
               lat: user.latitude,
