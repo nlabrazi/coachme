@@ -22,7 +22,7 @@
   </div>
 
   <div class="cards-home">
-    <% @coach_activities.each do |coach_activity| %>
+    <% @coach_activities.first(10).each do |coach_activity| %>
     <%= link_to coach_activity_path(coach_activity) do %>
     <div class="card-home">
       <%= cl_image_tag coach_activity.user.photo.key, id: "card-image-home" %>
@@ -39,18 +39,18 @@
   <div class="arguments">
     <div class="arg-1">
       <%= image_tag "check.svg", alt: "alttext", :class => "check" %>
-      <p class="mb-3">J'adore le veau</p>
-      <p class="text-center">Nous sommes ici pour vous proposer les meilleurs coach dans leur domaines.</p>
+      <p class="mb-3 title-arg">Coachs élevés en plein air</p>
+      <p class="text-center title-arg-light">Nos coachs sont soigneusement triés sur le volet par notre merveilleuse équipe.</p>
     </div>
     <div class="arg-1">
       <%= image_tag "check.svg", alt: "alttext", :class => "check" %>
-      <p class="mb-3">J'adore le veau</p>
-      <p class="text-center">Nous sommes ici pour vous proposer les meilleurs coach dans leur domaines.</p>
+      <p class="mb-3 title-arg">Coachs élevés en plein air</p>
+      <p class="text-center title-arg-light">Nous sommes ici pour vous proposer les meilleurs coach dans leur domaines.</p>
     </div>
     <div class="arg-1">
       <%= image_tag "check.svg", alt: "alttext", :class => "check" %>
-      <p class="mb-3">J'adore le veau</p>
-      <p class="text-center">Nous sommes ici pour vous proposer les meilleurs coach dans leur domaines.</p>
+      <p class="mb-3 title-arg">Coachs élevés en plein air</p>
+      <p class="text-center title-arg-light">Nous sommes ici pour vous proposer les meilleurs coach dans leur domaines.</p>
     </div>
   </div>
 
