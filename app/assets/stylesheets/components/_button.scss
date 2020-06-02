@@ -1,9 +1,18 @@
 .btn-yellow {
-  background-color: #AD2E24;
-  color: white;
-  border-radius: 5px;
+  background-color: #FF9900;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 30px;
+  line-height: 37px;
+  color: #000000;
   padding: 10px 10px;
   text-align: center;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin-left:-10px;
+  border: none;
+  width: 300px;
+  height: 40px;
 }
 
 .btn-yellow:hover {
