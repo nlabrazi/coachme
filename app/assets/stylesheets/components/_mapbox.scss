@@ -22,4 +22,15 @@
     width: 50%;
     position: sticky;
     top: 0;
+
+    .markers {
+      background-image: url("https://image.flaticon.com/icons/png/512/2991/2991453.png");
+      backgroud-size: cover;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
   }
+
+

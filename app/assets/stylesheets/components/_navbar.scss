@@ -26,7 +26,7 @@
 }
 
 .navbar {
-  background-color: #181a1b;
+  background-color: transparent;
   height: 50px;
   top: 0;
 }
@@ -44,11 +44,11 @@
 }
 
 .navbar-nav .nav-item a.nav-link:hover {
-  color: #AD2E24;
+  color: #FF9900;
 }
 
 .navbar a:hover {
-  color: #AD2E24;
+  color: #FF9900;
 }
 
 .navbar-nav .nav-item a.nav-link {

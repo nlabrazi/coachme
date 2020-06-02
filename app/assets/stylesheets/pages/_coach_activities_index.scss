@@ -4,7 +4,7 @@
   .card-product {
     margin: 15px 0 15px 0;
     border-radius: 15px;
-    background-color: #292F36;
+    background-color: #3D3D3D;
   }
 
   .search-coach {
@@ -12,10 +12,24 @@
   }
 
   .search-coach input {
-    height: 60px;
-    width: 100%;
+    height: 45px;
+    width: 375px;
     font-size: 20px;
-    border-radius: 4px;
+    background: #F2F2F2;
+    border-radius: 10px 0px 0px 10px;
+  }
+
+  .search-coach input[type="submit"] {
+    border-radius: 0px 10px 10px 0px;
+    height: 45px;
+    width: 160px;
+    background: #FF9900;
+    color: #282828;
+    -webkit-appearance: none;
+  }
+
+  .cards-product {
+    width: 660px;
   }
 
   .cards-product a {
@@ -35,12 +49,31 @@
 
   .list-coaches {
     padding: 30px;
+    margin-left: 30px;
     width: 50%;
   }
 
   .active-card {
-    background-color: #AD2E24;
+    background-color: #FF9900;
     transform: scale(1.03);
     transition: ease 0.5s;
+    color: #292F36;
   }
+
+  .active-card h2 {
+    color: #292F36;
+  }
+
+  .active-card h3 {
+    color: #292F36;
+  }
+
+  .active-card .card-price {
+    color: #292F36;
+  }
+
+  .mapboxgl-canvas {
+    width: 570px;
+  }
+
 }
