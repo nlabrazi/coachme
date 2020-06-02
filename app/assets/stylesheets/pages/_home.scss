@@ -120,6 +120,11 @@
     overflow-x: scroll;
     display: flex;
     border-radius: 10px;
+    scrollbar-width: none;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
   }
 
   .cards-home a {
@@ -177,9 +182,4 @@
   }
 
 }
-
-//.browse {
-  //margin-top: 80px;
-  //text-align: center;
-//}
 
