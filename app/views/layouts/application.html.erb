@@ -16,7 +16,7 @@
 <body id="<%= controller.controller_name %>-<%= controller.action_name %>" >
   <%= render 'shared/navbar' %>
   <%= render 'shared/flashes' %>
-  <div class="content-wrapper"><%= yield %></div>
+  <%= yield %>
   <%= render 'shared/footer' %>
 </body>
 </html>
