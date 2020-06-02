@@ -11,5 +11,5 @@
         console.log(star.attributes);
       });
       rating_input.value = event.target.id;
-    })
-  })
+    });
+  });
