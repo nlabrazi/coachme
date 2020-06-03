@@ -75,7 +75,9 @@
           <h3> commentaires </h3>
         <% end %>
       </div>
-
+        <% if coach_activity_reviews.is_a? String %>
+        <h3> Soyez le premier à commenter </h3>
+        <% else %>
         <% coach_activity_reviews.each do |review| %>
           <div class="reviews">
             <div class="review-header">
@@ -93,6 +95,7 @@
             <div class="review-content">
               <p> <%= review.content %> </p>
             </div>
+              <% end %>
               <% end %>
           </div>
 
