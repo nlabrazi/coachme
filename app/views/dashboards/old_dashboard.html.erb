@@ -1,26 +1,24 @@
-<div class="dashboard">
-  <div class="nav flex-column nav-pills col-md-2" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-    <a class="nav-link active top" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Mes Activités</a>
-    <a class="nav-link middle" id="v-my-bookings-tab" data-toggle="pill" href="#v-my-bookings" role="tab" aria-controls="v-my-bookings" aria-selected="false">Discuter avec mes coachs</a>
-    <a class="nav-link bottom" id="v-my-deals-tab" data-toggle="pill" href="#v-my-deals" role="tab" aria-controls="v-my-deals" aria-selected="false">Votre Compte</a>
-  </div>
-
-
-<!-- Coach View -->
-<div class="container">
-  <% if current_user.coach? %>
-  <ul>
-    <% current_user.coach_activities.map(&:bookings).flatten.each do |booking| %>
-    <li>
-      <%= booking.coach_activity.activity.name %>
-      <%= link_to "chat", room_path(booking.room) %>
-    </li>
+    <% if current_user.coach? %>
+    <div class="row">
+      <% @coach_activities.each do |coach_activity| %>
+      <div>
+        <p> <%= "#{coach_activity.activity.name} du #{coach_activity.start_date} au #{coach_activity.end_date}. Prix : #{coach_activity.price} €" %> </p>
+        <%= link_to "voir ce cours", coach_activity_path(coach_activity) %>
+      </div>
+      <% coach_activity.bookings.each do |booking| %>
+      <div class="booking-container-<%= booking.id %>">
+        <%= render "bookings/infos", coach_activity: coach_activity, booking: booking %>
+        <%= link_to "Envoyer un message", room_path(booking.room), class: "btn btn-primary" %>
+      </div>
+      <% end %>
+      <% end %>
+    </div>
+    <div>
+      <%= link_to "créez votre cours", new_coach_activity_path  %>
+    </div>
     <% end %>
-  </ul>
-  <% end %>
-</div>
 
-<!-- User View -->
+  <!-- User View -->
   <div class= "container">
     <div class="dashboard-header">
       <div class="dashboard-header-hello">
@@ -77,4 +75,4 @@
     <% end %>
   <% end %>
   </div>
-  </div>
+</div>
