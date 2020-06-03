@@ -1,12 +1,9 @@
 <div class="dashboard">
   <div class="nav flex-column nav-pills col-md-2" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-    <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Accueil</a>
-    <a class="nav-link" id="v-my-bookings-tab" data-toggle="pill" href="#v-my-bookings" role="tab" aria-controls="v-my-bookings" aria-selected="false">Historique</a>
-    <a class="nav-link" id="v-my-deals-tab" data-toggle="pill" href="#v-my-deals" role="tab" aria-controls="v-my-deals" aria-selected="false">Paiements</a>
-    <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Paramètres</a>
+    <a class="nav-link active top" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Mes Activités</a>
+    <a class="nav-link middle" id="v-my-bookings-tab" data-toggle="pill" href="#v-my-bookings" role="tab" aria-controls="v-my-bookings" aria-selected="false">Discuter avec mes coachs</a>
+    <a class="nav-link bottom" id="v-my-deals-tab" data-toggle="pill" href="#v-my-deals" role="tab" aria-controls="v-my-deals" aria-selected="false">Votre Compte</a>
   </div>
-
-  <div class= "container">
 
     <!-- Coach View -->
     <% if current_user.coach? %>
@@ -28,18 +25,64 @@
     </div>
     <% end %>
 
-    <!-- User View -->
-    <% if current_user.coach? == false %>
-    <% @bookings.each do |booking| %>
-    <div>
-      <p> <%= "#{booking.coach_activity.activity.name} le #{booking.start_time} avec #{booking.coach.first_name} || Status : #{booking.status}" %> </p>
-      <%= link_to "voir ce cours", coach_activity_bookings_url(booking.coach_activity, booking_id: booking.id) %>
-    </div>
-    <div>
-      <%= link_to "Donnez votre avis", new_booking_review_path(booking), class: "btn btn-primary", id: "add-button" %>
-    </div>
-    <% end %>
-    <% end %>
+  <!-- User View -->
+  <div class= "container">
+    <div class="dashboard-header">
+      <div class="dashboard-header-hello">
+        <h2> Bonjour <%= current_user.first_name %> ! </h2>
+      </div>
+      <div class="dashboard-header-infos">
+        <h3> Il y a <%= @bookings.count %> activités en cours </h3>
+      </div>
 
+    </div>
+  <% if current_user.coach? == false %>
+    <% @bookings.each do |booking| %>
+
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="content">
+          <div class="coach_avatar">
+            <div class="avatar-img">
+              <%= cl_image_tag booking.coach.photo.key, height: 200, width: 200, gravity: :face, id: "coach_avatar", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            </div>
+            <div class="coach-infos">
+              <div class="coach-name">
+                <h2> <%= booking.coach.first_name %> </h2>
+              </div>
+              <div class="coach-rating">
+                <%= rating_star(booking.coach_activity.bookings) %>
+              </div>
+              <div class="activity-price">
+                <h2> <%= booking.coach_activity.activity.name %> </h2>
+                <h2> <strong><%= booking.sum_price %></strong> €/h </h2>
+              </div>
+            </div>
+          </div>
+          <div class="booking-infos">
+            <div class="start-date">
+              <h3>Début du cours:</h3>
+              <h3> <%= booking.start_time.strftime("%d/%m/%Y-%H:%M") %> </h3>
+            </div>
+            <div class="end-date">
+              <h3>Fin du cours:</h3>
+              <h3> <%= booking.start_time.strftime("%d/%m/%Y-%H:%M") %> </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <%= link_to "Annuler le cours", coach_activity_booking_path(booking.coach_activity, booking), method: :delete, class: "button-specialities" %>
+        <% if booking.room != nil %>
+          <%= link_to "Envoyer un message", room_path(booking.room), class: "button-specialities" %>
+        <% end %>
+        <%= link_to "Donnez votre avis", new_booking_review_path(booking), class: "button-specialities" %>
+      </div>
+    </div>
+    <% end %>
+  <% end %>
   </div>
 </div>
+
+
+
