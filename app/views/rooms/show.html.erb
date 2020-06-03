@@ -1,12 +1,5 @@
 <div class="container-room">
-  <div>
-  </div>
-  <div class="new_message">
-    <%= simple_form_for [@room, Message.new] do |f| %>
-    <%= f.input :content, input_html: {class: "input-message"}, placeholder:"Que souhaitez-vous demander au coach ?", label: false %>
-    <%= f.submit class: "input-btn" %>
-    <% end %>
-  </div>
+
   <div id="messages" data-room-id="<%= @room.id %>">
     <% @room.messages.each do |message| %>
     <div class="message-container" id="message-<%= message.id %>">
@@ -22,4 +15,12 @@
     </div>
     <% end %>
   </div>
+
+  <div class="new_message">
+    <%= simple_form_for [@room, Message.new] do |f| %>
+<%= f.input :content, :as => :text, :input_html => { 'rows' => 6, 'cols' => 10 }, class: "input-btn", label: "Votre avis", placeholder: "Partagez votre expérience en toute honnêteté..." %>
+    <%= f.submit class: "input-btn" %>
+    <% end %>
+  </div>
+
 </div>
