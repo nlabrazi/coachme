@@ -1,26 +1,24 @@
 <div class="container-room">
-
-  <div id="messages" data-room-id="<%= @room.id %>">
-    <% @room.messages.each do |message| %>
-    <div class="message-container" id="message-<%= message.id %>">
-      <p><%= message.content %></p>
-      <i class="author">
-        <span><%= message.user.email %></span>
-        <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
-      </i>
-
-      <div>
-        <%= cl_image_tag current_user.photo.key, id: "chat-avatar", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+  <div class="chat">
+    <div id="messages" data-room-id="<%= @room.id %>">
+      <% @room.messages.each do |message| %>
+      <div class="message-container" id="message-<%= message.id %>">
+        <p><%= message.content %></p>
+        <i class="author">
+          <span><%= message.user.email %></span>
+          <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+        </i>
+        <div>
+          <%= cl_image_tag current_user.photo.key, id: "chat-avatar", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        </div>
       </div>
+      <% end %>
     </div>
-    <% end %>
+    <div class="new_message">
+      <%= simple_form_for [@room, Message.new], remote: true do |f| %>
+      <%= f.input :content, :as => :text, :wrapper_html => { class: "input-text" }, label: false, placeholder: "Que souhaitez-vous demander au coach ?" %>
+      <%= f.submit class: "input-btn" %>
+      <% end %>
+    </div>
   </div>
-
-  <div class="new_message">
-    <%= simple_form_for [@room, Message.new] do |f| %>
-<%= f.input :content, :as => :text, :input_html => { 'rows' => 6, 'cols' => 10 }, class: "input-btn", label: "Votre avis", placeholder: "Partagez votre expérience en toute honnêteté..." %>
-    <%= f.submit class: "input-btn" %>
-    <% end %>
-  </div>
-
 </div>
