@@ -1,0 +1,67 @@
+#create_bookings-show {
+    margin-left: 14px;
+
+  .coach_name {
+    margin-bottom: 30px;
+  }
+
+  .coach-rating img {
+    margin-right: 8px;
+  }
+
+  .coach_avatar {
+    display: flex;
+    margin-right: 25px;
+  }
+
+  .coach-infos {
+    margin-left: 15px;
+  }
+
+  .avatar-img {
+    margin-top: -62px;
+    margin-right: 10px;
+  }
+
+  .activity-price {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .activity-price h2 {
+    margin-right: 70px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 40px;
+    color: #FF9900;
+  }
+
+  .start-date{
+    margin-left: 30px;
+    margin-top: 25px;
+  }
+
+  .end-date {
+    margin-left: 30px;
+  }
+
+  .start-date h3 {
+    display: inline-block;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    color: #FF9900;
+  }
+
+  .end-date h3 {
+    display: inline-block;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    color: #FF9900;
+  }
+
+}

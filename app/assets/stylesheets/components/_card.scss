@@ -6,6 +6,7 @@
   display: flex;
   align-items: center;
   padding: 20px;
+  width: 660px;
 }
 
 .card-product img {
@@ -90,6 +91,10 @@
 
 /* end check */
 
+.card-product-infos img {
+  width: 20px;
+  height: 20px;
+}
 
 
 .card-product-coach-activity {

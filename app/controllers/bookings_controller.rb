@@ -34,7 +34,15 @@ class BookingsController < ApplicationController
   end
 
   def update
+  end
 
+  def destroy
+    @booking = Booking.find(params[:id])
+    @coach_activity = @booking.coach_activity
+    @room = @booking.room
+    @room.destroy
+    @booking.destroy
+    redirect_to coach_activity_path(@coach_activity)
   end
 
   def validate

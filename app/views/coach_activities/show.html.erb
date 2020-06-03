@@ -67,15 +67,16 @@
   <div class="review-map-container">
     <div class="review-count">
       <div class="row-review-count">
-        <h2> <%= @coach_activity.bookings.count %>  </h2>
-        <h3> commentaires </h3>
+        <% coach_activity_reviews = booking_reviews(@bookings) %>
+        <% if coach_activity_reviews.is_a? String %>
+          <h3> <%= coach_activity_reviews %>  </h3>
+        <% else %>
+          <h2> <%= coach_activity_reviews.count %>  </h2>
+          <h3> commentaires </h3>
+        <% end %>
       </div>
 
-        <% @coach_activity.bookings.each do |booking| %>
-          <% if booking.reviews.empty? %>
-            <h3> Soyez le premier à commenter cette activité ! </h3>
-          <% end  %>
-        <% booking.reviews.each do |review|  %>
+        <% coach_activity_reviews.each do |review| %>
           <div class="reviews">
             <div class="review-header">
               <p> <%= review.booking.user.first_name %> </p>
@@ -93,7 +94,6 @@
               <p> <%= review.content %> </p>
             </div>
               <% end %>
-              <% end %>
           </div>
 
     </div>
@@ -110,17 +110,7 @@
 <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header">
-        <span type="button" class="button-close" data-dismiss="modal" aria-label="Close">X</span>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="button-specialities" data-dismiss="modal">Annuler</button>
-        <button type="button" class="button-specialities">Modifier</button>
-        <button type="button" class="button-specialities">Voir dans mon Dashboard</button>
-      </div>
+      ...
     </div>
   </div>
 </div>

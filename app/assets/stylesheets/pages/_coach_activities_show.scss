@@ -17,6 +17,8 @@
   .coach-name-rating {
     padding-top: 90px;
     padding-left: 25px;
+    font-style: italic;
+    color: #FF9900;
   }
 
   .coach-rating img {
@@ -227,6 +229,7 @@
   .modal-content {
     background-color: #3D3D3D;
     border-radius: 10px;
+    width: 720px
   }
 
   .modal-header {
