@@ -2,6 +2,12 @@ class CoachActivitiesController < ApplicationController
 
   def index
     @coach_activities = CoachActivity.all
+    if params[:order] == "price"
+      @coach_activities = @coach_activities.order(price: :asc)
+    elsif params[:order] == "rating"
+      @coach_activities = @coach_activities.order(rating: :desc)
+    end
+
     if params[:query]
       @coach_activities = @coach_activities.search_by_activity(params[:query])
           #test markers
