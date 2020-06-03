@@ -5,22 +5,25 @@
     <a class="nav-link bottom" id="v-my-deals-tab" data-toggle="pill" href="#v-my-deals" role="tab" aria-controls="v-my-deals" aria-selected="false">Votre Compte</a>
   </div>
 
-
-<!-- Coach View -->
-<div class="container">
-  <% if current_user.coach? %>
-  <ul>
-    <% current_user.coach_activities.map(&:bookings).flatten.each do |booking| %>
-    <li>
-      <%= booking.coach_activity.activity.name %>
-      <%= link_to "chat", room_path(booking.room) %>
-    </li>
+  <!-- Coach View -->
+  <div class="container">
+    <div class="row">
+      <% if current_user.coach? %>
+      <ul>
+        <% current_user.coach_activities.map(&:bookings).flatten.each do |booking| %>
+        <div>
+          <p> <%= "#{booking.coach_activity.activity.name} du #{booking.coach_activity.start_date} au #{booking.coach_activity.end_date}. Prix : #{booking.coach_activity.price} €" %> </p>
+          <div class="booking-container-<%= booking.id %>">
+            <%= render "bookings/infos", coach_activity: booking.coach_activity, booking: booking %>
+          </div>·
+          <%= link_to "Chat", room_path(booking.room) %>
+        </div>
+      <% end %>
+    </ul>
     <% end %>
-  </ul>
-  <% end %>
-</div>
+  </div>
 
-<!-- User View -->
+  <!-- User View -->
   <div class= "container">
     <div class="dashboard-header">
       <div class="dashboard-header-hello">
@@ -31,7 +34,28 @@
       </div>
 
     </div>
-  <% if current_user.coach? == false %>
+
+    <!-- Coach View -->
+<!--     <#% if current_user.coach? %>
+    <div class="row">
+      <#% @coach_activities.each do |coach_activity| %>
+      <div>
+        <p> <#%= "#{coach_activity.activity.name} du #{coach_activity.start_date} au #{coach_activity.end_date}. Prix : #{coach_activity.price} €" %> </p>
+        <#%= link_to "voir ce cours", coach_activity_path(coach_activity) %>
+      </div>
+      <#% coach_activity.bookings.each do |booking| %>
+      <div class="booking-container-<#%= booking.id %>">
+        <#%= render "bookings/infos", coach_activity: coach_activity, booking: booking %>
+      </div>
+      <#% end %>
+      <#% end %>
+    </div>
+    <div>
+      <#%= link_to "créez votre cours", new_coach_activity_path  %>
+    </div>
+    <#% end %> -->
+
+    <% if current_user.coach? == false %>
     <% @bookings.each do |booking| %>
 
     <div class="modal-content">
@@ -52,6 +76,9 @@
                 <h2> <%= booking.coach_activity.activity.name %> </h2>
                 <h2> <strong><%= booking.sum_price %></strong> €/h </h2>
               </div>
+              <div class="status">
+                <h3> status : <%= booking.status %> </h3>
+              </div>
             </div>
           </div>
           <div class="booking-infos">
@@ -69,12 +96,15 @@
       <div class="modal-footer">
         <%= link_to "Annuler le cours", coach_activity_booking_path(booking.coach_activity, booking), method: :delete, class: "button-specialities" %>
         <% if booking.room != nil %>
-          <%= link_to "Envoyer un message", room_path(booking.room), class: "button-specialities" %>
+        <%= link_to "Envoyer un message", room_path(booking.room), class: "button-specialities" %>
         <% end %>
+        <% if booking.status == "Accepted" %>
         <%= link_to "Donnez votre avis", new_booking_review_path(booking), class: "button-specialities" %>
+        <% end %>
       </div>
     </div>
     <% end %>
-  <% end %>
+    <% end %>
   </div>
-  </div>
+</div>
+</div>

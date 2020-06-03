@@ -1,6 +1,7 @@
 
 <div>
   <p> <%= "#{booking.user.first_name} le #{booking.start_time} au #{booking.end_time}. Montant : #{booking.sum_price} € || Status: #{booking.status}" %> </p>
-  <%= link_to "Valider", coach_activity_booking_validate_path(coach_activity, booking), class: "btn btn-primary btn-block", method: :put, data: { turbolinks: false }, remote: true %>
-  <%= link_to "Refuser", coach_activity_booking_refused_path(coach_activity, booking), class: "btn btn-danger btn-block", method: :put, data: { turbolinks: false }, remote: true %>
+  <%= link_to "Valider", coach_activity_booking_validate_path(booking.coach_activity, booking), class: "btn btn-primary btn-block", method: :put, data: { turbolinks: false }, remote: true %>
+  <%= link_to "Refuser", coach_activity_booking_refused_path(booking.coach_activity, booking), class: "btn btn-danger btn-block", method: :put, data: { turbolinks: false }, remote: true %>
+  <%= link_to "Chat", room_path(booking), class: "btn btn-danger btn-block" %>
 </div>

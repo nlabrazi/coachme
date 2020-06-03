@@ -9,6 +9,10 @@ class MessagesController < ApplicationController
     )
   end
 
+  def messages
+    @messages = Message.all.order("created_at DESC")
+  end
+
 private
 
   def message_params
