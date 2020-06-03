@@ -116,6 +116,7 @@ def unique_coach(coaches, count)
 end
 
 count = 0
+
 10.times do
   activity = activity32
   users = [user1, user2, user3, user4, user5]

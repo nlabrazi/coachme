@@ -24,7 +24,7 @@ class BookingsController < ApplicationController
     @booking.coach_activity = @coach_activity
     @booking.user = current_user
     @booking.coach = @coach_activity.user
-    @booking.sum_price = @coach_activity.price
+    @booking.sum_price = @coach_activity.price * @booking.participant_number
     @booking.status = "pending"
       if @booking.save!
         Room.create(booking: @booking)
@@ -73,7 +73,7 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:duration, :start_time, :end_time, :participant_number)
+    params.require(:booking).permit(:duration, :date_time, :participant_number)
   end
 
 end

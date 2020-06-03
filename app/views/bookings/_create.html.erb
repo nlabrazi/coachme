@@ -1,4 +1,56 @@
 <div class="modal-header">
+
+  <span type="button" class="button-close" data-dismiss="modal" aria-label="Close">X</span>
+</div>
+
+  <div class="modal-body">
+
+    <div class="content" id="create_bookings-show">
+
+      <div class="modal-booking-infos">
+        <div class="modal-booking-title">
+          <h2>Votre réservation</h2>
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+<div class="modal-footer">
+  <%= link_to "Annuler le cours", coach_activity_booking_path(@coach_activity, @booking), method: :delete, class: "button-specialities" %>
+  <%= link_to "Voir dans mon Dashboard", dashboard_path, class: "button-specialities" %>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="modal-header">
   <span type="button" class="button-close" data-dismiss="modal" aria-label="Close">X</span>
 </div>
   <div class="modal-body">
@@ -36,6 +88,6 @@
   <%= link_to "Annuler le cours", coach_activity_booking_path(@coach_activity, @booking), method: :delete, class: "button-specialities" %>
   <%= link_to "Modifer le cours", coach_activity_booking_path(@coach_activity, @booking), method: :put, class: "button-specialities" %>
   <%= link_to "Voir dans mon Dashboard", dashboard_path, class: "button-specialities" %>
-</div>
+</div> -->
 
 
