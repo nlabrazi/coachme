@@ -151,16 +151,17 @@ end
 
 count = 0
 10.times do
-  activity = activity32
-  users = [user1, user2, user3, user4, user5]
-  coaches = [coach1, coach2, coach3, coach4, coach5, coach6, coach7, coach8, coach9, coach10]
-  coach = unique_coach(coaches, count)
-  coach_activity1 = CoachActivity.create! user: coach1, activity: activity, price: rand(50..100), start_date: "2020-05-25", end_date: "2020-12-30", capacity: rand(1..15)
-  6.times do
-    booking1 = Booking.create! user: users.sample, coach: coach_activity1.user, coach_activity: coach_activity1, sum_price: coach_activity1.price, duration: 1, status: "validate", participant_number: 5,  start_time: '09:00' , end_time: '10:00'
-    room1 = Room.create! booking: booking1
+  Activity.all.each do |activity|
+    users = [user1, user2, user3, user4, user5]
+    coaches = [coach1, coach2, coach3, coach4, coach5, coach6, coach7, coach8, coach9, coach10]
+    coach = unique_coach(coaches, count)
+    coach_activity1 = CoachActivity.create! user: coach1, activity: activity, price: rand(50..100), start_date: "2020-05-25", end_date: "2020-12-30", capacity: rand(1..15)
+    6.times do
+      booking1 = Booking.create! user: users.sample, coach: coach_activity1.user, coach_activity: coach_activity1, sum_price: coach_activity1.price, duration: 1, status: "validate", participant_number: 5,  start_time: '09:00' , end_time: '10:00'
+      room1 = Room.create! booking: booking1
     review1 = Review.create! booking: booking1, user: booking1.user, rating: rand(1..5), content: "Merci bieng ! " #{coach.user.first_name}
   end
+end
 end
 
 p "#{Booking.count} created"
