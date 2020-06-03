@@ -9,10 +9,7 @@
 
     <div class="filter-search row">
       <div id="price" class="filter-btn" filter-name="price">
-        <%= link_to "Tarifs", coach_activities_path(params:{query: params[:query], order: "price"}) %>
-      </div>
-      <div id="gender" class="filter-btn" filter-name="gender">
-        <span class="title"> Genre </span>
+        <%= link_to "Tarifs", coach_activities_path(params:{query: params[:query], order: "price"}), remote: true %>
       </div>
       <div id="rating" class="filter-btn active" filter-name="rating">
         <%= link_to "Notes", coach_activities_path(params:{query: params[:query], order: "price"}) %>
@@ -22,21 +19,7 @@
       <h3 class="result-count"> <%= @coach_activities.count %> coach trouvés </h3>
     </div>
     <div class="cards-product">
-      <% @coach_activities.each do |coach_activity| %>
-      <% @bookings = Booking.where(coach_activity_id: coach_activity.id) %>
-      <%= link_to coach_activity_path(coach_activity) do %>
-      <div class="card-product" data-user-id="<%= coach_activity.user.id %>">
-        <%= cl_image_tag coach_activity.user.photo.key, id: "activity_avatar", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-        <div class="card-product-infos">
-          <h2><%= coach_activity.user.first_name %></h2>
-          <p class="details" style="font-size:20px" > Notes: <%= rating_star(@bookings) %> </p>
-        </div>
-        <div class="card-price">
-          <h3><%= coach_activity.price.round %>€/h</h3>
-        </div>
-      </div>
-      <% end %>
-      <% end %>
+      <%= render"list_coach", coach_activities: @coach_activities %>
     </div>
   </div>
   <div id="map" class="position-sticky vh-65" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
