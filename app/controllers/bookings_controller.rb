@@ -42,7 +42,7 @@ class BookingsController < ApplicationController
     @room = @booking.room
     @room.destroy
     @booking.destroy
-    redirect_to coach_activity_path(@coach_activity)
+    redirect_to dashboard_path
   end
 
   def validate
