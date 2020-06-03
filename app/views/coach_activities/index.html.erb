@@ -1,7 +1,10 @@
-<div class="container-wrapper">
+<div class="container-wrapper d-flex"> <!-- mt-2 -->
   <div class="list-coaches">
-    <div class="search-coach">
-      <input class="search-coch-int" type="text" placeholder= "Nouvelle recherche..."><input type="submit" value="Chercher">
+    <div class="home-searchbar">
+      <%= form_tag coach_activities_path, class: "barsearch", method: :get do %>
+      <%= text_field_tag :query, params[:query], class: "form-control search-input", placeholder:"Coach, spécialité..."%>
+      <%= button_tag "Rechercher", class: "btn-yellow" %>
+      <% end %>
     </div>
     <div class="filter-search row">
       <div id="price" class="filter-btn" filter-name="price">
@@ -15,19 +18,20 @@
       </div>
     </div>
     <div class="search-count">
-      <span> <%= @coach_activities.count %> Coach trouvés </span>
+      <h3 class="result-count"> <%= @coach_activities.count %> coach trouvés </h3>
     </div>
     <div class="cards-product">
       <% @coach_activities.each do |coach_activity| %>
+      <% @bookings = Booking.where(coach_activity_id: coach_activity.id) %>
       <%= link_to coach_activity_path(coach_activity) do %>
       <div class="card-product" data-user-id="<%= coach_activity.user.id %>">
         <%= cl_image_tag coach_activity.user.photo.key, id: "activity_avatar", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         <div class="card-product-infos">
           <h2><%= coach_activity.user.first_name %></h2>
-          <ul>
-            <li> <%#= user.review.rating %> </li>
-            <li>Diplôme :<%= coach_activity.user.licence %></li>
-          </ul>
+          <p class="details" style="font-size:20px" > Notes: <%= rating_star(@bookings) %> </p>
+<!--           <ul style="list-style: none;">
+            <li> Diplôme :<%#= coach_activity.user.licence %></li>
+          </ul> -->
         </div>
         <div class="card-price">
           <h3><%= coach_activity.price.round %>€/h</h3>
@@ -37,8 +41,6 @@
       <% end %>
     </div>
   </div>
-    <div id="map" class="position-sticky vh-65" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-<!--   <div class="map-container">
-    </div> -->
+  <div id="map" class="position-sticky vh-65" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 </div>

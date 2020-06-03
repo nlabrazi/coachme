@@ -1,13 +1,11 @@
 <div class="container">
 
-
-
   <div class="card-container">
 
 
     <div class="card-activity">
       <div class="activity">
-        <div class="activity-name">
+        <div class="activity-name mb-4">
           <h3>En quoi consiste cette activité ?</h3>
         </div>
         <div class="activity-descritpion">
@@ -25,34 +23,15 @@
           <div class="coach-name">
             <h2> <%= @coach_activity.user.first_name %> </h2>
           </div>
-          <div class="coach-rating">
-            <% @coach_activity.bookings.each do |booking|  %>
-              <% sum = 0 %>
-              <% booking.reviews.each do |review| %>
-                <% sum += review.rating %>
-              <% end %>
-              <% average_rating = sum / booking.reviews.count %>
-              <% average_rating.to_i.times do  %>
-                <%= image_tag "dumbell.svg" %>
-              <% end %>
-              <% less = 5 - average_rating.to_i  %>
-              <% less.times do  %>
-                <%= image_tag "dumbell white.svg" %>
-              <% end %>
-            <% end %>
-          </div>
+          <%= rating_star(@bookings) %>
         </div>
       </div>
       <div class="speciality-coach">
-        <div class="specialities">
-          <h3>Spécialités</h3>
-        </div>
+          <h3 >Spécialités</h3>
         <div class="row-button-specialities">
         <% @coach_activity.user.coach_activities.first(3).each do |coach_activity| %>
           <% unless coach_activity == @coach_activity %>
-            <div class="button-specialities">
-              <%= link_to coach_activity.activity.name, coach_activity_path(coach_activity) %>
-            </div>
+              <%= link_to coach_activity.activity.name, coach_activity_path(coach_activity), class: "button-specialities" %>
           <% end %>
         <% end %>
         </div>
@@ -76,7 +55,7 @@
           <%= f.input  :start_time, as: :string, required: false, input_html: {class: "flatpickr"}, placeholder:"Heure de début du cours" %>
           <%= f.input  :end_time, as: :string, required: false, input_html: {class: "flatpickr"}, placeholder:"Heure de fin du cours" %>
           <%= f.input :participant_number, input_html: { min: 0, max: 5 }, placeholder:"Nombre de participants" %>
-          <%= f.button :submit, "Transpirer avec #{@coach_activity.user.first_name}", class: "button-form" %>
+          <%= f.button :submit, "Transpirez avec #{@coach_activity.user.first_name}", class: "button-form", data: {toggle: "modal", target: "#staticBackdrop"} %>
           <% end %>
         </div>
       </div>
@@ -88,11 +67,16 @@
   <div class="review-map-container">
     <div class="review-count">
       <div class="row-review-count">
-        <h2> <%= @coach_activity.bookings.count %>  </h2>
-        <h3> commentaires </h3>
+        <% coach_activity_reviews = booking_reviews(@bookings) %>
+        <% if coach_activity_reviews.is_a? String %>
+          <h3> <%= coach_activity_reviews %>  </h3>
+        <% else %>
+          <h2> <%= coach_activity_reviews.count %>  </h2>
+          <h3> commentaires </h3>
+        <% end %>
       </div>
-        <% @coach_activity.bookings.each do |booking| %>
-        <% booking.reviews.each do |review|  %>
+
+        <% coach_activity_reviews.each do |review| %>
           <div class="reviews">
             <div class="review-header">
               <p> <%= review.booking.user.first_name %> </p>
@@ -102,14 +86,13 @@
                 <% end %>
                 <% less = 5 - review.rating.to_i  %>
                 <% less.times do  %>
-                  <%= image_tag "dumbell white.svg" %>
+                  <%= image_tag "dumbell_white.svg" %>
                 <% end %>
               </div>
             </div>
             <div class="review-content">
               <p> <%= review.content %> </p>
             </div>
-              <% end %>
               <% end %>
           </div>
 
@@ -121,4 +104,13 @@
   </div>
 
 
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      ...
+    </div>
+  </div>
 </div>

@@ -18,11 +18,14 @@ Rails.application.routes.draw do
       put "/validate", to: "bookings#validate"
       put "/refused", to: "bookings#refused"
     end
+    resources :bookings, only: [:destroy, :update]
   end
   resources :bookings, only: [:show] do
     resources :reviews, only: [:create, :new]
   end
+
   resources :rooms, only: [:show] do
     resources :messages, only: [:create]
   end
+
 end

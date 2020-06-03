@@ -1,24 +1,41 @@
-<div class="container">
-  <div>
-    <h1> Votre réservation : <%= @booking.coach_activity.activity.name %></h1>
-  </div>
-  <div class="row">
-    <div class="col-12 d-flex">
-      <div class="m-3">
-        <%= cl_image_tag @booking.coach.photo.key, height: 200, width: 200, gravity: :face, id: "coach_avatar", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-      </div>
-      <div class="m-3">
-        <p> <%= @booking.coach_activity.activity.category %> </p>
-        <p> Avec <%= @booking.coach.first_name %> </p>
-        <p> Date <%= @booking.start_time %> </p>
-        <p> Montant à payer <%= @booking.sum_price %> € </p>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col">
-      <%= link_to "Votre Dashboard", dashboard_path, class: "btn btn-primary btn-block", method: :get %>
-    </div>
-  </div>
+<div class="modal-header">
+  <span type="button" class="button-close" data-dismiss="modal" aria-label="Close">X</span>
 </div>
+  <div class="modal-body">
+    <div class="content" id="create_bookings-show">
+      <div class="coach_avatar">
+        <div class="avatar-img">
+          <%= cl_image_tag @booking.coach.photo.key, height: 200, width: 200, gravity: :face, id: "coach_avatar", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        </div>
+        <div class="coach-infos">
+          <div class="coach-name">
+            <h2> <%= @booking.coach.first_name %> </h2>
+          </div>
+          <div class="coach-rating">
+            <%= rating_star(@booking.coach_activity.bookings) %>
+          </div>
+          <div class="activity-price">
+            <h2> <%= @booking.coach_activity.activity.name %> </h2>
+            <h2> <strong><%= @booking.sum_price %></strong> €/h </h2>
+          </div>
+        </div>
+      </div>
+      <div class="booking-infos">
+        <div class="start-date">
+          <h3>Début du cours:</h3>
+          <h3> <%= @booking.start_time.strftime("%d/%m/%Y-%H:%M") %> </h3>
+        </div>
+        <div class="end-date">
+          <h3>Fin du cours:</h3>
+          <h3> <%= @booking.start_time.strftime("%d/%m/%Y-%H:%M") %> </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="modal-footer">
+  <%= link_to "Annuler le cours", coach_activity_booking_path(@coach_activity, @booking), method: :delete, class: "button-specialities" %>
+  <%= link_to "Modifer le cours", coach_activity_booking_path(@coach_activity, @booking), method: :put, class: "button-specialities" %>
+  <%= link_to "Voir dans mon Dashboard", dashboard_path, class: "button-specialities" %>
+</div>
+
 

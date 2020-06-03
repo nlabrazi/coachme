@@ -17,6 +17,8 @@
   .coach-name-rating {
     padding-top: 90px;
     padding-left: 25px;
+    font-style: italic;
+    color: #FF9900;
   }
 
   .coach-rating img {
@@ -28,7 +30,7 @@
     margin-left: 45px;
   }
 
-  .specialities h3 {
+  .speciality-coach h3 {
     font-family: Montserrat;
     font-style: normal;
     font-weight: 300;
@@ -38,33 +40,22 @@
   }
 
   .button-specialities {
-    width: 155px;
-    height: 50px;
     background: #FF9900;
     border-radius: 24px;
-    margin-left: 15px;
-    display: flex;
+    margin-right: 15px;
+    display: inline-block;
     text-align: center;
-    place-content: center
-  }
-
-    .button-specialities:hover {
-    background: #282828;
-  }
-
-  .button-specialities a {
+    padding: 10px;
     color: #282828;
     font-family: Montserrat;
     font-style: normal;
     font-weight: 300;
-    font-size: 20px;
-    line-height: 24px;
-    place-self: center;
+    font-size: 14px;
+    border-style: none;
   }
 
-    .button-specialities a:hover {
+  .button-specialities:hover {
     text-decoration: none;
-    color: #FF9900;
   }
 
   .row-button-specialities {
@@ -175,15 +166,20 @@
     color: #282828;
   }
 
+  .form-control:focus {
+    box-shadow: none;
+  }
+
   .button-form {
+    display: block;
+    margin: 30px auto 0;
     width: 325px;
     height: 70px;
-    margin-top: 20px;
-    margin-left: 60px;
     border: 2px solid #000000;
     box-sizing: border-box;
     border-radius: 10px;
-    font-family: Montserrat;
+    font-family: Montserrat !important;
+    font-size: 20px;
   }
 
   .row-review-count {
@@ -228,6 +224,35 @@
     margin-block-start: 15px;
     margin-left: 10px;
     margin-right: 10px;
+  }
+
+  .modal-content {
+    background-color: #3D3D3D;
+    border-radius: 10px;
+    width: 720px
+  }
+
+  .modal-header {
+    justify-content: flex-end !important;
+    border: none;
+  }
+
+  .button-close {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    color: #FF9900
+  }
+
+  .modal-body {
+    margin-top: 10px;
+  }
+
+
+  .modal-footer {
+    justify-content: space-around;
+    border: none;
   }
 
 }
