@@ -33,12 +33,6 @@ class CoachActivitiesController < ApplicationController
         @booking = Booking.new
         @bookings = Booking.where(coach_activity_id: @coach_activity.id)
         @coach = @coach_activity.user
-        @bookings_datetime = @bookings.map do |booking|
-          {
-            from: booking.start_time,
-            to:   booking.end_time
-          }
-        end
       end
 
       def create

@@ -1,6 +1,95 @@
 #create_bookings-show {
     margin-left: 14px;
 
+  .modal-booking-infos {
+    display: block;
+  }
+
+  .modal-booking-title {
+    text-align: center;
+    margin-bottom: 30px;
+
+  }
+
+  .modal-booking-title h2 {
+    margin-top: -70px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 27px;
+    color: #D3D3D3;
+  }
+
+  .modal-booking-cours {
+    display: flex;
+    align-items: baseline;
+  }
+
+  .modal-booking-cours-details {
+    margin-left: 50px;
+  }
+
+  .modal-booking-cours h2.cours {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 27px;
+    color: #D3D3D3;
+  }
+
+  .modal-booking-cours h2.activity-name {
+    padding-left: 25px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 30px;
+    color: #FF9900;
+}
+
+  .modal-booking-cours h3.cours {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 15px;
+    color: #D3D3D3;
+  }
+
+  .modal-booking-cours h3.activity-name {
+    padding-left: 15px;
+    padding-right: 15px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    color: #FF9900;
+}
+
+  .modal-booking-total {
+    margin-top: 20px;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+  }
+
+  .modal-booking-total h2 {
+    padding-left: 15px;
+    padding-right: 5px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 40px;
+    color: #FF9900;
+  }
+
+  .modal-booking-total h3 {
+    margin-top: 20px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 25px;
+    color: #D3D3D3;
+  }
+
   .coach_name {
     margin-bottom: 30px;
   }
@@ -30,15 +119,6 @@
   .activity-price {
     display: flex;
     justify-content: space-between;
-  }
-
-  .activity-price h2 {
-    margin-right: 70px;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 40px;
-    color: #FF9900;
   }
 
   .start-date{
