@@ -20,7 +20,7 @@
 
   .new_message {
     /* width: 120%; */
-    /* min-width: 600px; */
+
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     /* display: inline-flex; */
     font-size: 20px;
@@ -28,6 +28,7 @@
     grid-area: textbox;
     width: 100%;
     z-index: 9000;
+    min-width: 600px;
 
     & > form {
       justify-content: center;
@@ -68,6 +69,7 @@
     height: 100%;
     grid-area: messages;
     margin-top: 30px;
+    padding-bottom: 10px;
 
   }
 
