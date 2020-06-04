@@ -1,8 +1,16 @@
 Rails.application.routes.draw do
+
+  get 'errors/not_found'
+  get 'errors/internal_server_error'
+
+  get "/404", :to => "errors#not_found", :via => :all
+  #get "/422", :to => "errors#unacceptable"
+  get "/500", :to => "errors#internal_server_error", :via => :all
+
   get 'messages/create'
   get 'rooms/show'
-  # get 'reviews/new'
-  # get 'reviews/create'
+  get 'reviews/create'
+
   devise_for :users
 
   root to: 'pages#home'
