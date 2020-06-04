@@ -56,7 +56,7 @@ p "Creating coach..."
 
 
 photo_coach = URI.open("https://res.cloudinary.com/dw22pxuaw/image/upload/v1590746649/larque_d3dkcc.jpg")
-coach1 = User.create! password: "123456", email: "larque@gmail.com", coach: true, first_name: "Jean-Michel", last_name: "Larqué", phone: "0652770202", address: "90 Rue des Moines, Paris 17e Arrondissement, Île-de-France, France", latitude: 48.8779962, longitude: 2.2505532, licence: "BPJEPS", location: 10
+coach1 = User.create! password: "123456", email: "larque@gmail.com", coach: true, first_name: "Jean-Michel", last_name: "Larqué", phone: "0652770202", address: "90 Rue des Moines, Paris 17e Arrondissement, Île-de-France, France", legal: "Règlement sur après le cours", licence: "BPJEPS", location: 10
 coach1.photo.attach(io: photo_coach, filename: 'coach_picture', content_type: 'image/jpg')
 
 photo_coach = URI.open("https://res.cloudinary.com/dw22pxuaw/image/upload/v1590746649/Courbis_wqcrvm.jpg")
@@ -76,7 +76,7 @@ coach5 = User.create! password: "123456", email: "amraoui@gmail.com", coach: tru
 coach5.photo.attach(io: photo_coach, filename: 'coach_picture', content_type: 'image/jpg')
 
 photo_coach = URI.open("https://res.cloudinary.com/dw22pxuaw/image/upload/v1590746650/Lescault_sqrsu6.jpg")
-coach6 = User.create! password: "123456", email: "julielescault@gmail.com", coach: true, first_name: "Julie", last_name: "Lescault", phone: "0752770202", address: "4 Rue Ventadour, Paris 1er Arrondissement, Île-de-France, France", legal: "Règlement sur après le cours", licence: "BAPAAT", location: 6
+coach6 = User.create! password: "123456", email: "julielescault@gmail.com", coach: true, first_name: "Julie", last_name: "Lescault", phone: "0752770202", address: "12 Avenue de l'Opéra, Paris 1er Arrondissement, Île-de-France, France", legal: "Règlement sur après le cours", licence: "BAPAAT", location: 6
 coach6.photo.attach(io: photo_coach, filename: 'coach_picture', content_type: 'image/jpg')
 
 photo_coach = URI.open("https://res.cloudinary.com/dw22pxuaw/image/upload/v1590746649/demonac_gpk78h.jpg")
@@ -142,60 +142,22 @@ p " Begin bookings "
 p " ************** "
 p "-----------------------"
 
-def unique_coach(coaches, count)
-  coaches.each do |coach|
-    coach = coach[count]
-    count += 1
-  end
-end
-
-count = 0
-
-10.times do
-  Activity.all.each do |activity|
-    users = [user1, user2, user3, user4, user5]
-    coaches = [coach1, coach2, coach3, coach4, coach5, coach6, coach7, coach8, coach9, coach10]
+Activity.all.each do |activity|
+  users = [user1, user2, user3, user4, user5]
+  coaches = [coach1, coach2, coach3, coach4, coach5, coach6, coach7, coach8, coach9, coach10]
     coaches.each do |coach|
-      coach_activity1 = CoachActivity.create! user: coach, activity: activity, price: rand(50..100), start_date: "2020-05-25", end_date: "2020-12-30", capacity: rand(1..15)
-      6.times do
-        booking1 = Booking.create! user: users.sample, coach: coach_activity1.user, coach_activity: coach_activity1, sum_price: coach_activity1.price, duration: 1, status: "validate", participant_number: 5,  start_time: '09:00' , end_time: '10:00'
-        room1 = Room.create! booking: booking1
-      review1 = Review.create! booking: booking1, user: booking1.user, rating: rand(1..5), content: "Merci bieng ! " #{coach.user.first_name}
+    coach_activity1 = CoachActivity.create! user: coach, activity: activity, price: rand(50..100), start_date: "2020-05-25", end_date: "2020-12-30", capacity: rand(1..15)
+    6.times do
+      booking1 = Booking.create! user: users.sample, coach: coach_activity1.user, coach_activity: coach_activity1, sum_price: coach_activity1.price, duration: rand(1..3), status: "Validate", participant_number: rand(1..5), date_time: "2020-06-05 12:00"
+      room1 = Room.create! booking: booking1
+      review1 = Review.create! booking: booking1, user: booking1.user, rating: rand(1..5), content: "Merci bieng #{coach_activity1.user.first_name}!"
     end
   end
+  p "#{activity.name} : #{Booking.count}bookings created, #{Review.count} reviews created"
 end
-end
 
-p "#{Booking.count} created"
-
-
-
-# 50.times do
-#   users = [user1, user2, user3, user4, user5]
-#   coaches = [coach1, coach2, coach3, coach4, coach5, coach6, coach7, coach8, coach9, coach10]
-#   user = users.sample
-#   coach = coach.sample
-#   coach_activity1 = CoachActivity.create! user: User.find(coach1.id), activity: Activity.find(activity20.id), price: rand(50..100), start_date: "2020-05-25", end_date: "2020-12-30", capacity: rand(1..15)
-#     booking1 = Booking.create! user: User.find(user1.id), coach: User.find(coach1.id), coach_activity: coach_activity1, sum_price: coach_activity1.price, duration: 1, status: "validate", participant_number: 5
-#       room1 = Room.create! booking_id: booking1
-#       review1 = Review.create! booking: booking1 user: User.find(user1.id), rating: rand(1..5), content: "Merci bieng "
-# end
-
-
-# CoachActivity.create! user: User.find(coach2.id), activity: Activity.find(activity20.id), price: rand(50..100), start_date: "2020-05-25", end_date: "2020-12-30", capacity: rand(1..15)
-# CoachActivity.create! user: User.find(coach3.id), activity: Activity.find(activity20.id), price: rand(50..100), start_date: "2020-05-25", end_date: "2020-12-30", capacity: rand(1..15)
-# CoachActivity.create! user: User.find(coach4.id), activity: Activity.find(activity20.id), price: rand(50..100), start_date: "2020-05-25", end_date: "2020-12-30", capacity: rand(1..15)
-# CoachActivity.create! user: User.find(coach5.id), activity: Activity.find(activity20.id), price: rand(50..100), start_date: "2020-05-25", end_date: "2020-12-30", capacity: rand(1..15)
-# CoachActivity.create! user: User.find(coach6.id), activity: Activity.find(activity20.id), price: rand(50..100), start_date: "2020-05-25", end_date: "2020-12-30", capacity: rand(1..15)
-# CoachActivity.create! user: User.find(coach7.id), activity: Activity.find(activity20.id), price: rand(50..100), start_date: "2020-05-25", end_date: "2020-12-30", capacity: rand(1..15)
-# CoachActivity.create! user: User.find(coach8.id), activity: Activity.find(activity20.id), price: rand(50..100), start_date: "2020-05-25", end_date: "2020-12-30", capacity: rand(1..15)
-# CoachActivity.create! user: User.find(coach9.id), activity: Activity.find(activity20.id), price: rand(50..100), start_date: "2020-05-25", end_date: "2020-12-30", capacity: rand(1..15)
-# CoachActivity.create! user: User.find(coach10.id), activity: Activity.find(activity20.id), price: rand(50..100), start_date: "2020-05-25", end_date: "2020-12-30", capacity: rand(1..15)
-
-
-# CoachActivity.create! user: User.coach.sample, activity: Activity.all.sample, price: rand(30..100), start_date: "2020-05-25", end_date: "2020-12-30", capacity: rand(1..10)
-# CoachActivity.create! user: User.coach.sample, activity: Activity.all.sample, price: rand(30..100), start_date: "2020-05-25", end_date: "2020-12-30", capacity: rand(1..10)
-# CoachActivity.create! user: User.coach.sample, activity: Activity.all.sample, price: rand(30..100), start_date: "2020-05-25", end_date: "2020-12-30", capacity: rand(1..10)
+p "TOTAL #{Booking.count} bookings created"
+p "TOTAL #{Review.count} reviews created"
 
 
 

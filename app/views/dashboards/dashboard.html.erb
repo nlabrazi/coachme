@@ -12,7 +12,7 @@
       <ul>
         <% current_user.coach_activities.map(&:bookings).flatten.each do |booking| %>
         <div>
-          <p> <%= "#{booking.coach_activity.activity.name} du #{booking.coach_activity.start_date} au #{booking.coach_activity.end_date}. Prix : #{booking.coach_activity.price} €" %> </p>
+          <p> <%= "#{booking.coach_activity.activity.name} le #{booking.coach_activity.start_date} au #{booking.coach_activity.end_date}. Prix : #{booking.coach_activity.price} €" %> </p>
           <div class="booking-container-<%= booking.id %>">
             <%= render "bookings/infos", coach_activity: booking.coach_activity, booking: booking %>
           </div>·
@@ -61,6 +61,7 @@
     <div class="modal-content">
       <div class="modal-body">
         <div class="content">
+
           <div class="coach_avatar">
             <div class="avatar-img">
               <%= cl_image_tag booking.coach.photo.key, height: 200, width: 200, gravity: :face, id: "coach_avatar", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -74,31 +75,33 @@
               </div>
               <div class="activity-price">
                 <h2> <%= booking.coach_activity.activity.name %> </h2>
-                <h2> <strong><%= booking.sum_price %></strong> €/h </h2>
+                <h2 class="price"> <strong><%= booking.sum_price %></strong> €</h2>
               </div>
               <div class="status">
-                <h3> status : <%= booking.status %> </h3>
+                <h3> status: </h3> <h3 class="orange"> <%= booking.status %> </h3>
               </div>
             </div>
+            <%= link_to image_tag("delete.svg"), coach_activity_booking_path(booking.coach_activity, booking), method: :delete, class: "button-delete" %>
           </div>
           <div class="booking-infos">
             <div class="start-date">
-              <h3>Début du cours:</h3>
-              <h3> <%= booking.start_time.strftime("%d/%m/%Y-%H:%M") %> </h3>
+              <h3 class="white">Début du cours:</h3>
+              <h3> <%= booking.date_time.strftime("%d/%m/%Y-%H:%M") %> </h3>
             </div>
             <div class="end-date">
-              <h3>Fin du cours:</h3>
-              <h3> <%= booking.start_time.strftime("%d/%m/%Y-%H:%M") %> </h3>
+              <h3 class="white">Durée:</h3>
+              <h3> <%= booking.duration %> h </h3>
+              <h3 class="white"> Pour </h3>
+              <h3> <%= booking.participant_number %> personne(s) </h3>
             </div>
           </div>
         </div>
       </div>
       <div class="modal-footer">
-        <%= link_to "Annuler le cours", coach_activity_booking_path(booking.coach_activity, booking), method: :delete, class: "button-specialities" %>
         <% if booking.room != nil %>
-        <%= link_to "Envoyer un message", room_path(booking.room), class: "button-specialities" %>
+        <%= link_to "Envoyer un message", room_path(booking.room), class: "button-specialities2" %>
         <% end %>
-        <% if booking.status == "Accepted" %>
+        <% if booking.status == "validate" %>
         <%= link_to "Donnez votre avis", new_booking_review_path(booking), class: "button-specialities" %>
         <% end %>
       </div>

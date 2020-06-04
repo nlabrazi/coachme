@@ -24,9 +24,10 @@ class BookingsController < ApplicationController
     @booking.coach_activity = @coach_activity
     @booking.user = current_user
     @booking.coach = @coach_activity.user
-    @booking.sum_price = @coach_activity.price * @booking.participant_number
+    @booking.sum_price = @coach_activity.price * @booking.duration
     @booking.status = "pending"
-      if @booking.save!
+      if @booking.save
+
         Room.create(booking: @booking)
       else
         render "coach_activities/show"
@@ -40,6 +41,8 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @coach_activity = @booking.coach_activity
     @room = @booking.room
+    @review = @booking.reviews
+    @booking.reviews.destroy_all
     @room.destroy
     @booking.destroy
     redirect_to dashboard_path
