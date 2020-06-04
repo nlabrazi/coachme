@@ -30,9 +30,8 @@
           <h3 >Spécialités</h3>
         <div class="row-button-specialities">
         <%= link_to @coach_activity.activity.name, coach_activity_path(@coach_activity), class: "button-specialities" %>
-        <% @coach_activity.user.coach_activities.last(2).each do |coach_activity| %>
-
-              <%= link_to coach_activity.activity.name, coach_activity_path(coach_activity), class: "button-specialities-secondary" %>
+        <% @coach_activity.user.coach_activities.shuffle.first(2).each do |coach_activity| %>
+          <%= link_to coach_activity.activity.name, coach_activity_path(coach_activity), class: "button-specialities-secondary" %>
         <% end %>
         </div>
       </div>
