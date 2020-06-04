@@ -1,10 +1,7 @@
-.dashboard {
-  display: flex;
+#dashboards-dashboard {
 
-  #v-pills-tab {
-    position: fixed;
-    height: 100vh;
-    justify-content: center;
+  .dashboard {
+    display: flex;
   }
 
   .status {
@@ -14,46 +11,6 @@
 
   .container {
     padding-left: 165px;
-  }
-
-  .nav-link{
-    margin-left: -10px;
-    background-color: #282828;
-    color: #FF9900;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 15px;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #FF9900;
-  }
-
-  .nav-link.top {
-    border-radius: 0px 10px 0px 0px;
-  }
-
-  .nav-link.middle {
-    border-radius: none;
-  }
-
-  .nav-link.bottom {
-    border-radius: 0px 0px 10px 0px;
-  }
-
-  .nav-link.active{
-    background-color: #FF9900;
-    color: #282828;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 15px;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 
   .dashboard-header-hello {
@@ -134,7 +91,7 @@
       white-space: nowrap;
   }
 
-  .start-date{
+  .start-date {
     margin-left: 30px;
     margin-top: 25px;
   }

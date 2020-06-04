@@ -1,6 +1,4 @@
-// Specific CSS for your browse-page
-
-#searches_browse {
+#searches-browse {
 
   .img {
     width: 800px;
@@ -10,6 +8,50 @@
   h2 {
     margin-top: 20px;
     text-align: justify;
+  }
+
+  .container {
+    color: #E5E5E5;
+  }
+
+  .collectifs {
+    content: url("https://www.foodspring.fr/magazine/wp-content/uploads/2019/03/190410-fs-magazine-33-sportarten.-2.jpg");
+  }
+
+  .raquette {
+    content: url("https://www.foodspring.fr/magazine/wp-content/uploads/2019/03/190410-fs-magazine-33-sportarten.-4.jpg");
+  }
+
+  .danse {
+    content: url("https://www.foodspring.fr/magazine/wp-content/uploads/2019/03/190410-fs-magazine-33-sportarten.-9.jpg");
+  }
+
+  .combat {
+    content: url("https://www.foodspring.fr/magazine/wp-content/uploads/2019/03/190410-fs-magazine-33-sportarten.-6.jpg");
+  }
+
+  .glisse {
+    content: url("https://www.foodspring.fr/magazine/wp-content/uploads/2019/03/190410-fs-magazine-33-sportarten.-8.jpg");
+  }
+
+  .urbains {
+    content: url("https://www.foodspring.fr/magazine/wp-content/uploads/2019/03/190410-fs-magazine-33-sportarten.-3.jpg");
+  }
+
+  .individuels {
+    content: url("https://www.foodspring.fr/magazine/wp-content/uploads/2019/03/190410-fs-magazine-33-sportarten.-1.jpg");
+  }
+
+  .force {
+    content: url("https://www.foodspring.fr/magazine/wp-content/uploads/2019/03/190410-fs-magazine-33-sportarten.-7.jpg");
+  }
+
+  .endurance {
+    content: url("https://www.foodspring.fr/magazine/wp-content/uploads/2019/03/190410-fs-magazine-33-sportarten.-10.jpg");
+  }
+
+  .individuels {
+    content: url("https://www.foodspring.fr/magazine/wp-content/uploads/2019/03/190410-fs-magazine-33-sportarten.-1.jpg");
   }
 
 }
