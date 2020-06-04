@@ -8,9 +8,9 @@
           <span><%= message.user.email %></span>
           <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
         </i>
-        <div>
-          <%= cl_image_tag current_user.photo.key, id: "chat-avatar", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-        </div>
+      </div>
+      <div class="div-avatar-chat">
+        <%= cl_image_tag current_user.photo.key, id: "chat-avatar", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
       </div>
       <% end %>
     </div>
@@ -22,3 +22,4 @@
     </div>
   </div>
 </div>
+

@@ -6,6 +6,7 @@
   align-content: center;
   justify-content: center;
 }
+
 .chat {
   height: calc(100vh - 100px);
   display: grid;
@@ -40,6 +41,17 @@
 
   .input-btn {
     height: 100%;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border: none;
+    background-color: #FF9900;
+    color: #000000;
+    font-family: Montserrat;
+    font-weight: 300;
+  }
+
+    ::-webkit-scrollbar {
+    display: none;
   }
 
   .input-text {
@@ -53,4 +65,12 @@
     grid-area: messages;
   }
 
+  .div-avatar-chat {
+    margin-top: -10px;
+    height: 1px;
+  }
 
+  .bas-message {
+    background-color: white;
+    width: 100%;
+  }
