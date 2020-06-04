@@ -110,7 +110,7 @@
 
    .card-home:hover {
     transform: scale(1.03);
-    transition: ease 0.5s;
+    transition: ease 0.7s;
   }
 
   .cards-home {
@@ -160,21 +160,20 @@
     margin-left: 10px;
     border-radius: 24px;
     background-color: #FF9900;
-    width: 110px;
-    height: 20px;
     padding: 5px;
-    display: flex;
     text-align: center;
     justify-content: center;
+    display: block;
   }
 
   .card-home-infos h2 {
-    font-size: 10px;
+    font-size: 20px;
     font-family: "Montserrat", sans-serif;
     color: black;
     font-style: normal;
-    font-weight: 400;
-    padding-bottom: 1px;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 0px;
   }
 
   .tendances-header {
