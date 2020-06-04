@@ -4,20 +4,23 @@
 <% nofollow %>
 <% noindex %>
 
+ <div class="nav flex-column nav-pills col-md-2" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+  <a class="nav-link top" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Mes Activités</a>
+  <a class="nav-link middle active " id="v-my-bookings-tab" data-toggle="pill" href="#v-my-bookings" role="tab" aria-controls="v-my-bookings" aria-selected="false">Discuter avec mes coachs</a>
+  <a class="nav-link bottom" id="v-my-deals-tab" data-toggle="pill" href="#v-my-deals" role="tab" aria-controls="v-my-deals" aria-selected="false">Votre Compte</a>
+</div>
+
 <div class="container">
   <div class="header-review">
-    <div class="title-review">
-      <h1>Exprimez-vous! Évaluez <%= @booking.coach.first_name %></h1>
-    </div>
     <div class= "profil-review">
       <%= cl_image_tag @booking.coach.photo.key, height: 218, width: 218, gravity: :face, name: "card-avatar-coach", id: "coach_avatar" %>
     </div>
+    <div class="title-review">
+      <h1>Évaluez :</h1> <h1 class="coach-name"> <%= @booking.coach.first_name %></h1>
+    </div>
   </div>
   <div class="content">
-    <h3>Note :</h3>
-    <br>
     <div class="star-rating" style="cursor: pointer;">
-
       <i class="far fa-star" id="1"></i>
       <i class="far fa-star" id="2"></i>
       <i class="far fa-star" id="3"></i>
@@ -41,8 +44,8 @@
     <%= simple_form_for [@booking, @review] do |f| %>
     <%= f.input :rating, as: :hidden %>
     <%= f.input :content, :as => :text, :input_html => { 'rows' => 6, 'cols' => 10 }, label: "Votre avis", placeholder: "Partagez votre expérience en toute honnêteté..." %>
-    <%= f.button :submit,  "Postez votre commentaire", class: 'btn-orange'  %>
     <% end %>
+    <%= link_to "Commenter", dashboard_path, class: "btn btn-orange", method: :get %>
   </div>
 </div>
 
