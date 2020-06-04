@@ -1,41 +1,48 @@
 <div class="modal-header">
   <span type="button" class="button-close" data-dismiss="modal" aria-label="Close">X</span>
 </div>
+
   <div class="modal-body">
+
     <div class="content" id="create_bookings-show">
-      <div class="coach_avatar">
-        <div class="avatar-img">
-          <%= cl_image_tag @booking.coach.photo.key, height: 200, width: 200, gravity: :face, id: "coach_avatar", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+
+      <div class="modal-booking-infos">
+        <div class="modal-booking-title">
+          <h2>Votre réservation</h2>
         </div>
-        <div class="coach-infos">
-          <div class="coach-name">
-            <h2> <%= @booking.coach.first_name %> </h2>
+        <div class="modal-booking-cours">
+          <h2 class="cours">Votre cours</h2>
+          <h2 class="activity-name"> <%= @booking.coach_activity.activity.name %> </h2>
+        </div>
+        <div class="modal-booking-cours-details">
+          <div class="modal-booking-cours">
+            <h3 class="cours">Le</h3>
+            <h3 class="activity-name"> <%= @booking.date_time.strftime("%d/%m/%Y-%H:%M") %> </h3>
+            <h3 class="cours">Durée</h3>
+            <h3 class="activity-name"> <strong> <%= @booking.duration %> </strong> </h3>
+            <h3 class="cours">h</h3>
           </div>
-          <div class="coach-rating">
-            <%= rating_star(@booking.coach_activity.bookings) %>
-          </div>
-          <div class="activity-price">
-            <h2> <%= @booking.coach_activity.activity.name %> </h2>
-            <h2> <strong><%= @booking.sum_price %></strong> €/h </h2>
+          <div class="modal-booking-cours">
+            <h3 class="cours">Avec</h3>
+            <h3 class="activity-name"> <%= @booking.coach.first_name %> </h3>
+            <h3 class="cours">Pour</h3>
+            <h3 class="activity-name"> <strong> <%= @booking.participant_number %> </strong> </h3>
+            <h3 class="cours">Personne(s)</h3>
           </div>
         </div>
+        <div class="modal-booking-total">
+          <h3> Total réservation : </h3>
+          <h2> <strong> <%= @booking.sum_price %> </strong> </h2>
+          <h3> € </h3>
+        </div>
+
+
       </div>
-      <div class="booking-infos">
-        <div class="start-date">
-          <h3>Début du cours:</h3>
-          <h3> <%= @booking.start_time.strftime("%d/%m/%Y-%H:%M") %> </h3>
-        </div>
-        <div class="end-date">
-          <h3>Fin du cours:</h3>
-          <h3> <%= @booking.start_time.strftime("%d/%m/%Y-%H:%M") %> </h3>
-        </div>
-      </div>
+
     </div>
+
   </div>
+
 <div class="modal-footer">
-  <%= link_to "Annuler le cours", coach_activity_booking_path(@coach_activity, @booking), method: :delete, class: "button-specialities" %>
-  <%= link_to "Modifer le cours", coach_activity_booking_path(@coach_activity, @booking), method: :put, class: "button-specialities" %>
   <%= link_to "Voir dans mon Dashboard", dashboard_path, class: "button-specialities" %>
 </div>
-
-
