@@ -150,7 +150,7 @@ def unique_coach(coaches, count)
 end
 
 count = 0
-10.times do
+1.times do
   Activity.all.each do |activity|
     users = [user1, user2, user3, user4, user5]
     coaches = [coach1, coach2, coach3, coach4, coach5, coach6, coach7, coach8, coach9, coach10]
