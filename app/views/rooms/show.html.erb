@@ -1,3 +1,14 @@
+
+<% title 'Chat' %>
+<% description 'Chatting page.' %>
+<% keywords 'Chat, Chatting, Messages' %>
+<% nofollow %>
+<% noindex %>
+ <div class="nav flex-column nav-pills col-md-2" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+  <a class="nav-link top" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Mes Activités</a>
+  <a class="nav-link middle active " id="v-my-bookings-tab" data-toggle="pill" href="#v-my-bookings" role="tab" aria-controls="v-my-bookings" aria-selected="false">Discuter avec mes coachs</a>
+  <a class="nav-link bottom" id="v-my-deals-tab" data-toggle="pill" href="#v-my-deals" role="tab" aria-controls="v-my-deals" aria-selected="false">Votre Compte</a>
+</div>
 <div class="container-room">
   <div class="chat">
     <div id="messages" data-room-id="<%= @room.id %>">
@@ -8,9 +19,9 @@
           <span><%= message.user.email %></span>
           <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
         </i>
-        <div>
-          <%= cl_image_tag current_user.photo.key, id: "chat-avatar", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-        </div>
+      </div>
+      <div class="div-avatar-chat">
+        <%= cl_image_tag current_user.photo.key, id: "chat-avatar", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
       </div>
       <% end %>
     </div>

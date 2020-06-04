@@ -1,0 +1,14 @@
+function scrollMessage() {
+  const messages = document.querySelectorAll(".message-container")
+  const lastMessage = [...messages].pop()
+  lastMessage.scrollIntoView({behavior: "smooth"});
+  document.getElementsByClassName("input-btn").value = "";
+}
+
+scrollMessage()
+
+function resetForm() {
+  document.querySelector("#new_message").reset();
+}
+
+resetForm()

@@ -61,3 +61,16 @@
   cursor: pointer;
   border-radius: 50%;
 }
+
+.nav-item .dropdown-menu {
+  background-color: #282828;
+}
+
+.nav-item .dropdown-menu > a {
+  color: white;
+}
+
+.nav-item .dropdown-menu > a:hover {
+  background-color: #FF9900;
+  color: #282828;
+}

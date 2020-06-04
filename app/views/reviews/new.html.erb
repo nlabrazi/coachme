@@ -1,7 +1,17 @@
+<% title 'Commentaire' %>
+<% description 'Reviews page.' %>
+<% keywords 'Review, Commentaire, Rating' %>
+<% nofollow %>
+<% noindex %>
+
 <div class="container">
-  <div class="title-review">
-    <div><%= cl_image_tag @booking.coach.photo.key, height: 218, width: 218, gravity: :face, name: "card-avatar-coach", id: "coach_avatar" %></div>
-    <h1>Exprimez-vous! Évaluez <%= @booking.coach.first_name %> </h1>
+  <div class="header-review">
+    <div class="title-review">
+      <h1>Exprimez-vous! Évaluez <%= @booking.coach.first_name %></h1>
+    </div>
+    <div class= "profil-review">
+      <%= cl_image_tag @booking.coach.photo.key, height: 218, width: 218, gravity: :face, name: "card-avatar-coach", id: "coach_avatar" %>
+    </div>
   </div>
   <div class="content">
     <h3>Note :</h3>

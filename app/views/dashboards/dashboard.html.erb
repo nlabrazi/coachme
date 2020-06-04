@@ -1,3 +1,9 @@
+<% title 'Tabelau de bord' %>
+<% description 'Member dashboard page.' %>
+<% keywords 'Dashboard, Tableau de bord, Gestionnaire' %>
+<% nofollow %>
+<% noindex %>
+
 <div class="dashboard">
   <div class="nav flex-column nav-pills col-md-2" id="v-pills-tab" role="tablist" aria-orientation="vertical">
     <a class="nav-link active top" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Mes Activités</a>
@@ -18,24 +24,23 @@
           </div>·
           <%= link_to "Chat", room_path(booking.room) %>
         </div>
+        <% end %>
+      </ul>
       <% end %>
-    </ul>
-    <% end %>
-  </div>
-
-  <!-- User View -->
-  <div class= "container">
-    <div class="dashboard-header">
-      <div class="dashboard-header-hello">
-        <h2> Bonjour <%= current_user.first_name %> ! </h2>
-      </div>
-      <div class="dashboard-header-infos">
-        <h3> Il y a <%= @bookings.count %> activités en cours </h3>
-      </div>
-
     </div>
 
-    <!-- Coach View -->
+    <!-- User View -->
+    <div class= "container">
+      <div class="dashboard-header">
+        <div class="dashboard-header-hello">
+          <h2> Bonjour <%= current_user.first_name %> ! </h2>
+        </div>
+        <div class="dashboard-header-infos">
+          <h3> Il y a <%= @bookings.count %> activités en cours </h3>
+        </div>
+      </div>
+
+      <!-- Coach View -->
 <!--     <#% if current_user.coach? %>
     <div class="row">
       <#% @coach_activities.each do |coach_activity| %>

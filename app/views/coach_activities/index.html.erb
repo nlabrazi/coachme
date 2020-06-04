@@ -1,3 +1,9 @@
+<% title 'Recherche' %>
+<% description 'Search page.' %>
+<% keywords 'Search, Recherche, Find' %>
+<% nofollow %>
+<% noindex %>
+
 <div class="container-wrapper d-flex"> <!-- mt-2 -->
   <div class="list-coaches">
     <div class="home-searchbar">
@@ -8,12 +14,8 @@
     </div>
 
     <div class="filter-search row">
-      <div id="price" class="filter-btn" filter-name="price">
-        <%= link_to "Tarifs", coach_activities_path(params:{query: params[:query], order: "price"}), remote: true %>
-      </div>
-      <div id="rating" class="filter-btn active" filter-name="rating">
-        <%= link_to "Notes", coach_activities_path(params:{query: params[:query], order: "price"}) %>
-      </div>
+      <%= link_to "Tarifs", coach_activities_path(params:{query: params[:query], order: "price"}), class: "filter-btn", remote: true %>
+      <%= link_to "Notes", coach_activities_path(params:{query: params[:query], order: "price"}), class: "filter-btn" %>
     </div>
     <div class="search-count">
       <h3 class="result-count"> <%= @coach_activities.count %> coach trouvés </h3>
