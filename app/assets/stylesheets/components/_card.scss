@@ -64,6 +64,7 @@
   border-radius: 10px;
 }
 
+
 .card-activity {
   margin-top: 376px;
   margin-left: 118px;
@@ -87,6 +88,11 @@
   background: #FF9900;
   box-shadow: 5px 4px 20px #1B1F23;
   border-radius: 10px;
+}
+
+.card-booking:hover {
+  transform: scale(1.03);
+  transition: ease 0.5s;
 }
 
 /* end check */

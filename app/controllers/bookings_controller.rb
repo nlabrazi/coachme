@@ -25,7 +25,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.coach = @coach_activity.user
     @booking.sum_price = @coach_activity.price * @booking.duration
-    @booking.status = "pending"
+    @booking.status = "en attente"
       if @booking.save
 
         Room.create(booking: @booking)
@@ -51,7 +51,7 @@ class BookingsController < ApplicationController
   def validate
     @booking = Booking.find(params[:booking_id])
     @coach_activity = CoachActivity.find(params[:coach_activity_id])
-    updated = @booking.update(status: "Accepted")
+    updated = @booking.update(status: "confirmé")
     respond_to do |format|
       format.html { updated ? (redirect_to dashboard_path) : (render "dashboards/dashboard") }
       format.js
@@ -61,7 +61,7 @@ class BookingsController < ApplicationController
   def refused
     @booking = Booking.find(params[:booking_id])
     @coach_activity = CoachActivity.find(params[:coach_activity_id])
-    @booking.status = "Refused"
+    @booking.status = "refusé"
     @booking.save
     respond_to do |format|
       format.html { updated ? (redirect_to dashboard_path) : (render "dashboards/dashboard") }
