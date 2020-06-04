@@ -7,12 +7,27 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require "open-uri"
 
+p " *********** "
+p " Begin seed "
+p " *********** "
+
+p "Destroy curent data..."
+
+p "Destroying Review... #{Review.count} "
 Review.destroy_all
+p "Destroying Room... #{Room.count} "
 Room.destroy_all
+p "Destroying Booking... #{Booking.count} "
 Booking.destroy_all
+p "Destroying CoachActivity... #{CoachActivity.count} "
 CoachActivity.destroy_all
+p "Destroying Activity... #{Activity.count} "
 Activity.destroy_all
+p "Destroying User... #{User.count} "
 User.destroy_all
+p "-----------------------"
+
+p "Creating users..."
 
 photo_user = URI.open("https://res.cloudinary.com/dw22pxuaw/image/upload/v1590746650/loic_baitrx.jpg")
 user1 = User.create! password: "123456", email: "loic.redon@gmail.com", first_name: "Loïc", last_name: "Redon", phone: "0652770554", address: "90 Rue des Moines, Paris 17e Arrondissement, Île-de-France, France"
@@ -33,6 +48,12 @@ user4.photo.attach(io: photo_user, filename: 'user_picture', content_type: 'imag
 photo_user = URI.open("https://res.cloudinary.com/dw22pxuaw/image/upload/v1590746650/zaken_av1lw9.jpg")
 user5 = User.create! password: "123456", email: "corniaud@gmail.com", first_name: "Alex", last_name: "Corniaud", phone: "0652776069", address: "91 Rue des Moines, Paris 17e Arrondissement, Île-de-France, France"
 user5.photo.attach(io: photo_user, filename: 'user_picture', content_type: 'image/jpg')
+
+p "#{User.count} created..."
+p "-----------------------"
+
+p "Creating coach..."
+
 
 photo_coach = URI.open("https://res.cloudinary.com/dw22pxuaw/image/upload/v1590746649/larque_d3dkcc.jpg")
 coach1 = User.create! password: "123456", email: "larque@gmail.com", coach: true, first_name: "Jean-Michel", last_name: "Larqué", phone: "0652770202", address: "90 Rue des Moines, Paris 17e Arrondissement, Île-de-France, France", latitude: 48.8779962, longitude: 2.2505532, licence: "BPJEPS", location: 10
@@ -74,6 +95,11 @@ photo_coach = URI.open("https://res.cloudinary.com/dw22pxuaw/image/upload/v15907
 coach10 = User.create! password: "123456", email: "cloud@gmail.com", coach: true, first_name: "Cloud", last_name: "Strife", phone: "0752707979", address: "12 Rue Montmartre, Paris 1er Arrondissement, Île-de-France, France", legal: "Règlement sur après le cours", licence: "BAPAAT", location: 6
 coach10.photo.attach(io: photo_coach, filename: 'coach_picture', content_type: 'image/jpg')
 
+p "#{User.coach.count} created..."
+p "-----------------------"
+
+p "Creating activities..."
+
 activity1 = Activity.create! name: "Boxe thaï", category: "Sport de combat", description: "La boxe thaïlandaise abrégée boxe thaï ou encore muay-thaï est un art marial pieds points. C’est probablement la boxe la plus complète puisqu’on utilise toutes les parties du corps pour frapper son opposant. La boxe anglaise utilise les poings, la boxe française utilise les pieds et les poings, et la boxe thaï ajoute les coudes et les genoux."
 activity2 = Activity.create! name: "Danse", category: "Sports de danse", description: "Idéal pour tous les âges. Parfait pour faire des rencontres, ou bien comme activité de couple. Offre un sentiment libérateur. Réduit le stress. Effets positifs sur le système cardio-vasculaire. Avec ton partenaire, tu apprends différents pas de danse et mouvements de différentes danses. Cela nécessite d’être concentré et de s’adapter à son partenaire."
 activity3 = Activity.create! name: "Breakdance", category: "Sports de danse", description: "Pour les sportifs qui savent déjà bien bouger ou qui souhaitent apprendre. Renforce l’ensemble du corps. Améliore aussi la souplesse et la coordination. Le breakdance est une danse urbaine. Tu y apprends des mouvements et des figures impressionnantes. Les mouvements s’exécutent principalement au sol. Les différentes poses s’enchaînent rapidement. Avoir de l’expérience en gymnastique est un plus."
@@ -108,6 +134,14 @@ activity31 = Activity.create! name: "Gymnastique ", category: "Sports individuel
 activity32 = Activity.create! name: "Yoga", category: "Sports individuels ", description: "Pour toutes les personnes qui veulent se détendre et se relaxer grâce au sport, mais qui souhaitent quand même entraîner tout le corps. Effets de détente et de relaxation. Renforcement musculaire et amélioration du contrôle et de la souplesse. Tu apprends à contrôler ta respiration, à écouter ton corps et à détendre en pleine conscience tes muscles."
 activity33 = Activity.create! name: "Zumba", category: "Sports de danse", description: "Pour les personnes qui aiment les mouvements rapides et sensuels. Parfait pour s’entraîner en groupe, mais aussi danser seul. Entraîne le système cardio-vasculaire. Tu apprends à te sentir mieux dans ta peau et à te bouger au rythme des sons latino-américains. La zumba est surtout pratiquée en groupe. Comme dans un cours fitness classique, c’est l’entraîneur qui présente les mouvements et les participants doivent les reproduire."
 
+p "#{Activity.count} created"
+p "-----------------------"
+
+p " ************** "
+p " Begin bookings "
+p " ************** "
+p "-----------------------"
+
 def unique_coach(coaches, count)
   coaches.each do |coach|
     coach = coach[count]
@@ -118,18 +152,21 @@ end
 count = 0
 
 10.times do
-  activity = activity32
-  users = [user1, user2, user3, user4, user5]
-  coaches = [coach1, coach2, coach3, coach4, coach5, coach6, coach7, coach8, coach9, coach10]
-  coach = unique_coach(coaches, count)
-  coach_activity1 = CoachActivity.create! user: coach, activity: activity, price: rand(50..100), start_date: "2020-05-25", end_date: "2020-12-30", capacity: rand(1..15)
-  6.times do
-    booking1 = Booking.create! user: users.sample, coach: coach_activity1.user, coach_activity: coach_activity1, sum_price: coach_activity1.price, duration: 1, status: "validate", participant_number: 5
-    room1 = Room.create! booking: booking1
-    review1 = Review.create! booking: booking1, user: booking1.user, rating: rand(1..5), content: "Merci bieng #{coach.first_name} ! "
+  Activity.all.each do |activity|
+    users = [user1, user2, user3, user4, user5]
+    coaches = [coach1, coach2, coach3, coach4, coach5, coach6, coach7, coach8, coach9, coach10]
+    coaches.each do |coach|
+      coach_activity1 = CoachActivity.create! user: coach, activity: activity, price: rand(50..100), start_date: "2020-05-25", end_date: "2020-12-30", capacity: rand(1..15)
+      6.times do
+        booking1 = Booking.create! user: users.sample, coach: coach_activity1.user, coach_activity: coach_activity1, sum_price: coach_activity1.price, duration: 1, status: "validate", participant_number: 5,  start_time: '09:00' , end_time: '10:00'
+        room1 = Room.create! booking: booking1
+      review1 = Review.create! booking: booking1, user: booking1.user, rating: rand(1..5), content: "Merci bieng ! " #{coach.user.first_name}
+    end
   end
 end
+end
 
+p "#{Booking.count} created"
 
 
 
