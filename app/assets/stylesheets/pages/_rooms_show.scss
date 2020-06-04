@@ -1,21 +1,24 @@
-.container-room {
-  border-radius: 5px;
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  align-content: center;
-  justify-content: center;
-}
-.chat {
-  height: calc(100vh - 100px);
-  display: grid;
-  grid-template-rows: auto 30px;
-  grid-template-areas: "messages"
-  "textbox";
-  overflow: hidden;
-}
+#rooms-show {
 
-.new_message {
+  .container-room {
+    border-radius: 5px;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+  }
+
+  .chat {
+    height: calc(100vh - 100px);
+    display: grid;
+    grid-template-rows: auto 30px;
+    grid-template-areas: "messages"
+    "textbox";
+    overflow: hidden;
+  }
+
+  .new_message {
     /* width: 120%; */
     /* min-width: 600px; */
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
@@ -26,9 +29,9 @@
     width: 100%;
 
     & > form {
-    justify-content: center;
-    display: flex;
-    width: 100%;
+      justify-content: center;
+      display: flex;
+      width: 100%;
     }
   }
 
@@ -40,6 +43,18 @@
 
   .input-btn {
     height: 100%;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border: none;
+    background-color: #FF9900;
+    color: #000000;
+    font-family: Montserrat;
+    font-weight: 300;
+    font-style: normal;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
   }
 
   .input-text {
@@ -53,4 +68,64 @@
     grid-area: messages;
   }
 
+  .div-avatar-chat {
+    margin-top: -10px;
+    height: 1px;
+  }
 
+  .bas-message {
+    background-color: white;
+    width: 100%;
+  }
+
+  .nav-link {
+    margin-left: -10px;
+    background-color: #282828;
+    color: #FF9900;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 15px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #FF9900;
+  }
+
+
+  .nav-link.top {
+    border-radius: 0px 10px 0px 0px;
+  }
+
+  .nav-link.middle {
+    border-radius: none;
+  }
+
+  .nav-link.bottom {
+    border-radius: 0px 0px 10px 0px;
+  }
+
+  .nav-link.active{
+    background-color: #FF9900 !important;
+    color: #282828 !important;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 15px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none !important;
+  }
+
+
+
+  #v-pills-tab {
+    position: fixed;
+    height: 100vh;
+    justify-content: center;
+  }
+
+}
