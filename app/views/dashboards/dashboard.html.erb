@@ -20,7 +20,7 @@
 </div>
 
   <!-- Coach View -->
-  <div class="container">
+  <div class="container coach-view-container">
     <div class="row">
       <% if current_user.coach? %>
       <ul>
@@ -30,7 +30,10 @@
           <div class="booking-container-<%= booking.id %>">
             <%= render "bookings/infos", coach_activity: booking.coach_activity, booking: booking %>
           </div>·
-          <%= link_to "Chat", room_path(booking.room) %>
+          <br>
+          <%= link_to "Chat", room_path(booking.room), class:"btn-orange" %>
+          <br>
+          <br>
         </div>
         <% end %>
       </ul>
