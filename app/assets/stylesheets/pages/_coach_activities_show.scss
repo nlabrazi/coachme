@@ -156,7 +156,7 @@
     color: #282828
   }
 
-    .integer {
+  .integer {
     background: #FF9900;
     font-family: Montserrat;
     font-style: normal;
@@ -213,7 +213,7 @@
     color: #FF9900
   }
 
-    .row-review-count h3 {
+  .row-review-count h3 {
     font-family: Montserrat;
     font-style: normal;
     font-weight: 300;
@@ -273,9 +273,30 @@
     border: none;
   }
 
-  .flatpickr-month, .flatpickr-monthDropdown-months, .flatpickr-current-month, .numInputWrapper, .flatpickr-weekdays, .flatpickr-weekdays, .dayContainer, .flatpickr-weekday {
-    background-color: #3D3D3D;
+  .flatpickr-month, .flatpickr-monthDropdown-months, .flatpickr-current-month, .numInputWrapper, .flatpickr-weekdays, .flatpickr-weekdays, .dayContainer, .flatpickr-weekday, .flatpickr-time-separator {
+    background-color: #282828;
     color: #E5E5E5;
+  }
+
+  .flatpickr-day:hover {
+    background-color: #3D3D3D;
+  }
+
+  .flatpickr-time input.flatpickr-minute:hover {
+    background-color: #3D3D3D;
+  }
+
+  .flatpickr-time input.flatpickr-hour:hover {
+    background-color: #3D3D3D;
+  }
+
+   .flatpickr-time input.flatpickr-hour, .flatpickr-time input.flatpickr-minute {
+    background-color: #3D3D3D;
+   }
+
+  .flatpickr-day.selected {
+    background-color: #FF9900;
+    border: 3px white;
   }
 
 }
