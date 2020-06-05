@@ -30,7 +30,8 @@
 }
 
 .btn-orange:hover {
-  box-shadow: 0 0 10px white;
+  transform: scale(1.03);
+  transition: ease 0.5s;
 }
 
 a.btn-orange {
@@ -53,4 +54,12 @@ a.btn-orange {
 .form-wrapper h2 {
   color: #5DFDCB;
   font-weight: bold;
+}
+
+.button-specialities2:hover {
+  text-decoration: none;
+}
+
+.button-specialities:hover {
+  text-decoration: none;
 }
