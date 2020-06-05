@@ -17,7 +17,7 @@
       <% @room.messages.each do |message| %>
       <div class="message-container" id="message-<%= message.id %>">
         <div class="div-avatar-chat">
-          <%= cl_image_tag current_user.photo.key, height: 40, width: 40, id: "chat-avatar", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <%= cl_image_tag message.user.photo.key, height: 40, width: 40, id: "chat-avatar", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         </div>
         <p><%= message.content %></p>
         <i class="author">
