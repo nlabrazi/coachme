@@ -44,8 +44,8 @@
     <%= simple_form_for [@booking, @review] do |f| %>
     <%= f.input :rating, as: :hidden %>
     <%= f.input :content, :as => :text, :input_html => { 'rows' => 6, 'cols' => 10 }, label: "Votre avis", placeholder: "Partagez votre expérience en toute honnêteté..." %>
+    <%= f.submit "Commenter", class: "btn btn-orange" %>
     <% end %>
-    <%= link_to "Commenter", dashboard_path, class: "btn btn-orange", method: :get %>
   </div>
 </div>
 
