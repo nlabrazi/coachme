@@ -20,9 +20,9 @@
 </div>
 
   <!-- Coach View -->
-  <div class="container coach-view-container"> <!-- - -->
+  <div class="container coach-view-container">
     <div class="row">
-      <% if current_user.coach? %> <!-- <#% raise %> -->
+      <% if current_user.coach? %>
       <ul>
         <% current_user.coach_activities.map(&:bookings).flatten.each do |booking| %>
         <div>
