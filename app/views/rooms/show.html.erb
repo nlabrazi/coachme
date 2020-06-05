@@ -29,7 +29,7 @@
     </div>
     <div class="new_message">
       <%= simple_form_for [@room, Message.new], remote: true do |f| %>
-      <%= f.input :content, :as => :text, :wrapper_html => { class: "input-text" }, label: false, placeholder: "Que souhaitez-vous demander au coach ?" %>
+      <%= f.input :content, :as => :text, :wrapper_html => { class: "input-text" }, label: false, placeholder: "Que souhaitez-vous demander au coach ?"%>
       <%= f.submit class: "input-btn" %>
       <% end %>
     </div>
