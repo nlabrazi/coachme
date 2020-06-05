@@ -1,28 +1,51 @@
-  .mapboxgl-popup {
-    max-width: 200px;
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+  color: black;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.mapboxgl-popup-content {
+  background: #3d3d3d !important;
+  color: white;
+  border: 1px solid #ff9900;
+  border-radius: 10px !important;
+
+  .mapboxgl-popup-close-button {
+    color: #ff9900;
   }
 
-  .mapboxgl-popup-content {
-    color: black;
-    text-align: center;
-    font-family: 'Open Sans', sans-serif;
+  .coach-markers li:first-child {
+    font-size: 18px;
+    margin-bottom: 5px;
   }
 
-  .mapboxgl-popup-content ul {
-    list-style: none;
+}
+  .mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
+    border-top-color: #ff9900 !important;
   }
 
-  .mapboxgl-popup-content img {
-    height: 70px;
-    width: 70px;
-    border-radius: 50%
-  }
+.mapboxgl-popup-content ul {
+  list-style: none;
+  padding: 0;
+}
 
-  #map {
-    top: 0;
-    width: 50%;
-    margin: 50px 70px 30px 0;
-    position: sticky;
-    box-shadow: 5px 4px 20px #1B1F23;
-    border-radius: 10px;
-  }
+.mapboxgl-popup-content img {
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+
+#map {
+  top: 0;
+  width: 50%;
+  margin: 50px 70px 30px 0;
+  position: sticky;
+  box-shadow: 5px 4px 20px #1B1F23;
+  border-radius: 10px;
+}

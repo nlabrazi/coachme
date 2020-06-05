@@ -27,7 +27,6 @@ class BookingsController < ApplicationController
     @booking.sum_price = @coach_activity.price * @booking.duration
     @booking.status = "en attente"
       if @booking.save
-
         Room.create(booking: @booking)
       else
         render "coach_activities/show"

@@ -11,10 +11,15 @@
     width: 500px;
     min-width: 250px;
     padding-left: 30px;
+
+    .search-input {
+      background: #3d3d3d;
+      color: #E5E5E5;
+    }
   }
 
   .btn-yellow {
-    font-size: 20px;
+    font-size: 18px;
     width: 260px;
     padding: initial;
   }
