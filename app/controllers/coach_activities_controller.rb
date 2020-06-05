@@ -2,6 +2,7 @@ class CoachActivitiesController < ApplicationController
 
   def index
     @coach_activities = CoachActivity.all
+    # @coach_activities.activity.name = Activity.name
     if params[:order] == "price"
       @coach_activities = @coach_activities.order(price: :asc)
     elsif params[:order] == "rating"
