@@ -17,7 +17,7 @@
       <% @room.messages.each do |message| %>
       <div class="message-container" id="message-<%= message.id %>">
         <div class="div-avatar-chat">
-          <%= cl_image_tag current_user.photo.key, height: 40, width: 40, id: "chat-avatar", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <%= cl_image_tag message.user.photo.key, height: 40, width: 40, id: "chat-avatar", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         </div>
         <p><%= message.content %></p>
         <i class="author">
@@ -29,7 +29,7 @@
     </div>
     <div class="new_message">
       <%= simple_form_for [@room, Message.new], remote: true do |f| %>
-      <%= f.input :content, :as => :text, :wrapper_html => { class: "input-text" }, label: false, placeholder: "Que souhaitez-vous demander au coach ?" %>
+      <%= f.input :content, :as => :text, :wrapper_html => { class: "input-text" }, label: false, placeholder: "Que souhaitez-vous demander au coach ?"%>
       <%= f.submit class: "input-btn" %>
       <% end %>
     </div>
