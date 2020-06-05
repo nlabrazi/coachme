@@ -1,5 +1,5 @@
 .dash-link {
-    margin-left: -10px;
+    // margin-left: -10px;
     background-color: #282828;
     color: #FF9900;
     font-family: Montserrat;
@@ -10,11 +10,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #FF9900;
+    // border: 1px solid #FF9900;
+    // border-radius: 10px;
   }
 
   .dash-link.top {
-    border-radius: 0px 10px 0px 0px;
+    // border-radius: 0px 10px 0px 0px;
   }
 
   .dash-link.middle {
@@ -22,7 +23,7 @@
   }
 
   .dash-link.bottom {
-    border-radius: 0px 0px 10px 0px;
+    // border-radius: 0px 0px 10px 0px;
   }
 
   .dash-link.active {
@@ -39,13 +40,18 @@
     text-decoration: none !important;
   }
 
-  #v-pills-tab {
+  .dash.dash-pills {
     position: fixed;
-    height: 100vh;
-    justify-content: center;
+    top: 50%;
+    left: 0%;
+    transform: translateY(-50%);
+    border: 1px solid #FF9900;
+    border-radius: 10px;
+    padding: 0;
+    overflow: hidden;
   }
 
-  #v-pills-tab a:hover {
+ .dash.dash-pills a:hover {
     text-decoration: none;
     color: #FF9900;
   }
