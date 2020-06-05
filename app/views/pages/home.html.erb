@@ -24,36 +24,84 @@
   </div>
 
   <div class="cards-home">
-    <% @coach_activities.first(10).each do |coach_activity| %>
-    <%= link_to coach_activity_path(coach_activity) do %>
-    <div class="card-home">
-      <%= cl_image_tag coach_activity.user.photo.key, id: "card-image-home" %>
-      <div class="card-home-infos">
-        <h2><%= coach_activity.activity.name %></h2>
+    <a href="/coach_activities?query=yoga&button=">
+      <div class="card-home">
+        <%= cl_image_tag "https://res.cloudinary.com/dw22pxuaw/image/upload/v1591348098/Home%20Coach%20Me/wesley-tingey-dlxNvA7pVwU-unsplash_vpam7x.jpg", id: "card-image-home" %>
+        <div class="card-home-infos">
+          <h2>Yoga</h2>
+        </div>
       </div>
-    </div>
-    <% end %>
-    <% end %>
+    </a>
+    <a href="/coach_activities?query=escalade&button=">
+      <div class="card-home">
+        <%= cl_image_tag "https://res.cloudinary.com/dw22pxuaw/image/upload/v1591348085/Home%20Coach%20Me/x-N4QTBfNQ8Nk-unsplash_ipjbit.jpg", id: "card-image-home" %>
+        <div class="card-home-infos">
+          <h2>Escalade</h2>
+        </div>
+      </div>
+    </a>
+    <a href="/coach_activities?query=basketball&button=">
+      <div class="card-home">
+        <%= cl_image_tag "https://res.cloudinary.com/dw22pxuaw/image/upload/v1591348080/Home%20Coach%20Me/malcolm-lightbody-jW2CpfyQo7o-unsplash_xrsqln.jpg", id: "card-image-home" %>
+        <div class="card-home-infos">
+          <h2>Basketball</h2>
+        </div>
+      </div>
+    </a>
+    <a href="/coach_activities?query=boxe&button=">
+      <div class="card-home">
+        <%= cl_image_tag "https://res.cloudinary.com/dw22pxuaw/image/upload/v1591348077/Home%20Coach%20Me/jose-aljovin-op2UhOH0sIc-unsplash_b2kg0s.jpg", id: "card-image-home" %>
+        <div class="card-home-infos">
+          <h2>Boxe</h2>
+        </div>
+      </div>
+    </a>
+    <a href="/coach_activities?query=tiralarc&button=">
+      <div class="card-home">
+        <%= cl_image_tag "https://res.cloudinary.com/dw22pxuaw/image/upload/v1591348084/Home%20Coach%20Me/annie-spratt-jY9mXvA15W0-unsplash_pekmzo.jpg", id: "card-image-home" %>
+        <div class="card-home-infos">
+          <h2>Tir à l'arc</h2>
+        </div>
+      </div>
+    </a>
+    <a href="/coach_activities?query=yoga&button=">
+      <div class="card-home">
+        <%= cl_image_tag "https://res.cloudinary.com/dw22pxuaw/image/upload/v1591348084/Home%20Coach%20Me/patrick-kool-zTwmxau8DlQ-unsplash_zktyao.jpg", id: "card-image-home" %>
+        <div class="card-home-infos">
+          <h2>Yoga</h2>
+        </div>
+      </div>
+    </a>
+    <a href="/coach_activities?query=crossfit&button=">
+      <div class="card-home">
+        <%= cl_image_tag "https://res.cloudinary.com/dw22pxuaw/image/upload/v1591348076/Home%20Coach%20Me/damir-spanic-22L7do1cOho-unsplash_d0fehr.jpg", id: "card-image-home" %>
+        <div class="card-home-infos">
+          <h2>Crossfit</h2>
+        </div>
+      </div>
+    </a>
   </div>
 </div>
 
 
-  <div class="arguments">
-    <div class="arg-1">
-      <%= image_tag "check.svg", alt: "alttext", :class => "check" %>
-      <p class="mb-3 title-arg">Les meilleurs coachs</p>
-      <p class="text-center title-arg-light">Le meilleur de nos coachs directement chez vous.</p>
-    </div>
-    <div class="arg-1">
-      <%= image_tag "check.svg", alt: "alttext", :class => "check" %>
-      <p class="mb-3 title-arg">Meilleur prix garanti</p>
-      <p class="text-center title-arg-light">Nous nous évertuons à vous proposer les meilleurs prix.</p>
-    </div>
-    <div class="arg-1">
-      <%= image_tag "check.svg", alt: "alttext", :class => "check" %>
-      <p class="mb-3 title-arg">Coaching sur mesures</p>
-      <p class="text-center title-arg-light">C'est vous qui personnalisez votre cours selon vos besoins.</p>
-    </div>
+
+
+<div class="arguments">
+  <div class="arg-1">
+    <%= image_tag "check.svg", alt: "alttext", :class => "check" %>
+    <p class="mb-3 title-arg">Les meilleurs coachs</p>
+    <p class="text-center title-arg-light">Le meilleur de nos coachs directement chez vous.</p>
   </div>
+  <div class="arg-1">
+    <%= image_tag "check.svg", alt: "alttext", :class => "check" %>
+    <p class="mb-3 title-arg">Meilleur prix garanti</p>
+    <p class="text-center title-arg-light">Nous nous évertuons à vous proposer les meilleurs prix.</p>
+  </div>
+  <div class="arg-1">
+    <%= image_tag "check.svg", alt: "alttext", :class => "check" %>
+    <p class="mb-3 title-arg">Coaching sur mesures</p>
+    <p class="text-center title-arg-light">C'est vous qui personnalisez votre cours selon vos besoins.</p>
+  </div>
+</div>
 
 
