@@ -12,8 +12,7 @@ const initFlatPicker = () => {
     minDate: "today",
     //inline: true,
     enableTime: true,
-    dateFormat: "d-m-Y H:i",
-    time_24hr: true,
+    dateFormat: "Y-m-d H:i",
     //"disable": bookings,
   });
 };

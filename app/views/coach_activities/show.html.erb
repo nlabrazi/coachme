@@ -51,9 +51,9 @@
       <div class="form-booking" id="form-booking">
         <div class="form-wrapper">
           <%= simple_form_for [@coach_activity, @booking], url: coach_activity_bookings_path(@coach_activity), method: :post, remote: true do |f| %>
-          <%= f.input :date_time, as: :string, required: false, input_html: {class: "flatpickr"}, placeholder:"Heure de début du cours" %>
-          <%= f.input :duration, input_html: { min: 0, max: 5 }, placeholder:"Nombre d'heure" %>
-          <%= f.input :participant_number, input_html: { min: 0, max: 5 }, placeholder:"Nombre de participants" %>
+          <%= f.input :date_time, as: :string, required: false, input_html: {class: "flatpickr"}, placeholder:"Quel jour, quelle heure ?", label: "Date de début du cours" %>
+          <%= f.input :duration, input_html: { min: 0, max: 5 }, placeholder:"Pour combien de temps ?", label: "Nombre d'heures" %>
+          <%= f.input :participant_number, input_html: { min: 0, max: 5 }, placeholder:"Seul(e) ou accompagné(e) ?", label: "Nombre de participants"  %>
           <%= f.button :submit, "Transpirez avec #{@coach_activity.user.first_name}", class: "button-form", data: {toggle: "modal", target: "#staticBackdrop"} %>
           <% end %>
         </div>
