@@ -19,6 +19,7 @@ class User < ApplicationRecord
   has_many :messages, dependent: :destroy
 
   has_many :reviews
+  has_many :payments
 
   has_one_attached :photo
 

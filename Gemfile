@@ -22,6 +22,7 @@ gem 'pg_search', '~> 2.3.0'
 gem 'geocoder'
 gem 'cloudinary'
 gem 'meta-tags'
+gem 'stripe'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

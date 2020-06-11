@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'messages/create'
   get 'rooms/show'
   get 'reviews/create'
+  get 'payments/create'
 
   devise_for :users
 
@@ -30,6 +31,7 @@ Rails.application.routes.draw do
   end
   resources :bookings, only: [:show] do
     resources :reviews, only: [:create, :new]
+    resources :payments, only: [:create, :new]
   end
 
   resources :rooms, only: [:show] do
