@@ -77,6 +77,7 @@
                 <h3> Statut: </h3> <h3 class="orange"> <%= booking.status %> </h3>
               </div>
             </div>
+            <%= link_to "GO PAYER", new_booking_payment_path(booking), class: "btn btn-success btn-payment" %>
             <%= link_to image_tag("delete.svg"), coach_activity_booking_path(booking.coach_activity, booking), method: :delete, class: "button-delete" %>
           </div>
           <div class="booking-infos">
