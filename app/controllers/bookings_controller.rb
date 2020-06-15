@@ -1,6 +1,4 @@
 class BookingsController < ApplicationController
-  #before_action :set_booking
-
   def index
     @user = User.find(params[:user_id])
     @bookings = Booking.all

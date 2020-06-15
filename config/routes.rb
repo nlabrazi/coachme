@@ -30,7 +30,7 @@ get "/dashboard", to: 'dashboards#dashboard'
   get "/search", to: 'searches#search'
   get "/activities", to:'searches#browse'
 
-  resources :coach_activities, only: [:index, :show, :new, :create] do
+  resources :coach_activities, only: [:index, :show] do
     resources :bookings, only: [:create, :show] do
       put "/validate", to: "bookings#validate"
       put "/refused", to: "bookings#refused"
