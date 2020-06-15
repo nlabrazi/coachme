@@ -42,6 +42,3 @@ yarn-debug.log*
 *.swp
 .DS_Store
 .env*
-
-# Ignore STRIPE config payment
-/config/application.yml

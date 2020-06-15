@@ -3,6 +3,7 @@ class Booking < ApplicationRecord
   self.joins(:bookings).where('bookings = ?',booking)
   }
 
+  belongs_to :payment
   belongs_to :user
   belongs_to :coach_activity
   belongs_to :coach, class_name: "User"

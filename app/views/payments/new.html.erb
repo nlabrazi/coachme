@@ -1,8 +1,26 @@
 <div class="container">
-  <div class="top">
-    <img src="" alt="photo du coach">
-    <h3>GO PAYER CHIENNE</h3>
+  <div class="payment-top d-flex">
+    <div class="payment-pp_coach">
+      <%= cl_image_tag @booking.coach.photo.key, height: 150, width: 150, gravity: :face, name: "card-avatar-coach", id: "coach_avatar" %>
+    </div>
+    <h2>Récapitulatif commande avec <%= @booking.coach.first_name %></h2>
   </div>
-  <div class="payment-content">
+  <div class="payment-order">
+    <ul class="order-details">
+      <li> Date : <%= @booking.date_time %> </li>
+      <li> Location :</li>
+      <li> Participants : <%= @booking.participant_number %> </li>
+    </ul>
+    <ul class="order-price">
+      <li>Sous-Total : </li>
+      <li>Déduction : </li>
+      <li>Prix à Payer : <%= @booking.sum_price %> </li>
+    </ul>
+  </div>
+  <div class="payment-details">
+    <%= button_to 'PAYER', checkout_create_path, method: :post, params: {id: @booking.id}, remote: true %>
+  </div>
+  <div class="payment-disclaimer">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta adipisci excepturi ducimus, molestias saepe voluptate similique corporis. Atque iste dignissimos perspiciatis, necessitatibus voluptate voluptatem dolorem magnam iusto consectetur rerum vitae.</p>
   </div>
 </div>
