@@ -199,6 +199,13 @@
     color: #FF9900;
   }
 
+  .button-form.link {
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+  }
+
   .row-review-count {
     display: flex;
     align-items: baseline;
