@@ -23,6 +23,10 @@ gem 'geocoder'
 gem 'cloudinary'
 gem 'meta-tags'
 gem 'stripe'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
+gem 'omniauth-google'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
