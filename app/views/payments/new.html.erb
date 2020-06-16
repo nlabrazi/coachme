@@ -1,8 +1,65 @@
-<div class="container">
-  <div class="top">
-    <img src="" alt="photo du coach">
-    <h3>GO PAYER CHIENNE</h3>
+<script>
+ function disableSubmit() {
+  document.getElementById("btn-payment").disabled = true;
+}
+
+function activateButton(element) {
+
+  if(element.checked) {
+    document.getElementById("btn-payment").disabled = false;
+  }
+  else  {
+    document.getElementById("btn-payment").disabled = true;
+  }
+
+}
+</script>
+
+<div class="container payment-container">
+  <div class="payment-top d-flex">
+    <div class="payment-pp_coach">
+      <%= cl_image_tag @booking.coach.photo.key, height: 150, width: 150, gravity: :face, name: "card-avatar-coach", id: "coach_avatar" %>
+    </div>
+    <div class="payment-top-title">
+      <h2>Récapitulatif commande avec <%= @booking.coach.first_name %></h2>
+    </div>
   </div>
-  <div class="payment-content">
+
+  <div class="payment-order">
+    <div class="card mb-3 payment-order-top" style="max-width: 540px;">
+      <div class="row no-gutters">
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">Résumé :</h5>
+            <ul class="order-details">
+              <br>
+              <li> Date : <%= @booking.date_time %> </li>
+              <li> Location :</li>
+              <li> Participants : <%= @booking.participant_number %> </li>
+              <br>
+              <li>Sous-Total : <%= @booking.sum_price %> €</li>
+              <li>Déduction : <%= @booking.sum_price %> €</li>
+              <br>
+              <li>Prix à Payer : <%= @booking.sum_price %> €</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <%= cl_image_tag "https://res.cloudinary.com/dw22pxuaw/image/upload/v1591348098/Home%20Coach%20Me/wesley-tingey-dlxNvA7pVwU-unsplash_vpam7x.jpg", class:"bd-placeholder-img", width:"100%", height:"100%" %>
+          <title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/>
+        </div>
+      </div>
+    </div>
+    <div class="order-price-payment">
+      <%= button_to "PROCEDER AU PAIEMENT", checkout_create_path, method: :post, params: {id: @booking.id}, remote: true, id:"btn-payment" %>
+    </div>
+  </div>
+  <br>
+  <br>
+  <div class="payment-disclaimer">
+    <input type="checkbox" name="terms" id="terms" onchange="activateButton(this)">  J'acceptes les termes & Conditions
+    <br>
+    <br>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta adipisci excepturi ducimus, molestias saepe voluptate similique corporis. Atque iste dignissimos perspiciatis, necessitatibus voluptate voluptatem dolorem magnam iusto consectetur rerum vitae.</p>
   </div>
 </div>

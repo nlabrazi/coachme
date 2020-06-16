@@ -1,0 +1,11 @@
+// console.log('<%= @booking.coach.first_name %>');
+
+const stripe = Stripe('<%= Rails.configuration.stripe[:stripe_publishable_key] %>');
+
+console.log(stripe);
+
+stripe.redirectToCheckout({
+  sessionId: '<%= @session.id %>'
+}).then (function (result) {
+  console.log(result.error.message);
+});
