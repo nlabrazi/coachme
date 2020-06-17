@@ -26,7 +26,7 @@ function activateButton(element) {
   </div>
 
   <div class="payment-order">
-    <div class="card mb-3 payment-order-top" style="max-width: 540px;">
+    <div class="card mb-3 payment-order-top">
       <div class="row no-gutters">
         <div class="col-md-8">
           <div class="card-body">
@@ -51,6 +51,11 @@ function activateButton(element) {
       </div>
     </div>
     <div class="order-price-payment">
+      <% if flash[:error].present? %>
+      <div id="error_explanation">
+        <p><%= flash[:error] %></p>
+      </div>
+      <% end %>
       <%= button_to "PROCEDER AU PAIEMENT", checkout_create_path, method: :post, params: {id: @booking.id}, remote: true, id:"btn-payment" %>
     </div>
   </div>
@@ -60,6 +65,6 @@ function activateButton(element) {
     <input type="checkbox" name="terms" id="terms" onchange="activateButton(this)">  J'acceptes les termes & Conditions
     <br>
     <br>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta adipisci excepturi ducimus, molestias saepe voluptate similique corporis. Atque iste dignissimos perspiciatis, necessitatibus voluptate voluptatem dolorem magnam iusto consectetur rerum vitae.</p>
+    <p>En cliquant sur sur "J'acceptes" vous reconnaissez être en accord avec les termes et conditions d'utilisation de l'application CoachMe : à savoir que nous ne pourrons être tenu responsable d'aucune façon si cela part en cacahuète. Signé "La fine équipe".</p>
   </div>
 </div>
