@@ -1,8 +1,0 @@
-test: &default
-#  PAYPAL_ENV: sandbox
-#  PAYPAL_CLIENT_ID:     notyet
-#  PAYPAL_CLIENT_SECRET:   notyet
-  STRIPE_PUBLISHABLE_KEY: pk_test_51GsdEiAB4OfgnnOdx5Ia9DIoIwP3H29GvWKsGFINRvndGItVeAWnZDJdIrGlFHSP566yX9pqvg67Jx0fhmk83wT600Xs5tGYRW
-  STRIPE_SECRET_KEY:  sk_test_51GsdEiAB4OfgnnOd41Fyh0mzoqbGDpg4KjX0hgOJJ9tb9df3TN5qYJ9BQD4OItO5sHy63n3o5RnEJbScQpthTUBj00KeAM9jjj
-development:
-  <<: *default
