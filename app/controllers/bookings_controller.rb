@@ -1,4 +1,6 @@
 class BookingsController < ApplicationController
+  before_action :authenticate_user!, except: [:notify]
+
   def index
     @user = User.find(params[:user_id])
     @bookings = Booking.all
@@ -29,6 +31,22 @@ class BookingsController < ApplicationController
       else
         render "coach_activities/show"
       end
+
+    if @booking
+    # send request to PayPal
+    values = {
+      business: 'sb-cf12q2336620@business.example.com',
+      cmd: '_xclick',
+      upload: 1,
+      notify_url: 'https://coach-me.best/notify',
+      amount: @booking.sum_price,
+      item_name: @booking.coach.first_name,
+      item_number: @booking.id,
+      quantity: @booking.duration,
+      return: 'https://coach-me.best/dashboard'
+    }
+    redirect_to "https://www.sandbox.paypal.com/cgi-bin/webscr?" + values.to_query
+    end
   end
 
   def update
@@ -53,6 +71,21 @@ class BookingsController < ApplicationController
       format.html { updated ? (redirect_to dashboard_path) : (render "dashboards/dashboard") }
       format.js
     end
+  end
+
+  def notify
+    params.permit!
+    status_payment = params[:payment_status]
+
+    booking = Booking.find(params[:item_number])
+
+    if status_payment = "Completed"
+      booking.update_attributes status_payment: true
+    else
+      booking.destroy
+    end
+
+    render nothing: true
   end
 
   def refused

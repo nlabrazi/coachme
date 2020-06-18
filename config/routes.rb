@@ -19,6 +19,10 @@ end
 # STRIPE test
 
 
+# Paypal notify
+  post '/notify' => 'bookings#notify'
+# Paypal notify
+
 
 devise_for :users
 
