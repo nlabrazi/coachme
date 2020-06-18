@@ -16,8 +16,8 @@ class CheckoutController < ApplicationController
         quantity:    @booking.duration,
         amount:      @booking.sum_price,
         name:        @booking.coach.first_name,
-        description: @booking.coach_activity.activity.name,
-        images:      @booking.coach.photo.key  # --> should work on live server
+        description: @booking.coach_activity.activity.name
+        #images:      @booking.coach.photo.key  # --> should work on live server
       }],
       success_url: checkout_success_url + '?session_id={CHECKOUT_SESSION_ID}', #UNSECURE FOR PROD (we must use webhook)
       cancel_url: checkout_cancel_url
