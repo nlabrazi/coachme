@@ -84,16 +84,6 @@ ActiveRecord::Schema.define(version: 2020_06_18_224413) do
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
-  create_table "paiments", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "booking_id", null: false
-    t.integer "price"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["booking_id"], name: "index_paiments_on_booking_id"
-    t.index ["user_id"], name: "index_paiments_on_user_id"
-  end
-
   create_table "payments", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "booking_id", null: false
@@ -155,8 +145,6 @@ ActiveRecord::Schema.define(version: 2020_06_18_224413) do
   add_foreign_key "coach_activities", "users"
   add_foreign_key "messages", "rooms"
   add_foreign_key "messages", "users"
-  add_foreign_key "paiments", "bookings"
-  add_foreign_key "paiments", "users"
   add_foreign_key "payments", "bookings"
   add_foreign_key "payments", "users"
   add_foreign_key "reviews", "bookings"

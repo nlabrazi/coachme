@@ -11,14 +11,13 @@ Rails.application.routes.draw do
   get 'reviews/create'
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
-=======
+
 # STRIPE test
 scope '/checkout' do
   post 'create',  to:'checkout#create',  as: 'checkout_create'
   get 'cancel',   to:'checkout#cancel',  as: 'checkout_cancel'
   get 'success',  to:'checkout#success', as: 'checkout_success'
 end
-# STRIPE test
 
 root to: 'pages#home'
 get "/dashboard", to: 'dashboards#dashboard'
