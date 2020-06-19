@@ -63,3 +63,20 @@ a.btn-orange {
 .button-specialities:hover {
   text-decoration: none;
 }
+
+.btn-payment {
+  padding: 10px;
+  justify-content: center;
+  color: #282828;
+  background-color: #538d22;
+  border-style: none;
+  border-radius: 24px;
+  font-size: 16px;
+  font-weight: 300;
+  font-style: normal;
+  font-family: Montserrat;
+}
+
+.btn-payment:hover {
+  background-color: #73a942;
+}
