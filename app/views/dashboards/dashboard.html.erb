@@ -49,6 +49,7 @@
         <div class="dashboard-header-infos">
           <h3> Il y a <%= @bookings.count %> activités en cours </h3>
         </div>
+        <%= link_to "Deconnexion", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
       </div>
 
     <% if current_user.coach? == false %>
