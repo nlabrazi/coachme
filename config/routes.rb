@@ -18,12 +18,6 @@ scope '/checkout' do
 end
 # STRIPE test
 
-
-# Paypal notify
-  post '/notify' => 'bookings#notify'
-# Paypal notify
-
-
 devise_for :users
 
 root to: 'pages#home'
