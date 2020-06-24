@@ -26,12 +26,10 @@
       <div class="or">ou connectez-vous via</div>
       <div class="flex-c-m social-connector">
         <% unless current_user %>
-        <%= link_to "", user_facebook_omniauth_authorize_path, class: "login-social-item bg1" %>
+        <%= link_to "", user_facebook_omniauth_authorize_path, class: "login-social-item bg1 fab fa-facebook-f" %>
         <% else %>
         <%= link_to “Logout”, destroy_user_session_path, method: :delete %>
         <% end %>
-          <i class="fab fa-facebook-f"></i>
-        </a>
         <a href="#" class="login-social-item bg2">
           <i class="fab fa-twitter"></i>
         </a>
@@ -40,7 +38,7 @@
         </a>
       </div>
       <div class="forgot">
-      <%= render "devise/shared/links" %>
+        <%= render "devise/shared/links" %>
       </div>
     </div>
   </div>
