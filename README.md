@@ -1,17 +1,16 @@
-Rails App - Batch #400 @lewagon Paris
+## Rails App - Batch #400 @lewagon Paris
 
-Trouvez votre coach sportif via notre application
+# Trouvez votre coach sportif via notre application
 
-config
+
+### config
 yarn add bootstrap
 yarn add places.js
 yarn add mapbox-gl
 yarn add flatpickr
 
 
-
-
-#New Gem added
+### New Gem added
 gem 'pundit'
 gem 'pg_search', '~> 2.3.0'
 gem 'geocoder'
