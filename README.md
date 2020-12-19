@@ -1,4 +1,6 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+Rails App - Batch #400 @lewagon Paris
+
+Trouvez votre coach sportif via notre application
 
 config
 yarn add bootstrap
